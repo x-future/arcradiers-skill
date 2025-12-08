@@ -238,7 +238,7 @@ export default function App() {
           <div className="flex items-center gap-3 text-arc-mob font-display font-bold text-xl">
             <img 
               src="/ARC-RAiders-SKill-Logo.png" 
-              alt="ARC Raiders Skill Logo" 
+              alt="ARC Radiers Skill Tree Builder" 
               className="h-10 w-auto object-contain"
             />
             ARC Radiers Skill Tree Builder
