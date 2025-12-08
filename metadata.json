@@ -1,0 +1,5 @@
+{
+  "name": "Neural Arc Builder",
+  "description": "A next-generation interactive skill tree builder with AI-powered specialization assistance. Design your character build, visualize dependency paths, and use Gemini to optimize your loadout.",
+  "requestFramePermissions": []
+}
