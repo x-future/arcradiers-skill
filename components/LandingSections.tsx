@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Zap, Box, Shield, Users, Crosshair, HelpCircle, BookOpen, MessageSquare, Database } from 'lucide-react';
+import { Target, Zap, Box, Shield, Users, Crosshair, HelpCircle, BookOpen, MessageSquare, Database, Play } from 'lucide-react';
 
 const LandingSections = () => {
   return (
@@ -140,6 +140,177 @@ const LandingSections = () => {
                 <p className="text-zinc-300 text-sm mb-2"><strong>Build:</strong> Mobility <strong>Skill Tree</strong> (45-55) + Low Conditioning</p>
                 <p className="text-zinc-300 text-xs">High mobility and tactical dodging. Best <strong>ARC Raiders</strong> skills: Extreme sprint, climbing, dodging.</p>
              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === Video Guides === */}
+      <section id="videos" className="py-20 px-6 bg-black/40 border-t border-zinc-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
+              ARC Raiders Skill Tree Video Guides
+            </h2>
+            <p className="text-zinc-300 text-sm md:text-base max-w-2xl mx-auto">
+              Prefer learning by watching? These community videos walk through early priorities, full 75 point builds, and
+              common mistakes to avoid when planning your ARC Raiders Skill Tree.
+            </p>
+          </div>
+
+          {/* Featured iframe */}
+          <div className="mb-12">
+            <div className="bg-arc-panel border border-zinc-800 rounded-2xl p-4 md:p-6 shadow-2xl">
+              <p className="text-xs uppercase tracking-[0.2em] text-arc-mob mb-3 font-display">Featured Guide</p>
+              <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-4">
+                Arc Raiders – Skill Tree Overview – Best EARLY Skills
+              </h3>
+              <div className="aspect-video w-full rounded-xl overflow-hidden border border-zinc-900 bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/41EgAdedf8k"
+                  title="Arc Raiders – Skill Tree Overview – Best EARLY Skills"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Video link grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <a
+              href="https://www.youtube.com/watch?v=GhaoPMkzido"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-mob/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-mob">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  Arc Raiders OP Skill Tree Build Guide – BEST SKILLS TO UNLOCK! – SOLO Beginner to Pro Full Guide
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Deep-dive on strong early picks and a full progression path from fresh character to end‑game.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=K7Mf9fg8-7U"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-cond/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-cond">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  Arc Raiders – The ONLY Skill Tree Build you NEED | 75 Points
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  A full 75‑point example build focusing on consistent performance across most activities.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=V5nKXXsiODQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-mob/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-mob">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  Watch THIS Before Unlocking Skills in ARC Raiders (In‑Depth Guide & Build)
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Explains how the tree works so you avoid wasting points and understand long‑term trade‑offs.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=s08i_ImDvc0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-surv/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-surv">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  BEST All Round Skill Tree in Arc Raiders! Avoid This Mistake!
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  A flexible all‑rounder build plus common routing mistakes to steer clear of.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=abOCeC8vruw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-mob/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-mob">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  Arc Raiders: The Best 13 Skills To Unlock Early… (Skill Tree Beginner’s Guide)
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  A curated list of must‑have early skills to unlock first on fresh accounts.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=yKBU3UMhT4U"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-cond/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-cond">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  If YOU Mess this up, Goodluck. - Arc Raiders Skill Tree Guide & Best Skill Tree Build
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Highlights critical mistakes and presents a safe, strong recommendation to follow.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=akrz8fbocZI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-arc-panel border border-zinc-800 rounded-xl p-4 hover:border-arc-surv/60 transition-colors flex gap-3"
+            >
+              <div className="mt-1 text-arc-surv">
+                <Play size={18} />
+              </div>
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  My ARC Raiders Skill Tree: what I like, what I regret (level 75 build review)
+                </h3>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Level 75 review with insight into which picks felt worth it and which could be skipped.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
