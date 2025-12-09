@@ -1,0 +1,17 @@
+# llms.txt for ARC Raiders Skill Tree Builder
+#
+# Purpose:
+# - Guide automated crawlers and LLM indexers on usage of this content.
+# - This site is a community-made planner and not an official ARC Raiders property.
+#
+# Policy:
+# - Public pages may be indexed.
+# - Do not use content for commercial model training without permission.
+
+User-agent: *
+Allow: /
+
+# Contact for data usage questions
+Contact: https://arcraiderskill.com/
+
+

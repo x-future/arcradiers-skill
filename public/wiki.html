@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARC Raiders Skill Tree Wiki</title>
+  <meta name="description" content="ARC Raiders Skill Tree Wiki: Conditioning, Mobility, Survival branches, build tips, and FAQs." />
+  <link rel="canonical" href="https://arcraiderskill.com/wiki.html" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --panel: #0f0f11;
+      --text: #e5e5e5;
+      --muted: #9ca3af;
+      --accent: #d19a53;
+      --cond: #26d672;
+      --mob: #d19a53;
+      --surv: #ff4444;
+      --border: #1f1f23;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 24px 64px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #111; border: 1px solid var(--border); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;}
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: -0.01em; }
+    h2 { margin: 24px 0 12px; font-size: 22px; }
+    h3 { margin: 16px 0 8px; font-size: 18px; }
+    ul { padding-left: 18px; margin: 8px 0 0; color: var(--muted); }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; color: #000; font-weight: 700; }
+    .badge-cond { background: var(--cond); }
+    .badge-mob { background: var(--mob); color: #000; }
+    .badge-surv { background: var(--surv); color: #000; }
+    .footer { margin-top: 32px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: #111; color: var(--text); text-decoration: none; font-weight: 600; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="pill">ARC Raiders Skill Tree</div>
+        <h1>Wiki & Quick Reference</h1>
+        <div style="color: var(--muted);">Branches, mechanics, and quick build guidance.</div>
+      </div>
+      <div>
+        <a class="btn" href="/">← Back to Builder</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Branches</h2>
+      <ul>
+        <li><span class="badge badge-cond">Conditioning</span> Stamina, shield efficiency, survival sustain. Good for tanks/long fights.</li>
+        <li><span class="badge badge-mob">Mobility</span> Movement speed, rolls, vaulting, fall mitigation. Best for PvP/flankers.</li>
+        <li><span class="badge badge-surv">Survival</span> Loot speed, inventory, crafting, stealth. Suited for solo/looters.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Core Mechanics</h2>
+      <ul>
+        <li>Max points: 75 total (one per level).</li>
+        <li>Prerequisites: unlock parent nodes before children.</li>
+        <li>Category gates: some nodes need category points (e.g., 15 / 36).</li>
+        <li>Ranks: most nodes have 1 or 5 ranks; respect max rank caps.</li>
+        <li>Respec: use the planner to test builds before committing in-game.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Quick Builds</h2>
+      <h3>Solo Looter</h3>
+      <ul>
+        <li>Survival 40–50 pts, light Mobility.</li>
+        <li>Focus: loot speed, backpack capacity, stealth noise reduction.</li>
+      </ul>
+
+      <h3>Team Tank</h3>
+      <ul>
+        <li>Conditioning 40–50 pts, some Survival.</li>
+        <li>Focus: stamina regen, shield penalties, downed survivability.</li>
+      </ul>
+
+      <h3>PvP Flanker</h3>
+      <ul>
+        <li>Mobility 45–55 pts, low Conditioning.</li>
+        <li>Focus: sprint/roll stamina, climb/vault speed, fall damage reduction.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>How to Use the Builder</h2>
+      <ul>
+        <li>Pan/Zoom: drag to pan, scroll to zoom (0.4x–2.5x).</li>
+        <li>Allocate: click nodes to add/remove points; watch category totals.</li>
+        <li>Share: use “Share Build” to copy a link with your allocation.</li>
+        <li>AI Assist: ask the Gemini assistant for scenario-based builds.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>Best first picks?</strong> Early Mobility (Marathon Runner) then Survival looting.</li>
+        <li><strong>Can I respec?</strong> In-game options are limited; plan here first.</li>
+        <li><strong>Do hash links index?</strong> Sections are referenced, but primary canonical is the main URL.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>© 2025 ARC Raiders Skill Tree Wiki (community-made)</span>
+      <span><a href="/">Back to Builder</a></span>
+    </div>
+  </div>
+
+  <!-- Google tag (gtag.js) -->
+  <div style="display: none">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE151Y4ZR0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LE151Y4ZR0');
+    </script>
+  </div>
+</body>
+</html>
+
