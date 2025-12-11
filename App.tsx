@@ -249,6 +249,7 @@ export default function App() {
              <li><a href="#scenarios" className="hover:text-arc-mob transition-colors">Scenarios</a></li>
              <li><a href="#faq" className="hover:text-arc-mob transition-colors">FAQ</a></li>
              <li><a href="/wiki.html" className="hover:text-arc-mob transition-colors">Wiki</a></li>
+             <li><a href="/blog.html" className="hover:text-arc-mob transition-colors">Blog</a></li>
           </ul>
         </div>
       </nav>
