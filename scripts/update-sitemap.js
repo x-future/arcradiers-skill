@@ -1,178 +1,122 @@
-#!/usr/bin/env node
-
-/**
- * Auto-update sitemap.xml based on HTML files in public directory
- * This script scans for HTML files and updates sitemap.xml accordingly
- */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
-const publicDir = path.join(rootDir, 'public');
-const sitemapPath = path.join(publicDir, 'sitemap.xml');
 
-const DOMAIN = 'https://arcraiderskill.com';
+const ROOT_DIR = path.dirname(__dirname);
+const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 
-// Pages configuration with priorities and change frequencies
-const PAGE_CONFIG = {
-  '/': { priority: '1.0', changefreq: 'weekly' },
-  '/wiki.html': { priority: '0.8', changefreq: 'weekly' },
-  '/blog.html': { priority: '0.9', changefreq: 'daily' },
-  '/#features': { priority: '0.8', changefreq: 'weekly' },
-  '/#skill-trees': { priority: '0.8', changefreq: 'weekly' },
-  '/#scenarios': { priority: '0.8', changefreq: 'weekly' },
-  '/#faq': { priority: '0.7', changefreq: 'weekly' },
-  // Blog posts (wildcard pattern)
-  '/blog/': { priority: '0.7', changefreq: 'monthly' },
-};
-
-// Get current date in YYYY-MM-DD format
-function getCurrentDate() {
-  return new Date().toISOString().split('T')[0];
-}
-
-// Get file modification date
+// Get file modification time
 function getFileModDate(filePath) {
   try {
     const stats = fs.statSync(filePath);
-    return new Date(stats.mtime).toISOString().split('T')[0];
-  } catch {
-    return getCurrentDate();
+    return stats.mtime.toISOString();
+  } catch (error) {
+    return new Date().toISOString();
   }
 }
 
-// Scan public directory for HTML files
-function scanHTMLFiles() {
+// Scan public directory for files
+function scanDirectory(dir, baseUrl = '') {
   const files = [];
-
-  try {
-    const entries = fs.readdirSync(publicDir, { withFileTypes: true });
-
-    for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith('.html')) {
-        const filePath = path.join(publicDir, entry.name);
-        const url = `/${entry.name}`;
-        const modDate = getFileModDate(filePath);
-
-        files.push({
-          url,
-          modDate,
-          filePath,
-        });
-      } else if (entry.isDirectory() && entry.name === 'blog') {
-        // Scan blog subdirectory
-        const blogDir = path.join(publicDir, 'blog');
+  
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    
+    if (entry.isDirectory()) {
+      // Skip blog directory - handled separately
+      if (entry.name === 'blog') {
+        const blogDir = path.join(dir, 'blog');
         try {
           const blogEntries = fs.readdirSync(blogDir, { withFileTypes: true });
           for (const blogEntry of blogEntries) {
             if (blogEntry.isFile() && blogEntry.name.endsWith('.html')) {
               const filePath = path.join(blogDir, blogEntry.name);
-              const url = `/blog/${blogEntry.name}`;
-              const modDate = getFileModDate(filePath);
-
               files.push({
-                url,
-                modDate,
-                filePath,
+                url: '/blog/' + blogEntry.name,
+                modDate: getFileModDate(filePath),
+                priority: '0.7'
               });
             }
           }
         } catch (error) {
-          console.error('Error scanning blog directory:', error);
+          console.error('Error scanning blog directory:', error.message);
         }
       }
+      // Recursively scan other directories
+      else if (entry.name !== 'node_modules' && entry.name !== '.git') {
+        const subFiles = scanDirectory(fullPath, baseUrl + entry.name + '/');
+        files.push(...subFiles);
+      }
+    } else if (entry.isFile()) {
+      // Add HTML files
+      if (entry.name.endsWith('.html')) {
+        // Ensure URL starts with /
+        const url = baseUrl + entry.name;
+        const fullUrl = url.startsWith('/') ? url : '/' + url;
+        const modDate = getFileModDate(fullPath);
+        
+        // Determine priority based on URL
+        let priority = '0.5';
+        if (fullUrl === '/index.html' || fullUrl === '/') {
+          priority = '1.0';
+        } else if (fullUrl === '/wiki.html' || fullUrl === '/blog.html') {
+          priority = '0.9';
+        } else if (fullUrl.startsWith('/blog/')) {
+          priority = '0.7';
+        }
+        
+        files.push({
+          url: fullUrl,
+          modDate: modDate,
+          priority: priority
+        });
+      }
     }
-  } catch (error) {
-    console.error('Error scanning directory:', error);
   }
-
+  
   return files;
 }
 
 // Generate sitemap XML
-function generateSitemap() {
-  const htmlFiles = scanHTMLFiles();
-  const today = getCurrentDate();
+function generateSitemap(files) {
+  const baseUrl = 'https://arcraiderskill.com';
   
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  const urlEntries = files.map(file => {
+    const fullUrl = baseUrl + file.url;
+    return `    <url>
+      <loc>${fullUrl}</loc>
+      <lastmod>${file.modDate}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>${file.priority}</priority>
+    </url>`;
+  }).join('\n');
   
-  <!-- Homepage -->
-  <url>
-    <loc>${DOMAIN}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${PAGE_CONFIG['/'].changefreq}</changefreq>
-    <priority>${PAGE_CONFIG['/'].priority}</priority>
-  </url>
-`;
-
-  // Add hash fragment URLs (anchor links)
-  const hashFragments = ['/#features', '/#skill-trees', '/#scenarios', '/#faq'];
-  for (const fragment of hashFragments) {
-    const config = PAGE_CONFIG[fragment] || { priority: '0.7', changefreq: 'monthly' };
-    xml += `  
-  <url>
-    <loc>${DOMAIN}${fragment}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${config.changefreq}</changefreq>
-    <priority>${config.priority}</priority>
-  </url>
-`;
-  }
-
-  // Add HTML files (excluding index.html which is already added as homepage)
-  for (const file of htmlFiles) {
-    if (file.url === '/index.html') continue;
-    
-    const config = PAGE_CONFIG[file.url] || { priority: '0.7', changefreq: 'monthly' };
-    xml += `  
-  <url>
-    <loc>${DOMAIN}${file.url}</loc>
-    <lastmod>${file.modDate}</lastmod>
-    <changefreq>${config.changefreq}</changefreq>
-    <priority>${config.priority}</priority>
-  </url>
-`;
-  }
-
-  xml += `  
-</urlset>
-`;
-
-  return xml;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlEntries}
+</urlset>`;
 }
 
-// Main function
-function main() {
+// Main generation
+console.log('🔄 Auto-updating sitemap.xml...');
+
+try {
+  const files = scanDirectory(PUBLIC_DIR);
   console.log('🔄 Updating sitemap.xml...');
+  console.log('  Found', files.length, 'files');
   
-  try {
-    const sitemapContent = generateSitemap();
-    fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-    
-    console.log('✅ Sitemap updated successfully!');
-    console.log(`📄 Location: ${sitemapPath}`);
-    
-    // Count URLs
-    const urlCount = (sitemapContent.match(/<url>/g) || []).length;
-    console.log(`📊 Total URLs: ${urlCount}`);
-  } catch (error) {
-    console.error('❌ Error updating sitemap:', error);
-    process.exit(1);
-  }
+  const sitemap = generateSitemap(files);
+  
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap);
+  console.log('✅ Sitemap updated successfully!');
+  console.log('📄 Location:', path.join(PUBLIC_DIR, 'sitemap.xml'));
+  console.log('📊 Total URLs:', files.length);
+} catch (error) {
+  console.error('❌ Error updating sitemap:', error.message);
+  process.exit(1);
 }
-
-// Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
-}
-
-export { generateSitemap, scanHTMLFiles };
-
