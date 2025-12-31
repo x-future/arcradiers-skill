@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ARC Raiders Skill Tree Blog</title>
+    <link>https://arcraiderskill.com/blog.html</link>
+    <description>Latest ARC Raiders Skill Tree guides and tutorials</description>
+    <language>en-us</language>
+    <atom:link href="https://arcraiderskill.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 31 Dec 2025 05:26:50 GMT</lastBuildDate>
+    <item>
+      <title>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns</title>
+      <link>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</link>
+      <guid>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</guid>
+      <description>ARC Raiders Update 1.7.2 is here! Hidden Bunker returns, blueprint drop rates optimized, and numerous bug fixes for smoother gameplay experience.</description>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>ARC Raiders North Line Update 1.2.0: Stella Montis Map Live</title>
+      <link>https://arcraiderskill.com/blog/north-line-update.html</link>
+      <guid>https://arcraiderskill.com/blog/north-line-update.html</guid>
+      <description>ARC Raiders Update 1.2.0 is here! New Stella Montis map, new ARC types, balance adjustments, and numerous bug fixes await in this major content update.</description>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
