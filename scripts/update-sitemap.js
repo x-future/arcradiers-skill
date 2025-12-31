@@ -21,11 +21,13 @@ const DOMAIN = 'https://arcraiderskill.com';
 const PAGE_CONFIG = {
   '/': { priority: '1.0', changefreq: 'weekly' },
   '/wiki.html': { priority: '0.8', changefreq: 'weekly' },
-  '/blog.html': { priority: '0.8', changefreq: 'weekly' },
+  '/blog.html': { priority: '0.9', changefreq: 'daily' },
   '/#features': { priority: '0.8', changefreq: 'weekly' },
   '/#skill-trees': { priority: '0.8', changefreq: 'weekly' },
   '/#scenarios': { priority: '0.8', changefreq: 'weekly' },
   '/#faq': { priority: '0.7', changefreq: 'weekly' },
+  // Blog posts (wildcard pattern)
+  '/blog/': { priority: '0.7', changefreq: 'monthly' },
 };
 
 // Get current date in YYYY-MM-DD format
@@ -46,27 +48,48 @@ function getFileModDate(filePath) {
 // Scan public directory for HTML files
 function scanHTMLFiles() {
   const files = [];
-  
+
   try {
     const entries = fs.readdirSync(publicDir, { withFileTypes: true });
-    
+
     for (const entry of entries) {
       if (entry.isFile() && entry.name.endsWith('.html')) {
         const filePath = path.join(publicDir, entry.name);
         const url = `/${entry.name}`;
         const modDate = getFileModDate(filePath);
-        
+
         files.push({
           url,
           modDate,
           filePath,
         });
+      } else if (entry.isDirectory() && entry.name === 'blog') {
+        // Scan blog subdirectory
+        const blogDir = path.join(publicDir, 'blog');
+        try {
+          const blogEntries = fs.readdirSync(blogDir, { withFileTypes: true });
+          for (const blogEntry of blogEntries) {
+            if (blogEntry.isFile() && blogEntry.name.endsWith('.html')) {
+              const filePath = path.join(blogDir, blogEntry.name);
+              const url = `/blog/${blogEntry.name}`;
+              const modDate = getFileModDate(filePath);
+
+              files.push({
+                url,
+                modDate,
+                filePath,
+              });
+            }
+          }
+        } catch (error) {
+          console.error('Error scanning blog directory:', error);
+        }
       }
     }
   } catch (error) {
     console.error('Error scanning directory:', error);
   }
-  
+
   return files;
 }
 

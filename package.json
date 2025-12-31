@@ -4,17 +4,27 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "npm run update-sitemap && vite build",
+    "dev": "npm run generate-blog && vite",
+    "build": "npm run generate-blog && npm run update-sitemap && npm run generate-rss && vite build",
     "preview": "vite preview",
+    "generate-blog": "node scripts/generate-blog.js",
     "update-sitemap": "node scripts/update-sitemap.js",
+    "generate-rss": "node scripts/generate-rss.js",
     "watch-sitemap": "node scripts/update-sitemap.js --watch"
   },
   "dependencies": {
+    "@google/genai": "^1.30.0",
+    "date-fns": "^4.1.0",
+    "fuse.js": "^7.1.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@google/genai": "^1.30.0",
-    "lucide-react": "^0.554.0"
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
