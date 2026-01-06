@@ -107,6 +107,14 @@ console.log('🔄 Auto-updating sitemap.xml...');
 
 try {
   const files = scanDirectory(PUBLIC_DIR);
+  
+  // Add root URL (homepage)
+  files.unshift({
+    url: '/',
+    modDate: getFileModDate(path.join(ROOT_DIR, 'index.html')),
+    priority: '1.0'
+  });
+  
   console.log('🔄 Updating sitemap.xml...');
   console.log('  Found', files.length, 'files');
   

@@ -6,12 +6,54 @@
     <description>Latest ARC Raiders Skill Tree guides and tutorials</description>
     <language>en-us</language>
     <atom:link href="https://arcraiderskill.com/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 31 Dec 2025 05:26:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 11:20:15 GMT</lastBuildDate>
+    <item>
+      <title>ARC Raiders Skill Tree Complete Beginner's Guide 2025</title>
+      <link>https://arcraiderskill.com/blog/beginners-complete-guide.html</link>
+      <guid>https://arcraiderskill.com/blog/beginners-complete-guide.html</guid>
+      <description>New to ARC Raiders? This complete beginner's guide teaches you everything about the skill tree system. Learn how to allocate points, choose branches, and create your first build.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Mobility Branch Mastery: Speed, Evasion, and Positioning in ARC Raiders</title>
+      <link>https://arcraiderskill.com/blog/mobility-mastery-guide.html</link>
+      <guid>https://arcraiderskill.com/blog/mobility-mastery-guide.html</guid>
+      <description>Master the Mobility skill tree branch in ARC Raiders. Learn advanced movement techniques, dodge rolling, vaulting, and flanking strategies for aggressive players.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>ARC Raiders Skill Tree Mechanics: Deep Dive into Numbers</title>
+      <link>https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html</link>
+      <guid>https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html</guid>
+      <description>Advanced mathematical analysis of ARC Raiders skill tree mechanics. Learn exactly how damage reduction, stacking, and hidden mechanics work behind the scenes.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Survival Branch Complete Guide: Looting, Crafting, and Solo Play</title>
+      <link>https://arcraiderskill.com/blog/survival-branch-complete-guide.html</link>
+      <guid>https://arcraiderskill.com/blog/survival-branch-complete-guide.html</guid>
+      <description>Master the Survival skill tree in ARC Raiders. Learn looting strategies, inventory management, crafting efficiency, and stealth techniques for solo players.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Top 5 ARC Raiders Skill Tree Meta Builds (January 2025)</title>
+      <link>https://arcraiderskill.com/blog/top-5-meta-builds.html</link>
+      <guid>https://arcraiderskill.com/blog/top-5-meta-builds.html</guid>
+      <description>Discover the most effective and popular ARC Raiders skill tree builds in the current meta. Includes tank, DPS, solo, and team compositions optimized for Update 1.7.2.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ultimate Guide to Conditioning Branch in ARC Raiders Skill Tree</title>
+      <link>https://arcraiderskill.com/blog/ultimate-conditioning-guide.html</link>
+      <guid>https://arcraiderskill.com/blog/ultimate-conditioning-guide.html</guid>
+      <description>Complete guide to the Conditioning skill branch in ARC Raiders. Learn how to maximize stamina efficiency, shield recovery, and survival sustainability for tank builds.</description>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns</title>
       <link>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</link>
       <guid>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</guid>
-      <description>ARC Raiders Update 1.7.2 is here! Hidden Bunker returns, blueprint drop rates optimized, and numerous bug fixes for smoother gameplay experience.</description>
+      <description>ARC Raiders Update 1.7.2 released! Hidden Bunker returns with optimized blueprint drop rates. Includes critical bug fixes for interactions, indoor cold damage, and quest system improvements.</description>
       <pubDate>Thu, 18 Dec 2025 00:00:00 GMT</pubDate>
     </item>
     <item>

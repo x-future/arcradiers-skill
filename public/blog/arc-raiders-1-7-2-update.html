@@ -1,28 +1,238 @@
-<!DOCTYPE html><html><head><title>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns | ARC Raiders</title><meta name="description" content="ARC Raiders Update 1.7.2 is here! Hidden Bunker returns, blueprint drop rates optimized, and numerous bug fixes for smoother gameplay experience."><link rel="icon" href="/favicon.png"><style>body{background:#050505;color:#e5e5e5;font-family:Urbanist,sans-serif;max-width:800px;margin:0 auto;padding:2em;line-height:1.6;}a{color:#d19a53;text-decoration:none;}h1,h2,h3{font-family:Barlow,sans-serif;}code{background:#0f0f11;padding:0.2em 0.4em;border-radius:4px;}</style></head><body><nav><a href="/blog.html">← Back to Blog</a></nav><article><h1>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns</h1><p style="color:#9ca3af;"><time>2025-12-18</time> • 1 min read</p><p>
-<h2>🐛 关键Bug修复</h2></p><p><h3>互动输入问题修复</h3></p><p><strong>修复内容</strong>：解决了网络连接不佳时，快速连续点击互动键导致玩家无法执行任何互动操作的问题。</p><p><h3>环境伤害优化</h3></p><p><strong>修复内容</strong>：添加了缺失的体积碰撞，确保<strong>室内区域在"寒冷期"（Cold Snap）期间不再受到寒冷伤害</strong>。</p><p>这是一个重要的质量改进，玩家现在可以：
-- 🏠 在室内安全度过寒冷期
-- ❄️ 不再需要担心建筑物内的异常伤害
-- 🎯 更专注于战斗策略而非环境因素</p><p><h3>任务系统修复</h3></p><p><strong>修复内容</strong>：修复了导致<strong>"意外倡议"（Unexpected Initiative）任务</strong>无法生成任务物品的Bug，该任务现可以正常完成。</p><p><h3>驱动警告更新</h3></p><p><strong>更新内容</strong>：更新了AMD GPU用户的驱动警告提示，确保更好的游戏兼容性。</p><p>---</p><p><h2>📊 版本对比</h2></p><p>| 特性 | 1.7.0版本 | 1.7.2版本 | 变化 |
-|------|-----------|-----------|------|
-| 蓝图掉落率 | 大幅提升 | 略微下调 | ⚖️ 平衡调整 |
-| 隐藏地堡 | 禁用状态 | 重新启用 | ✅ 内容回归 |
-| 互动Bug | 存在 | 已修复 | 🐛 问题解决 |
-| 室内寒冷伤害 | 异常 | 已修复 | 🏠 体验优化 |
-| 任务系统 | 部分不可完成 | 已修复 | 📜 进度恢复 |</p><p>---</p><p><h2>🎮 玩家策略建议</h2></p><p>基于本次更新，我们为玩家提供以下策略建议：</p><p><h3>刷图建议</h3>
-1. <strong>优先目标</strong>：趁隐藏地堡刚开放，人少奖励多，抓紧探索
-2. <strong>蓝图获取</strong>：虽然掉落率略降，但仍处于较高水平，建议集中 farming
-3. <strong>组队优势</strong>：携带不同职业的队友可以提高地堡通关效率</p><p><h3>装备准备</h3>
-- 💪 <strong>高伤害武器</strong>：应对地堡内的精英敌人
-- 🛡️ <strong>护盾配置</strong>：室内战斗需要更强的防护
-- 🧪 <strong>治疗物品</strong>：确保续航能力</p><p>---</p><p><h2>🔮 未来展望</h2></p><p>从本次更新可以看出开发团队的方向：</p><p>1. <strong>数据驱动平衡</strong>：根据1.7.0的数据进行精细调整
-2. <strong>社区反馈重视</strong>：隐藏地堡的回归证明开发团队在倾听玩家声音
-3. <strong>质量优先</strong>：持续修复Bug提升游戏稳定性
-4. <strong>内容迭代</strong>：未来可能看到更多内容的启用和优化</p><p>---</p><p><h2>📝 总结</h2></p><p>ARC Raiders 1.7.2虽然是一个小型更新，但内容质量很高：</p><p>✅ <strong>优点</strong>：
-- 隐藏地堡回归带来新内容
-- 关键Bug修复提升体验
-- 平衡性调整更合理</p><p>⚠️ <strong>注意</strong>：
-- 蓝图掉落率降低需要适应
-- 建议及时更新AMD显卡驱动</p><p>🎯 <strong>总体评价</strong>：这是一个<strong>扎实的热修复更新</strong>，展现了开发团队对游戏平衡和玩家体验的重视。建议所有玩家尽快更新，并抓住隐藏地堡重新开放的黄金时机！</p><p>---</p><p><strong>更新日期</strong>: 2025年12月18日
-<strong>上一版本</strong>: <a href="https://arcraiders.wiki/wiki/Update:1.7.0">Update 1.7.0</a>
-<strong>官方来源</strong>: <a href="https://arcraiders.wiki/wiki/Update:1.7.2">ARC Raiders Wiki</a></p><p>> 💡 <strong>提示</strong>：想要获取更多ARC Raiders的游戏技巧和版本分析？关注我们的博客，第一时间获取最新攻略！
-</p></article></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns | ARC Raiders</title>
+  <meta name="description" content="ARC Raiders Update 1.7.2 released! Hidden Bunker returns with optimized blueprint drop rates. Includes critical bug fixes for interactions, indoor cold damage, and quest system improvements.">
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+    }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: var(--arc-bg);
+      color: #e5e5e5;
+      line-height: 1.6;
+      padding-top: 64px;
+    }
+
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    article {
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 3rem;
+    }
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .article-meta {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #27272a;
+    }
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: #d4d4d8;
+    }
+    a {
+      color: var(--arc-mob);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #e5a96a;
+    }
+    code {
+      background: #1a1a1d;
+      color: var(--arc-mob);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1a1a1d;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #e5e5e5;
+    }
+    strong {
+      color: white;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 2rem 1rem;
+      }
+      article {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="article-container">
+    <article>
+      <h1>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns</h1>
+      <div class="article-meta">
+        <time>2025-12-18</time> • 4 min read
+      </div>
+      <p>
+!<a href="https://arcraiders.wiki/w/resources/assets/arc_logo.svg">ARC Raiders Update Banner</a></p><p><h1>ARC Raiders Update 1.7.2: Complete Breakdown</h1></p><p>Embark Studios released <strong>ARC Raiders Update 1.7.2</strong> on December 18, 2025. As an important hotfix patch, this update not only optimizes game balance but also fixes several key issues affecting gameplay experience.</p><p><h2>🎯 Core Update Highlights</h2></p><p><h3>Blueprint Drop Rate Adjustments</h3></p><p>This update brings <strong>fine-tuned adjustments to the blueprint drop system</strong>:</p><p>- <strong>Slightly Lowered Drop Rate</strong>: Compared to version 1.7.0, the overall blueprint drop rate has been decreased
+- <strong>Still Higher Than Pre-1.7.0</strong>: Despite adjustments, drop rates remain higher than before Update 1.7.0
+- <strong>Balance Considerations</strong>: The development team seems to be finding the optimal balance point between player progression and game challenge</p><p><strong>Player Impact Analysis</strong>:
+- 🔵 Short-term: Blueprint acquisition speed will slow slightly
+- 🟢 Long-term: More stable drop rates benefit game economy balance
+- ⚡ Recommend farming during this update period</p><p><h3>🏚️ Hidden Bunker Re-enabled</h3></p><p><strong>Major News!</strong> The fan-favorite <strong>Hidden Bunker</strong> content has been re-enabled!</p><p>This is one of the most requested features from the community. The Hidden Bunker not only provides unique exploration experiences but also contains precious loot and challenging combat content.</p><p><strong>Exploration Tips</strong>:
+- 🗺️ Re-check previously discovered bunker entrance locations
+- 💎 Prepare high-level gear to handle internal threats
+- 👥 Team up to greatly improve survival rates
+- 🎁 Don't miss rare rewards inside bunker chests</p><p>---</p><p><h2>🐛 Key Bug Fixes</h2></p><p><h3>Interaction Input Fix</h3></p><p><strong>Fix</strong>: Resolved the issue where rapidly clicking the interact key with poor network connection caused players to be unable to perform any interaction.</p><p><strong>Player Feedback</strong>:
+- "This bug was so annoying, often preventing me from looting or opening doors"
+- "Game experience is much smoother after the fix"</p><p><h3>Environment Damage Optimization</h3></p><p><strong>Fix</strong>: Added missing volume collision to ensure <strong>indoor areas no longer take cold damage during "Cold Snap" periods</strong>.</p><p>This is an important quality improvement. Players can now:
+- 🏠 Safely weather cold snaps indoors
+- ❄️ No longer worry about abnormal damage inside buildings
+- 🎯 Focus more on combat strategy rather than environmental factors</p><p><h3>Quest System Fix</h3></p><p><strong>Fix</strong>: Resolved the bug preventing quest items from spawning in the <strong>"Unexpected Initiative" quest</strong>. The quest can now be completed normally.</p><p>Great news for players stuck on this quest!</p><p><h3>Driver Warning Update</h3></p><p><strong>Update</strong>: Updated driver warnings for AMD GPU users to ensure better game compatibility.</p><p>---</p><p><h2>📊 Version Comparison</h2></p><p>| Feature | Version 1.7.0 | Version 1.7.2 | Change |
+|---------|--------------|--------------|--------|
+| Blueprint Drop Rate | Significantly Increased | Slightly Decreased | ⚖️ Balance Adjustment |
+| Hidden Bunker | Disabled | Re-enabled | ✅ Content Returns |
+| Interaction Bug | Present | Fixed | 🐛 Issue Resolved |
+| Indoor Cold Damage | Abnormal | Fixed | 🏠 Experience Improved |
+| Quest System | Partially Uncompletable | Fixed | 📜 Progress Restored |</p><p>---</p><p><h2>🎮 Player Strategy Recommendations</h2></p><p>Based on this update, here are our strategy recommendations:</p><p><h3>Farming Recommendations</h3>
+1. <strong>Priority Target</strong>: Explore the Hidden Bunker while it's newly opened with fewer crowds
+2. <strong>Blueprint Acquisition</strong>: Though slightly decreased, rates remain high - focus farming
+3. <strong>Team Advantage</strong>: Bring teammates with different classes to improve bunker clear efficiency</p><p><h3>Gear Preparation</h3>
+- 💪 <strong>High-Damage Weapons</strong>: Handle elite enemies inside the bunker
+- 🛡️ <strong>Shield Configuration</strong>: Indoor combat requires stronger protection
+- 🧪 <strong>Healing Items</strong>: Ensure sustainability</p><p><h3>Timing Strategy</h3>
+- 🌅 <strong>Avoid Peak Hours</strong>: Bunker will be crowded when first opened
+- 🌙 <strong>Night Owl Advantage</strong>: Less competition during early morning hours
+- ⏰ <strong>Stay Tuned</strong>: Dev team may further adjust drop rates based on data</p><p>---</p><p><h2>🔮 Future Outlook</h2></p><p>This update shows the development team's direction:</p><p>1. <strong>Data-Driven Balance</strong>: Fine-tuning based on Update 1.7.0 data
+2. <strong>Community Feedback Valued</strong>: Hidden Bunker return proves they're listening to player voices
+3. <strong>Quality First</strong>: Continuously fixing bugs to improve game stability
+4. <strong>Content Iteration</strong>: More content enablement and optimization coming</p><p><strong>Expected Next Version</strong>:
+- Possible new loot crate adjustments
+- More bug fixes and performance optimizations
+- Potential seasonal event content</p><p>---</p><p><h2>📝 Summary</h2></p><p>Although ARC Raiders 1.7.2 is a small update, the content quality is high:</p><p>✅ <strong>Pros</strong>:
+- Hidden Bunker return brings new content
+- Key bug fixes improve experience
+- More reasonable balance adjustments</p><p>⚠️ <strong>Notes</strong>:
+- Blueprint drop rate reduction requires adaptation
+- Recommend updating AMD GPU drivers promptly</p><p>🎯 <strong>Overall Rating</strong>: This is a <strong>solid hotfix update</strong> that demonstrates the dev team's commitment to game balance and player experience. Recommend all players update quickly and seize the golden opportunity of the Hidden Bunker's reopening!</p><p>---</p><p><strong>Update Date</strong>: December 18, 2025
+<strong>Previous Version</strong>: <a href="https://arcraiders.wiki/wiki/Update:1.7.0">Update 1.7.0</a>
+<strong>Official Source</strong>: <a href="https://arcraiders.wiki/wiki/Update:1.7.2">ARC Raiders Wiki</a></p><p>---</p><p>> 💡 <strong>Pro Tip</strong>: Want more ARC Raiders gameplay tips and update analysis? Follow our blog for the latest guides!
+</p>
+    </article>
+  </div>
+</body>
+</html>

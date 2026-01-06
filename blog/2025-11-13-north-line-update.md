@@ -7,7 +7,7 @@ description: "ARC Raiders Update 1.2.0 is here! New Stella Montis map, new ARC t
 tags: ["update", "new-map", "balance", "major-update"]
 category: "updates"
 featured: true
-image: "/images/blog/blog-arc-news1.webp"
+image: "/images/blog-arc-news1.webp"
 ---
 
 ![North Line Update](blog/blog-arc-news1.webp)

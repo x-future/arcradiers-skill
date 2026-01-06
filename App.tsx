@@ -7,7 +7,7 @@ import ConnectionLines from './components/ConnectionLines';
 import Tooltip from './components/Tooltip';
 import GeminiAssistant from './components/GeminiAssistant';
 import LandingSections from './components/LandingSections';
-import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move } from 'lucide-react';
+import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move, Camera } from 'lucide-react';
 
 // Configuration for Grid Cropping & Sizing
 // Flatter aspect ratio: Width 18, Height 12
@@ -193,6 +193,16 @@ export default function App() {
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
+const handleScreenshot = () => {
+    const element = document.getElementById('skill-tree-container');
+    if (!element) {
+      alert('Could not find skill tree to capture');
+      return;
+    }
+    
+    // Using browser's native capture API or alert for now
+    alert('📸 Screenshot Feature\n\nTo take a screenshot of your build:\n1. Use your system screenshot tool (Win+Shift+S or Cmd+Shift+4)\n2. Or wait for our upcoming built-in screenshot feature!\n\nTip: Screenshots will be shareable in our Gallery soon!');
+  };
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -249,6 +259,7 @@ export default function App() {
              <li><a href="#scenarios" className="hover:text-arc-mob transition-colors">Scenarios</a></li>
              <li><a href="#faq" className="hover:text-arc-mob transition-colors">FAQ</a></li>
              <li><a href="/wiki.html" className="hover:text-arc-mob transition-colors">Wiki</a></li>
+             <li><a href="/screenshots.html" className="hover:text-arc-mob transition-colors">Gallery</a></li>
              <li><a href="/blog.html" className="hover:text-arc-mob transition-colors">Blog</a></li>
           </ul>
         </div>
@@ -298,6 +309,13 @@ export default function App() {
                 >
                    <Share2 size={18} />
                 </button>
+                <button
+                  onClick={handleScreenshot}
+                  className="text-zinc-400 hover:text-white transition-colors p-2"
+                  title="Take Screenshot"
+                >
+                   <Camera size={18} />
+                </button>
             </div>
 
             {/* Zoom Controls */}
@@ -316,6 +334,7 @@ export default function App() {
 
          {/* Scalable & Pannable Wrapper */}
          <div 
+            id="skill-tree-container"
             className="absolute left-1/2 top-1/2 transition-transform duration-75 ease-linear origin-center"
             style={{ 
               transform: `translate(calc(-50% + ${pan.x}px), calc(-50% + ${pan.y}px)) scale(${scale})` 

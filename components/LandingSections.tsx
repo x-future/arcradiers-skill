@@ -362,7 +362,7 @@ const LandingSections = () => {
           <div>
             <h4 className="text-white font-bold mb-4 font-display">About</h4>
             <p className="text-zinc-400 text-xs leading-relaxed">
-              © 2025 <strong>ARC Raiders Skill Tree</strong> Build Guide. This website is based on official. 
+              © 2025 <strong>ARC Raiders Skill Tree</strong> Build Guide. This website is not official. 
               <br/><br/>
               Version: V1.0 (Dec 2025)
             </p>

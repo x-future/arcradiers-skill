@@ -50,26 +50,22 @@ for (const file of files) {
 }
 posts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
 
-// Default blog image - using a reliable placeholder
-const DEFAULT_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"%3E%3Crect fill="%230f0f11" width="800" height="450"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="48" fill="%23d19a53"%3EARC RAIDERS%3C/text%3E%3Ctext x="50%25" y="58%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="24" fill="%239ca3af"%3EBlog Post%3C/text%3E%3C/svg%3E';
-
 const indexCards = posts.map(post => {
   const tags = post.meta.tags && post.meta.tags.length > 0
     ? post.meta.tags.slice(0, 3).map(tag => '<span class="tag">' + tag + '</span>').join('')
     : '';
-  const image = post.meta.image || post.meta.coverImage || DEFAULT_IMAGE;
-  const dateStr = new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const image = post.meta.image || post.meta.coverImage || 'https://arcraiders.wiki/w/images/thumb/b/b1/Patchnotes_img.png/600px-Patchnotes_img.png.webp';
 
   return `
     <article class="blog-card">
       <a href="/blog/${post.meta.slug}.html" class="blog-card-link">
         <div class="blog-card-image-wrapper">
-          <img src="${image}" alt="${post.meta.title}" class="blog-card-image" loading="lazy" onerror="this.src='${DEFAULT_IMAGE}'" />
+          <img src="${image}" alt="${post.meta.title}" class="blog-card-image" loading="lazy" />
           <div class="blog-card-overlay"></div>
         </div>
         <div class="blog-card-content">
           <div class="blog-card-meta">
-            <time>${dateStr}</time>
+            <time>${new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
             <span class="blog-card-divider">•</span>
             <span>${post.readingTime} min read</span>
           </div>
@@ -82,14 +78,81 @@ const indexCards = posts.map(post => {
   `;
 }).join('');
 
-const blogStyles = `
+const fullHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | ARC Raiders</title>
+  <meta name="description" content="ARC Raiders Skill Tree Blog">
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+    }
     body {
-      font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050505;
+      font-family: 'Urbanist', sans-serif;
+      background: var(--arc-bg);
       color: #e5e5e5;
       line-height: 1.6;
+      padding-top: 64px;
     }
+
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+
     .blog-container {
       max-width: 1400px;
       margin: 0 auto;
@@ -126,15 +189,15 @@ const blogStyles = `
       margin-top: 2rem;
     }
     .blog-card {
-      background: #0f0f11;
-      border: 1px solid #1f1f23;
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
       border-radius: 12px;
       overflow: hidden;
       transition: all 0.3s ease;
     }
     .blog-card:hover {
       transform: translateY(-4px);
-      border-color: #d19a53;
+      border-color: var(--arc-mob);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
     .blog-card-link {
@@ -219,7 +282,7 @@ const blogStyles = `
       display: inline-block;
       padding: 0.25rem 0.75rem;
       background: #1a1a1d;
-      color: #d19a53;
+      color: var(--arc-mob);
       font-size: 0.75rem;
       font-weight: 500;
       border-radius: 4px;
@@ -249,30 +312,36 @@ const blogStyles = `
         grid-template-columns: repeat(2, 1fr);
       }
     }
-`;
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
 
-const fullHTML = '<!DOCTYPE html>' +
-'<html lang="en">' +
-'<head>' +
-'  <meta charset="UTF-8">' +
-'  <meta name="viewport" content="width=device-width, initial-scale=1.0">' +
-'  <title>Blog | ARC Raiders</title>' +
-'  <meta name="description" content="ARC Raiders Skill Tree Blog">' +
-'  <link rel="icon" href="/favicon.png">' +
-'  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">' +
-'  <style>' + blogStyles + '</style>' +
-'</head>' +
-'<body>' +
-'  <div class="blog-container">' +
-'    <header class="blog-header">' +
-'      <h1 class="blog-title">ARC Raiders Skill Tree Blog</h1>' +
-'      <p class="blog-subtitle">Guides, updates, and tips to master your skill tree</p>' +
-'      <div class="blog-count">' + posts.length + ' posts published</div>' +
-'    </header>' +
-'    <section class="blog-grid">' + indexCards + '</section>' +
-'  </div>' +
-'</body>' +
-'</html>';
+  <div class="blog-container">
+    <header class="blog-header">
+      <h1 class="blog-title">ARC Raiders Skill Tree Blog</h1>
+      <p class="blog-subtitle">Guides, updates, and tips to master your skill tree</p>
+      <div class="blog-count">${posts.length} posts published</div>
+    </header>
+    <section class="blog-grid">
+      ${indexCards}
+    </section>
+  </div>
+</body>
+</html>`;
 
 fs.writeFileSync(path.join(PUBLIC_DIR, 'blog.html'), fullHTML);
 
@@ -289,7 +358,200 @@ for (const post of posts) {
   html = html.replace(/\n\n/g, '</p><p>');
   html = '<p>' + html + '</p>';
 
-  const postHTML = '<!DOCTYPE html><html><head><title>' + post.meta.title + ' | ARC Raiders</title><meta name="description" content="' + (post.meta.description || '') + '"><link rel="icon" href="/favicon.png"><style>body{background:#050505;color:#e5e5e5;font-family:Urbanist,sans-serif;max-width:800px;margin:0 auto;padding:2em;line-height:1.6;}a{color:#d19a53;text-decoration:none;}h1,h2,h3{font-family:Barlow,sans-serif;}code{background:#0f0f11;padding:0.2em 0.4em;border-radius:4px;}</style></head><body><nav><a href="/blog.html">← Back to Blog</a></nav><article><h1>' + post.meta.title + '</h1><p style="color:#9ca3af;"><time>' + post.meta.date + '</time> • ' + post.readingTime + ' min read</p>' + html + '</article></body></html>';
+  const postHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${post.meta.title} | ARC Raiders</title>
+  <meta name="description" content="${post.meta.description || ''}">
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+    }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: var(--arc-bg);
+      color: #e5e5e5;
+      line-height: 1.6;
+      padding-top: 64px;
+    }
+
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    article {
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 3rem;
+    }
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .article-meta {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #27272a;
+    }
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: #d4d4d8;
+    }
+    a {
+      color: var(--arc-mob);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #e5a96a;
+    }
+    code {
+      background: #1a1a1d;
+      color: var(--arc-mob);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1a1a1d;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #e5e5e5;
+    }
+    strong {
+      color: white;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 2rem 1rem;
+      }
+      article {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="article-container">
+    <article>
+      <h1>${post.meta.title}</h1>
+      <div class="article-meta">
+        <time>${post.meta.date}</time> • ${post.readingTime} min read
+      </div>
+      ${html}
+    </article>
+  </div>
+</body>
+</html>`;
 
   fs.writeFileSync(path.join(BLOG_PUBLIC_DIR, post.meta.slug + '.html'), postHTML);
   console.log('  ✓ Generated', post.meta.slug + '.html');

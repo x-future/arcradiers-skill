@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobility Branch Mastery: Speed, Evasion, and Positioning in ARC Raiders | ARC Raiders</title>
+  <meta name="description" content="Master the Mobility skill tree branch in ARC Raiders. Learn advanced movement techniques, dodge rolling, vaulting, and flanking strategies for aggressive players.">
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+    }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: var(--arc-bg);
+      color: #e5e5e5;
+      line-height: 1.6;
+      padding-top: 64px;
+    }
+
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    article {
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 3rem;
+    }
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .article-meta {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #27272a;
+    }
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: #d4d4d8;
+    }
+    a {
+      color: var(--arc-mob);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #e5a96a;
+    }
+    code {
+      background: #1a1a1d;
+      color: var(--arc-mob);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1a1a1d;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #e5e5e5;
+    }
+    strong {
+      color: white;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 2rem 1rem;
+      }
+      article {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="article-container">
+    <article>
+      <h1>Mobility Branch Mastery: Speed, Evasion, and Positioning in ARC Raiders</h1>
+      <div class="article-meta">
+        <time>2026-01-05</time> • 7 min read
+      </div>
+      <p>
+<h1>Mobility Branch Mastery Guide</h1></p><p>The <strong>Mobility branch</strong> is the domain of the fast, the aggressive, and the tactically superior. In ARC Raiders, mobility isn't just about moving faster—it's about controlling engagements, outmaneuvering opponents, and dictating the pace of combat.</p><p><h2>🏃 What is Mobility?</h2></p><p>Mobility focuses on:
+- <strong>Movement speed</strong> and sprint efficiency
+- <strong>Combat rolls</strong> and dodge mechanics
+- <strong>Vaulting</strong> and climbing capabilities
+- <strong>Fall damage mitigation</strong> for vertical plays</p><p>This branch is perfect for:
+- PvP-focused players
+- Flankers and harassers
+- Players who value positioning
+- Solo survivors</p><p><h2>📊 Complete Mobility Node Analysis</h2></p><p><h3>Tier 1: Speed Fundamentals (0-15 points)</h3></p><p><strong>Marathon Runner (5 ranks)</strong>
+- Increases sprint speed by 6% per rank
+- Total: 30% faster sprinting at max rank
+- <strong>Priority</strong>: Max immediately - game-changing</p><p><strong>Sprinter (5 ranks)</strong>
+- Reduces stamina cost while sprinting by 10% per rank
+- Total: 50% reduced sprint stamina cost at max rank
+- <strong>Synergy</strong>: Essential with Marathon Runner</p><p><strong>Adrenaline Rush (5 ranks)</strong>
+- Temporarily increase movement speed after taking damage
+- Duration: 3 seconds + 0.5 per rank
+- Speed boost: 15% + 3% per rank
+- <strong>Escape mechanic</strong>: Get out of bad situations</p><p><h3>Tier 2: Combat Mobility (15-36 points)</h3></p><p><strong>Combat Rolls (5 ranks)</strong>
+- Reduce dodge roll stamina cost by 15% per rank
+- Reduce dodge roll cooldown by 8% per rank
+- Increase i-frames (invincibility frames) by 5% per rank
+- <strong>Essential</strong>: For combat effectiveness</p><p><strong>Evasive (5 ranks)</strong>
+- Increases dodge/dash distance by 10% per rank
+- Total: 50% greater dodge distance at max rank
+- <strong>Spacial awareness</strong>: Create more separation</p><p><strong>Nimble (5 ranks)</strong>
+- Reduces weapon ready delay after sprinting by 20% per rank
+- Total: No delay at max rank (instant weapon ready)
+- <strong>Combat flow</strong>: Seamless sprint to shooting</p><p><h3>Tier 3: Advanced Maneuvers (36-75 points)</h3></p><p><strong>Free Runner (1 rank, requires 50 Mobility points)</strong>
+- Eliminates fall damage from any height
+- <strong>Verticality</strong>: Enables aggressive building plays
+- <strong>Map control</strong>: Access high-ground advantages</p><p><strong>Ghost (5 ranks)</strong>
+- Reduces footstep noise by 20% per rank
+- Total: Completely silent at max rank
+- <strong>Stealth</strong>: Approach unaware enemies</p><p><strong>Boundless (3 ranks)</strong>
+- Vaulting and climbing speed increased by 25% per rank
+- Mantle ledge height increased by 15% per rank
+- <strong>Map traversal</strong>: Reach places others can't</p><p><h2>🎯 Optimal Mobility Builds</h2></p><p><h3>Build 1: The Harasser (PvP Specialist)</h3>
+<strong>Points</strong>: 60 Mobility / 15 Conditioning</p><p><strong>Core Nodes</strong>:
+- Marathon Runner (5/5)
+- Sprinter (5/5)
+- Combat Rolls (5/5)
+- Evasive (5/5)
+- Nimble (5/5)
+- Free Runner (1/1)
+- Ghost (5/5)</p><p><strong>Secondary</strong>: Conditioning (Iron Constitution 5/5, Quick Recovery 5/5, Second Wind 3/3)</p><p><strong>Playstyle</strong>: Hit hard, retreat fast, repeat. Never fight fair.</p><p><strong>Strengths</strong>:
+- Unmatched speed
+- Can choose engagements
+- Escape any bad situation</p><p><strong>Weaknesses</strong>:
+- Low durability
+- Mistakes are punishing
+- Reliant on stamina management</p><p><h3>Build 2: The Skirmisher (Balanced Fighter)</h3>
+<strong>Points</strong>: 45 Mobility / 30 Conditioning</p><p><strong>Core Nodes</strong>:
+- Marathon Runner (5/5)
+- Sprinter (5/5)
+- Adrenaline Rush (5/5)
+- Combat Rolls (5/5)
+- Evasive (3/5)
+- Nimble (5/5)
+- Boundless (3/3)</p><p><strong>Secondary</strong>: Conditioning (Iron Constitution 5/5, Shield Efficiency 5/5, Second Wind 3/3)</p><p><strong>Playstyle</strong>: Speed with enough durability to make mistakes</p><p><strong>Strengths</strong>:
+- Fast but not fragile
+- Versatile
+- Good for all situations</p><p><strong>Weaknesses</strong>:
+- Not the fastest
+- Not the tankiest
+- Jack of all trades</p><p><h3>Build 3: The Scout (Solo Survivor)</h3>
+<strong>Points</strong>: 50 Mobility / 25 Survival</p><p><strong>Core Nodes</strong>:
+- Marathon Runner (5/5)
+- Sprinter (5/5)
+- Combat Rolls (5/5)
+- Ghost (5/5)
+- Free Runner (1/1)
+- Boundless (3/3)</p><p><strong>Secondary</strong>: Survival (Looter 5/5, Packer 5/5, Stealth 5/5)</p><p><strong>Playstyle</strong>: Move unseen, loot fast, leave before anyone knows you were there</p><p><strong>Strengths</strong>:
+- Incredible solo capability
+- Map control
+- Information gathering</p><p><strong>Weaknesses</strong>:
+- Weak in direct combat
+- Team utility limited
+- High skill ceiling</p><p><h2>💡 Advanced Mobility Techniques</h2></p><p><h3>Perfect Dodge Rolling</h3>
+<strong>Mechanics</strong>:
+- Time rolls with enemy attacks for i-frames
+- Practice against predictable enemies (basic ARCs)
+- Use audio cues for timing</p><p><strong>Application</strong>:
+- Dodge through enemies to flank
+- Avoid melee sweeps
+- Escape area-of-effect attacks</p><p><h3>Stamina Management</h3>
+<strong>The 40% Rule</strong>:
+- Never let stamina drop below 40%
+- Keep reserve for emergency rolls
+- Sprint in bursts, not continuously</p><p><strong>Regen Tactics</strong>:
+- Use cover to trigger regen
+- Crouch walking doesn't cost stamina
+- Adrenaline Rush for emergency speed</p><p><h3>Positioning Theory</h3>
+<strong>High Ground Advantage</strong>:
+- Use Free Runner to access rooftops
+- Verticality = information advantage
+- Force enemies to expose themselves</p><p><strong>Flanking Routes</strong>:
+- Plan approaches before engaging
+- Use Boundless for unexpected angles
+- Ghost enables stealthy positioning</p><p><h2>🔄 Combining Mobility with Combat</h2></p><p><h3>Sprint-Cancel Shooting</h3>
+1. Sprint toward target
+2. Release sprint key
+3. Instant fire (Nimble 5/5)
+4. Sprint again
+5. Repeat</p><p><strong>Result</strong>: Hard to hit, constant damage</p><p><h3>Roll-Shoot-Roll</h3>
+1. Combat Roll through attack
+2. Fire during recovery animation
+3. Roll again to reposition</p><p><strong>Result</strong>: Constantly moving target</p><p><h3>Vertical Hit-and-Run</h3>
+1. Free Runner to high position
+2. Take shots
+3. Drop to different level
+4. Repeat elsewhere</p><p><strong>Result</strong>: Enemies can't predict your location</p><p><h2>🧩 Mobility + Other Branches</h2></p><p><h3>Mobility + Conditioning</h3>
+<strong>Synergy</strong>: Speed that can take a hit</p><p><strong>Best for</strong>: Frontline harassers, aggressive players</p><p><strong>Key Strategy</strong>: Use speed to create openings, durability to survive mistakes</p><p><h3>Mobility + Survival</h3>
+<strong>Synergy</strong>: Ultimate solo build</p><p><strong>Best for</strong>: Lone wolves, loot-focused players</p><p><strong>Key Strategy</strong>: Move fast, loot fast, extract faster</p><p><h2>📈 Patch Impact Analysis</h2></p><p><strong>After Update 1.7.2</strong>:
+- Movement speed slightly more valuable (new bunker content)
+- Combat rolls nerfed slightly (i-frames reduced)
+- Fall damage increased (Free Runner more important)</p><p><strong>Meta Shift</strong>: Mobility slightly less dominant but still top-tier</p><p><h2>🎓 Training Exercises</h2></p><p><h3>Beginner Exercises</h3>
+1. <strong>Sprint Circles</strong>: Sprint around obstacles, maintain momentum
+2. <strong>Roll Timing</strong>: Practice dodging melee attacks
+3. <strong>Stamina Management</strong>: Sprint until 40%, regen, repeat</p><p><h3>Intermediate Exercises</h3>
+1. <strong>Perfect Dodges</strong>: Dodge 10 attacks in a row without getting hit
+2. <strong>Speed Routes</strong>: Time yourself between points, optimize path
+3. <strong>Combat Flow</strong>: Sprint-shoot-roll-shoot sequences</p><p><h3>Advanced Exercises</h3>
+1. <strong>Silent Takedowns</strong>: Use Ghost to approach and eliminate without alerting
+2. <strong>Vertical Mastery</strong>: Navigate map using only Free Runner and Boundless
+3. <strong>1vX Situations</strong>: Win fights while outnumbered using pure mobility</p><p><h2>❌ Common Mistakes to Avoid</h2></p><p><h3>Mistake 1: Overcommitting to Sprint</h3>
+<strong>Problem</strong>: Sprinting everywhere = no stamina for combat
+<strong>Solution</strong>: Walk in safe areas, sprint for engagements only</p><p><h3>Mistake 2: Ignoring Verticality</h3>
+<strong>Problem</strong>: Staying on ground level = limited options
+<strong>Solution</strong>: Use Free Runner and Boundless for 3D movement</p><p><h3>Mistake 3: Predictable Movement</h3>
+<strong>Problem</strong>: Same routes every time = easy to predict
+<strong>Solution</strong>: Vary approaches, use unexpected angles</p><p><h3>Mistake 4: Forgoing Ghost</h3>
+<strong>Problem</strong>: Loud footsteps = give away position
+<strong>Solution</strong>: Ghost is essential for stealth approaches</p><p><h2>🏆 Top Player Tips</h2></p><p><strong>From Top 100 Ranked Player - "Velocity"</strong>:
+> "Mobility isn't about running away—it's about choosing when and where to fight. Never let the enemy dictate engagement range. I recommend 60+ Mobility points for serious players."</p><p><strong>From Tournament Winner - "Slipstream"</strong>:
+> "The best Mobility players have mental maps of every possible route. Study the maps. Know where Free Runner lets you go. That knowledge is more valuable than any node."</p><p><strong>From Solo Queue Legend - "Phantom"</strong>:
+> "Ghost 5/5 is underrated. Being completely silent lets you gather information, choose fights, and escape before anyone knows you're there. It's the difference between good and great."</p><p>---</p><p><strong>Conclusion</strong>: The Mobility branch offers the highest skill ceiling and most exciting gameplay. Master it, and you'll outplay opponents who can't keep up with your speed and unpredictability.</p><p>> 💡 <strong>Recommended Reading</strong>: Complete your mastery with our <a href="/blog/ultimate-conditioning-guide.html">Conditioning Guide</a> and <a href="/blog/survival-branch-guide.html">Survival Guide</a>!
+</p>
+    </article>
+  </div>
+</body>
+</html>

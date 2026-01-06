@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARC Raiders Skill Tree Wiki</title>
-  <meta name="description" content="ARC Raiders Skill Tree Wiki: Conditioning, Mobility, Survival branches, build tips, and FAQs." />
+  <title>ARC Raiders Skill Tree Wiki - Complete Guide</title>
+  <meta name="description" content="Complete ARC Raiders Skill Tree Wiki: Master Conditioning, Mobility, and Survival branches. Learn optimal build paths, node strategies, and pro tips for dominating ARC Raiders gameplay." />
   <link rel="canonical" href="https://arcraiderskill.com/wiki.html" />
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
@@ -13,57 +13,181 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774598933307185"
        crossorigin="anonymous"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      color-scheme: dark;
-      --bg: #050505;
-      --panel: #0f0f11;
-      --text: #e5e5e5;
-      --muted: #9ca3af;
-      --accent: #d19a53;
-      --cond: #26d672;
-      --mob: #d19a53;
-      --surv: #ff4444;
-      --border: #1f1f23;
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+      --arc-cond: #26d672;
+      --arc-surv: #ff4444;
     }
     body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--arc-bg);
+      color: #e5e5e5;
       line-height: 1.6;
-      padding: 32px 24px 64px;
+      padding-top: 64px;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 960px; margin: 0 auto; }
-    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #111; border: 1px solid var(--border); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;}
-    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-    h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: -0.01em; }
-    h2 { margin: 24px 0 12px; font-size: 22px; }
-    h3 { margin: 16px 0 8px; font-size: 18px; }
-    ul { padding-left: 18px; margin: 8px 0 0; color: var(--muted); }
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; color: #000; font-weight: 700; }
-    .badge-cond { background: var(--cond); }
-    .badge-mob { background: var(--mob); color: #000; }
-    .badge-surv { background: var(--surv); color: #000; }
-    .footer { margin-top: 32px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: #111; color: var(--text); text-decoration: none; font-weight: 600; }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+    
+    /* Content Styles */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+    }
+    .card {
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      color: #a1a1aa;
+      line-height: 1.8;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #000;
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+    .badge-cond { background: var(--arc-cond); }
+    .badge-mob { background: var(--arc-mob); color: #000; }
+    .badge-surv { background: var(--arc-surv); color: #000; }
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #27272a;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #71717a;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--arc-mob);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation - EXACT SAME AS HOMEPAGE -->
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
     <div class="header">
-      <div>
-        <div class="pill">ARC Raiders Skill Tree</div>
-        <h1>Wiki & Quick Reference</h1>
-        <div style="color: var(--muted);">Branches, mechanics, and quick build guidance.</div>
-      </div>
-      <div>
-        <a class="btn" href="/">← Back to Builder</a>
-      </div>
+      <h1>Wiki & Quick Reference</h1>
+      <p class="subtitle">Branches, mechanics, and quick build guidance.</p>
     </div>
 
     <div class="card">
@@ -112,7 +236,7 @@
       <ul>
         <li>Pan/Zoom: drag to pan, scroll to zoom (0.4x–2.5x).</li>
         <li>Allocate: click nodes to add/remove points; watch category totals.</li>
-        <li>Share: use “Share Build” to copy a link with your allocation.</li>
+        <li>Share: use "Share Build" to copy a link with your allocation.</li>
         <li>AI Assist: ask the Gemini assistant for scenario-based builds.</li>
       </ul>
     </div>
@@ -127,8 +251,13 @@
     </div>
 
     <div class="footer">
-      <span>© 2025 ARC Raiders Skill Tree Wiki (community-made)</span>
-      <span><a href="/">Back to Builder</a></span>
+      <p>© 2025 ARC Raiders Skill Tree Wiki (community-made)</p>
+      <div class="footer-links">
+        <a href="/">Builder</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/screenshots.html">Gallery</a>
+      </div>
     </div>
   </div>
 
@@ -153,4 +282,3 @@
   </script>
 </body>
 </html>
-

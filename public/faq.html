@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARC Raiders Skill Tree FAQ</title>
+  <meta name="description" content="Frequently Asked Questions about ARC Raiders Skill Tree system.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --arc-bg: #050505;
+      --arc-panel: #0f0f11;
+      --arc-mob: #d19a53;
+    }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: var(--arc-bg);
+      color: #e5e5e5;
+      line-height: 1.6;
+      padding-top: 64px;
+    }
+    
+    /* Navigation - EXACT SAME AS HOMEPAGE */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+      border-bottom: 1px solid #18181b;
+      padding: 0.75rem 0;
+    }
+    .nav-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--arc-mob);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #d4d4d8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--arc-mob);
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      background: var(--arc-panel);
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+    .faq-answer {
+      color: #a1a1aa;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
+        ARC Raiders Skill Tree Builder
+      </a>
+      <div class="nav-links">
+        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="/faq.html" class="nav-link">FAQ</a>
+        <a href="/screenshots.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How many skill points do I get?</div>
+      <div class="faq-answer">You receive 75 skill points total - one per level from level 1 to level 75.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What are the three skill branches?</div>
+      <div class="faq-answer">Conditioning (tanking), Mobility (speed), and Survival (looting/crafting).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I reset my skill points?</div>
+      <div class="faq-answer">Yes, but respec options are limited in-game. Use our planner to test builds first.</div>
+    </div>
+  </div>
+
+  <!-- Google tag (gtag.js) -->
+  <div style="display: none">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE151Y4ZR0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LE151Y4ZR0');
+    </script>
+  </div>
+</body>
+</html>
