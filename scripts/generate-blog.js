@@ -351,6 +351,7 @@ for (const post of posts) {
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+  html = html.replace(/\!\[([^\]]*)\]\(([^\)]+)\)/gim, '<img src="$2" alt="$1">');
   html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
   html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>');
   html = html.replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code>$2</code></pre>');
