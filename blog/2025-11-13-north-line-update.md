@@ -10,7 +10,7 @@ featured: true
 image: "/images/blog-arc-news1.webp"
 ---
 
-![North Line Update](/images/blog-arc-news1.webp)
+![ARC Raiders North Line Update 1.2.0 - Stella Montis Map New Content Release](/images/blog-arc-news1.webp)
 
 # 🚂 ARC Raiders Update 1.2.0: North Line Complete Guide
 

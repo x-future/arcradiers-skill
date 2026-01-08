@@ -60,7 +60,7 @@ const indexCards = posts.map(post => {
     <article class="blog-card">
       <a href="/blog/${post.meta.slug}.html" class="blog-card-link">
         <div class="blog-card-image-wrapper">
-          <img src="${image}" alt="${post.meta.title}" class="blog-card-image" loading="lazy" />
+          <img src="${image}" alt="${post.meta.title}" class="blog-card-image" loading="lazy" decoding="async" />
           <div class="blog-card-overlay"></div>
         </div>
         <div class="blog-card-content">
@@ -351,7 +351,7 @@ for (const post of posts) {
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-  html = html.replace(/\!\[([^\]]*)\]\(([^\)]+)\)/gim, '<img src="$2" alt="$1">');
+  html = html.replace(/\!\[([^\]]*)\]\(([^\)]+)\)/gim, '<img src="$2" alt="$1" loading="lazy" decoding="async">');
   html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
   html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>');
   html = html.replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code>$2</code></pre>');

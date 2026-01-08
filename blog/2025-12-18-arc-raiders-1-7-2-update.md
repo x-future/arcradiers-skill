@@ -10,7 +10,7 @@ featured: true
 image: "/images/blog-arc-news1.webp"
 ---
 
-![ARC Raiders Update Banner](https://arcraiders.wiki/w/resources/assets/arc_logo.svg)
+![ARC Raiders Update 1.7.2 - Hidden Bunker Returns Blueprint Adjustments Hotfix December 2025](/images/blog-arc-news1.webp)
 
 # ARC Raiders Update 1.7.2: Complete Breakdown
 
