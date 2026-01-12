@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "generate-blog": "node scripts/generate-blog.js",
     "update-sitemap": "node scripts/update-sitemap.js",
-    "generate-rss": "node scripts/generate-rss.js",
+    "generate-rss": "node scripts/generate-rss.js || exit 0",
     "watch-sitemap": "node scripts/update-sitemap.js --watch"
   },
   "dependencies": {

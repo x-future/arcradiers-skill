@@ -9,6 +9,20 @@ const ROOT_DIR = path.dirname(__dirname);
 const BLOG_DIR = path.join(ROOT_DIR, 'blog');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 
+// Ensure directories exist
+try {
+  if (!fs.existsSync(BLOG_DIR)) {
+    console.log('⚠️  Blog directory not found, skipping RSS generation');
+    process.exit(0);
+  }
+  if (!fs.existsSync(PUBLIC_DIR)) {
+    fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+  }
+} catch (error) {
+  console.log('⚠️  Error checking directories, skipping RSS generation:', error.message);
+  process.exit(0);
+}
+
 // Parse frontmatter from markdown
 function parseFrontmatter(markdown) {
   const match = markdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);

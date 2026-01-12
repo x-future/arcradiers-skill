@@ -106,25 +106,31 @@ ${urlEntries}
 console.log('🔄 Auto-updating sitemap.xml...');
 
 try {
+  if (!fs.existsSync(PUBLIC_DIR)) {
+    console.log('⚠️  Public directory not found, skipping sitemap generation');
+    process.exit(0);
+  }
+
   const files = scanDirectory(PUBLIC_DIR);
-  
+
   // Add root URL (homepage)
   files.unshift({
     url: '/',
     modDate: getFileModDate(path.join(ROOT_DIR, 'index.html')),
     priority: '1.0'
   });
-  
+
   console.log('🔄 Updating sitemap.xml...');
   console.log('  Found', files.length, 'files');
-  
+
   const sitemap = generateSitemap(files);
-  
+
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap);
   console.log('✅ Sitemap updated successfully!');
   console.log('📄 Location:', path.join(PUBLIC_DIR, 'sitemap.xml'));
   console.log('📊 Total URLs:', files.length);
 } catch (error) {
-  console.error('❌ Error updating sitemap:', error.message);
-  process.exit(1);
+  console.error('⚠️  Error updating sitemap:', error.message);
+  console.log('Continuing with build...');
+  process.exit(0);
 }
