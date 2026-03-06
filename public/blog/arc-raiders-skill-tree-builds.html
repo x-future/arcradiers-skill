@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Skill Tree Builds – All Playstyle Guides 2025 | arcraiderskill.com</title>
+  <meta name="description" content="Complete list of ARC Raiders skill tree builds for every playstyle: tank, solo looter, PvP flanker, support, and hybrid. Find your perfect point allocation with our interactive builder.">
+  <link rel="canonical" href="https://arcraiderskill.com/blog/arc-raiders-skill-tree-builds.html">
+  <link rel="icon" href="/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ARC Raiders Skill Tree Builds — All Playstyle Guides 2025",
+    "description": "Every ARC Raiders skill tree build variant — from tank and solo looter to PvP flanker and support — with exact point allocations and node priorities.",
+    "datePublished": "2026-03-06",
+    "dateModified": "2026-03-06",
+    "author": {"@type": "Organization", "name": "ARC Raiders Skill Tree Builder"},
+    "publisher": {"@type": "Organization", "name": "arcraiderskill.com"}
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #07080d; --panel: #0e0f16; --border: rgba(255,255,255,0.07); --cyan: #00d4ff; --purple: #a855f7; --text: #d4d4d8; --muted: #71717a; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 60px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; border-bottom: 1px solid var(--border); background: rgba(7,8,13,0.92); backdrop-filter: blur(16px); }
+    .nav-accent { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,0.6) 40%, rgba(168,85,247,0.6) 60%, transparent); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0.65rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 36px; width: auto; opacity: 0.9; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .nav-brand-main { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; background: linear-gradient(135deg, #00d4ff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+    .nav-brand-sub { font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase; color: #52525b; line-height: 1; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+    .nav-links a { display: block; padding: 0.4rem 0.75rem; font-family: 'Orbitron', sans-serif; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #71717a; text-decoration: none; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0.75rem; right: 0.75rem; height: 1px; background: var(--cyan); transform: scaleX(0); transform-origin: left; transition: transform 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { margin-left: 0.75rem; padding: 0.35rem 1rem !important; border: 1px solid rgba(0,212,255,0.4) !important; border-radius: 4px; color: var(--cyan) !important; }
+    .nav-cta:hover { background: rgba(0,212,255,0.08) !important; }
+    @media (max-width: 767px) { .nav-links { display: none; } }
+
+    .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--cyan); text-decoration: none; }
+    .tag { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.4rem; margin-bottom: 0.4rem; }
+    .tag-guide { background: rgba(0,212,255,0.1); color: var(--cyan); border: 1px solid rgba(0,212,255,0.2); }
+    .tag-builds { background: rgba(168,85,247,0.1); color: var(--purple); border: 1px solid rgba(168,85,247,0.2); }
+
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 1rem; text-transform: uppercase; }
+    .meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .lead { font-size: 1.05rem; color: #e4e4e7; line-height: 1.8; margin-bottom: 2rem; }
+    h2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1rem; font-weight: 700; color: #e4e4e7; margin: 1.75rem 0 0.6rem; }
+    p { margin-bottom: 1rem; }
+    strong { color: #fff; font-weight: 600; }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; }
+
+    .build-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .build-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; position: relative; overflow: hidden; transition: border-color 0.2s; }
+    .build-card:hover { border-color: rgba(0,212,255,0.25); }
+    .build-card .accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+    .build-card h3 { margin-top: 0.25rem; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .split { display: flex; gap: 0.5rem; font-size: 0.75rem; margin-bottom: 0.75rem; }
+    .split-item { background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.5rem; }
+    .build-card p { font-size: 0.85rem; color: #a1a1aa; margin: 0; }
+
+    .detailed-build { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 2rem 0; position: relative; overflow: hidden; }
+    .detailed-build::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; }
+    .detailed-build.mob::before { background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .detailed-build.surv::before { background: linear-gradient(90deg, transparent, #fb923c, transparent); }
+    .detailed-build.cond::before { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+    .detailed-build.hybrid::before { background: linear-gradient(90deg, transparent, #22c55e, transparent); }
+    .stats-row { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 1.25rem; }
+    .stat { text-align: center; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.9rem; }
+    .stat-val { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; font-weight: 900; }
+    .stat-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-top: 2px; }
+
+    .tip { background: rgba(0,212,255,0.04); border-left: 3px solid var(--cyan); border-radius: 0 8px 8px 0; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
+    .comparison-table th { background: rgba(0,0,0,0.4); color: #a1a1aa; font-family: 'Orbitron', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .good { color: #4ade80; }
+    .mid { color: #fb923c; }
+    .low { color: #71717a; }
+
+    .related { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top: 3rem; }
+    .related-title { font-family: 'Orbitron', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 1rem; }
+    .related-links a { display: block; color: var(--text); font-size: 0.9rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border); text-decoration: none; }
+    .related-links a:hover { color: var(--cyan); }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; background: #040509; margin-top: 4rem; }
+    .footer-line { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.75rem; }
+    .flb { flex: 1; max-width: 180px; height: 1px; }
+    .flb.c { background: linear-gradient(90deg, transparent, rgba(0,212,255,0.35), transparent); }
+    .flb.p { background: linear-gradient(90deg, transparent, rgba(168,85,247,0.35), transparent); }
+    .fw { font-family: 'Orbitron', sans-serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: #3f3f46; }
+    .fc { font-size: 0.75rem; color: #52525b; }
+    .fc a { color: var(--cyan); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-accent"></div>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/apple-touch-icon.png" alt="ARC Raiders Skill Tree Builder">
+      <div class="nav-brand-text">
+        <span class="nav-brand-main">ARC Raiders</span>
+        <span class="nav-brand-sub">Skill Tree Builder</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#skill-trees">Skill Trees</a></li>
+      <li><a href="/#scenarios">Builds</a></li>
+      <li><a href="/wiki.html">Wiki</a></li>
+      <li><a href="/screenshots.html">Gallery</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/" class="nav-cta">Open Builder</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <p class="breadcrumb"><a href="/">Home</a> › <a href="/blog.html">Blog</a> › ARC Raiders Skill Tree Builds</p>
+  <span class="tag tag-guide">Builds Guide</span>
+  <span class="tag tag-builds">All Playstyles</span>
+
+  <h1>ARC Raiders Skill Tree Builds — Every Playstyle 2025</h1>
+  <p class="meta">March 6, 2026 &nbsp;·&nbsp; 12 min read &nbsp;·&nbsp; Covers all 75-point configurations</p>
+
+  <p class="lead">
+    There is no single "correct" <strong>ARC Raiders skill tree build</strong> — the right allocation depends on your playstyle, team composition, and raid goals. This guide covers every viable build variant in 2025: from aggressive PvP flankers to patient solo looters, tank supports, and hybrid all-rounders.
+  </p>
+
+  <h2>Quick-Reference: All Builds at a Glance</h2>
+  <div class="build-grid">
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#00d4ff,transparent)"></div>
+      <h3 style="color:#00d4ff">Balanced All-Rounder</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 32</span><span class="split-item" style="color:#fb923c">Surv 28</span><span class="split-item" style="color:#a855f7">Cond 15</span></div>
+      <p>Best for players who do everything. Highest floor performance.</p>
+    </div>
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#fb923c,transparent)"></div>
+      <h3 style="color:#fb923c">Solo Looter</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 25</span><span class="split-item" style="color:#fb923c">Surv 42</span><span class="split-item" style="color:#a855f7">Cond 8</span></div>
+      <p>Maximize extraction value. Every second of loot speed counts.</p>
+    </div>
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#a855f7,transparent)"></div>
+      <h3 style="color:#a855f7">Team Tank</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 15</span><span class="split-item" style="color:#fb923c">Surv 18</span><span class="split-item" style="color:#a855f7">Cond 42</span></div>
+      <p>Absorb damage and anchor team fights. Maximum shield efficiency.</p>
+    </div>
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#00d4ff,transparent)"></div>
+      <h3 style="color:#00d4ff">PvP Flanker</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 55</span><span class="split-item" style="color:#fb923c">Surv 12</span><span class="split-item" style="color:#a855f7">Cond 8</span></div>
+      <p>Outmaneuver every opponent. Highest skill ceiling build.</p>
+    </div>
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#22c55e,transparent)"></div>
+      <h3 style="color:#22c55e">Support Runner</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 20</span><span class="split-item" style="color:#fb923c">Surv 35</span><span class="split-item" style="color:#a855f7">Cond 20</span></div>
+      <p>Supply teammates, heal fast, carry heavy loads. Team-first role.</p>
+    </div>
+    <div class="build-card">
+      <div class="accent" style="background:linear-gradient(90deg,transparent,#facc15,transparent)"></div>
+      <h3 style="color:#facc15">Stealth Operative</h3>
+      <div class="split"><span class="split-item" style="color:#00d4ff">Mob 30</span><span class="split-item" style="color:#fb923c">Surv 38</span><span class="split-item" style="color:#a855f7">Cond 7</span></div>
+      <p>Move silently, loot fast, avoid all conflict. Patience rewarded.</p>
+    </div>
+  </div>
+
+  <h2>Detailed Build: Solo Looter (Survival-Focused)</h2>
+  <div class="detailed-build surv">
+    <h3 style="color:#fb923c">Solo Looter — 75 Points</h3>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-val" style="color:#00d4ff">25</div><div class="stat-label">Mobility</div></div>
+      <div class="stat"><div class="stat-val" style="color:#fb923c">42</div><div class="stat-label">Survival</div></div>
+      <div class="stat"><div class="stat-val" style="color:#a855f7">8</div><div class="stat-label">Conditioning</div></div>
+    </div>
+    <p>The Solo Looter is the highest-efficiency build for solo extraction play. It maximizes Survival investment to unlock top-tier looting nodes while spending just enough on Mobility for basic traversal.</p>
+    <h3>Core Node Priorities:</h3>
+    <ul>
+      <li><strong>Scrapping Speed I–V</strong> — Stack all 5 ranks. This is the backbone of the build.</li>
+      <li><strong>Backpack Mastery I–V</strong> — Carry more per run. Higher loot value per extraction.</li>
+      <li><strong>Safe Cracker</strong> — Opens locked containers for elite loot without key items.</li>
+      <li><strong>Quiet Hands</strong> — Reduced looting audio. ARC units aggro less during extraction.</li>
+      <li><strong>Marathon Runner</strong> (Mob) — Base stamina efficiency. Still needed even for non-combat runs.</li>
+    </ul>
+    <div class="tip"><strong>Best For:</strong> Solo queue, economy-focused play, resource farming, avoiding PvP entirely.</div>
+  </div>
+
+  <h2>Detailed Build: Team Tank (Conditioning-Focused)</h2>
+  <div class="detailed-build cond">
+    <h3 style="color:#a855f7">Team Tank — 75 Points</h3>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-val" style="color:#00d4ff">15</div><div class="stat-label">Mobility</div></div>
+      <div class="stat"><div class="stat-val" style="color:#fb923c">18</div><div class="stat-label">Survival</div></div>
+      <div class="stat"><div class="stat-val" style="color:#a855f7">42</div><div class="stat-label">Conditioning</div></div>
+    </div>
+    <p>Built for team-based squad play. The Tank build allows you to push into dangerous positions, soak fire for teammates, and sustain through prolonged firefights while your squad extracts loot.</p>
+    <h3>Core Node Priorities:</h3>
+    <ul>
+      <li><strong>Iron Constitution I–V</strong> — Stamina regen when taking damage. Essential for tank gameplay.</li>
+      <li><strong>Shield Expert</strong> — Eliminates equipped shield speed penalty. Huge QoL at 36+ Conditioning.</li>
+      <li><strong>Thick Skin</strong> — Passive damage reduction during Arc waves. Critical for PvE content.</li>
+      <li><strong>Carry Weight I–III</strong> (Conditioning) — Support teammates by carrying their overflow loot.</li>
+      <li><strong>Field Medic</strong> (Surv) — Faster heal speed lets you recover between engagements.</li>
+    </ul>
+    <div class="tip"><strong>Best For:</strong> 3-player squads, ARC wave defense, team extraction plays, ranked competitive.</div>
+  </div>
+
+  <h2>Build Comparison Table</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr><th>Build</th><th>PvP</th><th>Looting</th><th>Survivability</th><th>Movement</th><th>Skill Level</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Balanced All-Rounder</td><td class="mid">Medium</td><td class="mid">Medium</td><td class="mid">Medium</td><td class="mid">Medium</td><td>Beginner</td></tr>
+      <tr><td>Solo Looter</td><td class="low">Low</td><td class="good">High</td><td class="low">Low</td><td class="mid">Medium</td><td>Easy</td></tr>
+      <tr><td>Team Tank</td><td class="mid">Medium</td><td class="low">Low</td><td class="good">High</td><td class="low">Low</td><td>Medium</td></tr>
+      <tr><td>PvP Flanker</td><td class="good">Very High</td><td class="low">Low</td><td class="low">Low</td><td class="good">Max</td><td>Hard</td></tr>
+      <tr><td>Support Runner</td><td class="low">Low</td><td class="mid">Medium</td><td class="mid">Medium</td><td class="low">Low</td><td>Medium</td></tr>
+      <tr><td>Stealth Operative</td><td class="low">None</td><td class="good">High</td><td class="mid">Medium</td><td class="mid">Medium</td><td>Medium</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to Choose Your ARC Raiders Build</h2>
+  <h3>Ask yourself these three questions:</h3>
+  <ol>
+    <li><strong>Do you play solo or in a team?</strong> — Solo players need self-sufficient builds. Team players can specialize.</li>
+    <li><strong>What's your primary goal each raid?</strong> — Looting = Survival-heavy. Killing = Mobility-heavy. Sustaining = Conditioning-heavy.</li>
+    <li><strong>What's your risk tolerance?</strong> — High-risk players benefit from PvP Flanker. Conservative players thrive with Solo Looter.</li>
+  </ol>
+
+  <div class="tip">Use the <a href="/">ARC Raiders Skill Tree Builder</a> to simulate any build above before spending your real in-game points. The interactive planner shows you exactly which nodes unlock at each point threshold.</div>
+
+  <div class="related">
+    <p class="related-title">Related Articles</p>
+    <div class="related-links">
+      <a href="/blog/arc-raiders-skill-tree-best-build.html">ARC Raiders Skill Tree Best Build — #1 Recommendation</a>
+      <a href="/blog/arc-raiders-pvp-skill-tree-build.html">ARC Raiders Best Skill Tree for PvP</a>
+      <a href="/blog/arc-raiders-skill-tree-builder-guide.html">How to Use the Skill Tree Builder Tool</a>
+      <a href="/blog/top-5-meta-builds.html">Top 5 Meta Builds</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-line">
+    <div class="flb c"></div><span class="fw">ARC Raiders Skill Tree</span><div class="flb p"></div>
+  </div>
+  <p class="fc">© 2025 ARC Raiders Skill Tree Builder &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:support@arcraiderskill.com">support@arcraiderskill.com</a></p>
+</footer>
+<div style="display:none"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE151Y4ZR0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LE151Y4ZR0');</script></div>
+</body>
+</html>

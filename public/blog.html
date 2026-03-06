@@ -6,7 +6,8 @@
   <title>Blog | ARC Raiders</title>
   <meta name="description" content="ARC Raiders Skill Tree Blog">
   <link rel="icon" href="/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -22,21 +23,24 @@
       padding-top: 64px;
     }
 
-    /* Navigation - EXACT SAME AS HOMEPAGE */
+    /* ── Navigation (matches homepage) ── */
     nav {
       position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(5, 5, 5, 0.9);
-      backdrop-filter: blur(12px);
-      z-index: 50;
-      border-bottom: 1px solid #18181b;
-      padding: 0.75rem 0;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: rgba(7,8,13,0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
-    .nav-content {
+    .nav-accent {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.6) 40%, rgba(168,85,247,0.6) 60%, transparent);
+    }
+    .nav-inner {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0.65rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,34 +48,98 @@
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      color: var(--arc-mob);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
+      gap: 0.6rem;
       text-decoration: none;
     }
-    .nav-brand img {
-      height: 40px;
-      width: auto;
+    .nav-brand img { height: 36px; width: auto; opacity: 0.9; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .nav-brand-main {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #00d4ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .nav-brand-sub {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #52525b;
+      line-height: 1;
+      margin-top: 3px;
     }
     .nav-links {
       display: flex;
-      gap: 2rem;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
     }
-    .nav-link {
-      color: #d4d4d8;
+    .nav-links a {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #71717a;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.875rem;
       transition: color 0.2s;
+      position: relative;
     }
-    .nav-link:hover {
-      color: var(--arc-mob);
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0.75rem; right: 0.75rem;
+      height: 1px;
+      background: #00d4ff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
     }
-    @media (max-width: 767px) {
-      .nav-links { display: none; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      margin-left: 0.75rem;
+      padding: 0.35rem 1rem !important;
+      border: 1px solid rgba(0,212,255,0.4) !important;
+      border-radius: 4px;
+      color: #00d4ff !important;
     }
+    .nav-cta:hover { background: rgba(0,212,255,0.08) !important; }
+    @media (max-width: 767px) { .nav-links { display: none; } }
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 4rem;
+      background: #040509;
+    }
+    .footer-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .footer-line-bar { flex: 1; max-width: 180px; height: 1px; }
+    .footer-line-bar.cyan { background: linear-gradient(90deg, transparent, rgba(0,212,255,0.35), transparent); }
+    .footer-line-bar.purple { background: linear-gradient(90deg, transparent, rgba(168,85,247,0.35), transparent); }
+    .footer-wordmark {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #3f3f46;
+    }
+    .footer-copy { font-size: 0.75rem; color: #52525b; }
+    .footer-copy a { color: #00d4ff; text-decoration: none; }
+    .footer-copy a:hover { text-decoration: underline; }
 
     .blog-container {
       max-width: 1400px;
@@ -236,17 +304,24 @@
 </head>
 <body>
   <nav>
-    <div class="nav-content">
+    <div class="nav-accent"></div>
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <img src="/apple-touch-icon.png" alt="ARC Raiders" />
-        ARC Raiders Skill Tree Builder
+        <img src="/apple-touch-icon.png" alt="ARC Raiders Skill Tree Builder" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-main">ARC Raiders</span>
+          <span class="nav-brand-sub">Skill Tree Builder</span>
+        </div>
       </a>
-      <div class="nav-links">
-        <a href="/wiki.html" class="nav-link">Wiki</a>
-        <a href="/blog.html" class="nav-link">Blog</a>
-        <a href="/faq.html" class="nav-link">FAQ</a>
-        <a href="/screenshots.html" class="nav-link">Gallery</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#skill-trees">Skill Trees</a></li>
+        <li><a href="/#scenarios">Builds</a></li>
+        <li><a href="/wiki.html">Wiki</a></li>
+        <li><a href="/screenshots.html">Gallery</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="https://store.steampowered.com/app/1808500/ARC_Raiders/" class="nav-cta" target="_blank" rel="noopener">Play Now</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -254,10 +329,295 @@
     <header class="blog-header">
       <h1 class="blog-title">ARC Raiders Skill Tree Blog</h1>
       <p class="blog-subtitle">Guides, updates, and tips to master your skill tree</p>
-      <div class="blog-count">8 posts published</div>
+      <div class="blog-count">23 posts published</div>
     </header>
     <section class="blog-grid">
       
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-bobcat-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Bobcat End-Game Weapon Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>9 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Bobcat — Best End-Game Weapon? Full Guide</h2>
+          <p class="blog-card-excerpt">Is the Bobcat the best weapon in ARC Raiders? Full stats, end-game economy advice, top-tier skill tree pairings, and how to progress to the Bobcat without wrecking your loadout budget.</p>
+          <div class="blog-card-tags"><span class="tag">end game</span><span class="tag">bobcat</span><span class="tag">weapon</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-tempest-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Tempest Weapon Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Tempest Guide — Stats, Build & Tactics</h2>
+          <p class="blog-card-excerpt">The Tempest is the go-to mid-game upgrade weapon. Full stats, optimal skill tree pairing, combat tactics, and why players switch from the Ferro to the Tempest.</p>
+          <div class="blog-card-tags"><span class="tag">tempest</span><span class="tag">mid-game</span><span class="tag">weapon</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-venator-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Venator Sniper Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>9 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Venator Sniper Guide — Range, Stats & Best Build</h2>
+          <p class="blog-card-excerpt">Master the Venator sniper rifle. Highest single-shot damage in the game — positioning tactics, best skill tree pairing, and how to dominate open terrain from elevation.</p>
+          <div class="blog-card-tags"><span class="tag">sniper</span><span class="tag">venator</span><span class="tag">pvp</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-renegade-vs-venator.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Renegade vs Venator Comparison" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>9 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Renegade vs Venator — Which Sniper Wins?</h2>
+          <p class="blog-card-excerpt">Head-to-head comparison of the two best snipers in ARC Raiders. Stats, strengths, best scenarios for each, and a clear verdict on which one to pick for your playstyle.</p>
+          <div class="blog-card-tags"><span class="tag">comparison</span><span class="tag">sniper</span><span class="tag">renegade</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-osprey-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Osprey Sniper Beginner Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Osprey Sniper — Best Beginner Sniper Guide</h2>
+          <p class="blog-card-excerpt">New to sniping? Start with the Osprey. More forgiving bolt cycle, lower cost, and all the fundamentals you need before graduating to the Venator. Full guide inside.</p>
+          <div class="blog-card-tags"><span class="tag">sniper</span><span class="tag">osprey</span><span class="tag">beginner</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-stitcher-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Stitcher CQC Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Stitcher — Is It the Best CQC Weapon?</h2>
+          <p class="blog-card-excerpt">The Stitcher shreds enemies in close quarters. CQC rush build, gap-close tactics, burst fire technique at medium range, and why it dominates indoor engagements.</p>
+          <div class="blog-card-tags"><span class="tag">stitcher</span><span class="tag">cqc</span><span class="tag">mobility</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-anvil-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Anvil Rifle Best Beginner Weapon" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Anvil Guide — Best Beginner Weapon Explained</h2>
+          <p class="blog-card-excerpt">The Anvil is the recommended upgrade from the Ferro — higher damage per shot, semi-auto precision, and broad effective range. Why it's the community's top new-player weapon.</p>
+          <div class="blog-card-tags"><span class="tag">anvil</span><span class="tag">beginner</span><span class="tag">weapon</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-ferro-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Ferro Weapon Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Ferro Guide — Best Starter Weapon Stats & Build</h2>
+          <p class="blog-card-excerpt">The Ferro is the most popular weapon in ARC Raiders for good reason. Low recoil, common ammo, budget-friendly. Everything you need to maximize it across all playstyles.</p>
+          <div class="blog-card-tags"><span class="tag">ferro</span><span class="tag">starter</span><span class="tag">beginner</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-rattler-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Rattler Pistol Secondary Weapon Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>7 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Rattler — Best Secondary Weapon? Full Guide</h2>
+          <p class="blog-card-excerpt">The Rattler pistol is the go-to sidearm for most loadouts. Nearly free, lightweight, fast draw — perfect emergency backup for when your primary runs dry. Full guide inside.</p>
+          <div class="blog-card-tags"><span class="tag">rattler</span><span class="tag">pistol</span><span class="tag">secondary</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-kettle-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Kettle Weapon Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Kettle Guide — Versatile Mid-Range Weapon</h2>
+          <p class="blog-card-excerpt">The Kettle is a reliable mid-range option for solo looters who need a functional combat weapon without over-investing in pure PvP gear. Full stats and Survival build pairing.</p>
+          <div class="blog-card-tags"><span class="tag">kettle</span><span class="tag">versatile</span><span class="tag">solo</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-skill-tree-best-build.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Skill Tree Best Build 2025" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>10 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Skill Tree Best Build — Full 75-Point Allocation Guide</h2>
+          <p class="blog-card-excerpt">The definitive guide to the best ARC Raiders skill tree build in 2025. Full 75-point allocation with Tier 1/2/3 priorities, leveling path, and build recommendations for every playstyle.</p>
+          <div class="blog-card-tags"><span class="tag">best build</span><span class="tag">guide</span><span class="tag">meta</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-skill-tree-builds.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="All ARC Raiders Skill Tree Builds 2025" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>12 min read</span>
+          </div>
+          <h2 class="blog-card-title">All ARC Raiders Skill Tree Builds — Every Archetype Ranked</h2>
+          <p class="blog-card-excerpt">Complete breakdown of every ARC Raiders skill tree build: All-Rounder, Solo Looter, Team Tank, PvP Flanker, Support Runner, and Stealth Operative. Find your perfect build with our decision guide.</p>
+          <div class="blog-card-tags"><span class="tag">builds</span><span class="tag">all archetypes</span><span class="tag">guide</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-pvp-skill-tree-build.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Best PvP Skill Tree Build" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>11 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Best Skill Tree for PvP — Flanker Build Deep Dive</h2>
+          <p class="blog-card-excerpt">The definitive ARC Raiders PvP skill tree guide. 55 Mobility / 12 Survival / 8 Conditioning Flanker build with priority nodes, PvP tactics, advanced movement, and ranked match tips.</p>
+          <div class="blog-card-tags"><span class="tag">pvp</span><span class="tag">flanker</span><span class="tag">mobility</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/arc-raiders-skill-tree-builder-guide.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="ARC Raiders Skill Tree Builder Guide" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>8 min read</span>
+          </div>
+          <h2 class="blog-card-title">ARC Raiders Skill Tree Builder — How to Use Every Feature</h2>
+          <p class="blog-card-excerpt">Complete guide to the ARC Raiders Skill Tree Builder. Learn to plan builds, use build sharing, AI assist, and import/export features to optimize your 75-point allocation before committing in-game.</p>
+          <div class="blog-card-tags"><span class="tag">tool guide</span><span class="tag">builder</span><span class="tag">tips</span></div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card">
+      <a href="/blog/tfue-arc-raiders-skill-tree.html" class="blog-card-link">
+        <div class="blog-card-image-wrapper">
+          <img src="/images/blog-arc-news1.webp" alt="Tfue ARC Raiders Skill Tree Build Analysis" class="blog-card-image" loading="lazy" decoding="async" />
+          <div class="blog-card-overlay"></div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time>March 6, 2026</time>
+            <span class="blog-card-divider">•</span>
+            <span>9 min read</span>
+          </div>
+          <h2 class="blog-card-title">Tfue Skill Tree ARC Raiders — What Build Does Tfue Run?</h2>
+          <p class="blog-card-excerpt">Community analysis of Tfue's ARC Raiders skill tree. Based on observed movement patterns, dodge frequency, and vault speed from stream footage — reconstructed into an estimated 48–55 Mobility build.</p>
+          <div class="blog-card-tags"><span class="tag">pro player</span><span class="tag">pvp analysis</span><span class="tag">tfue</span></div>
+        </div>
+      </a>
+    </article>
+
     <article class="blog-card">
       <a href="/blog/beginners-complete-guide.html" class="blog-card-link">
         <div class="blog-card-image-wrapper">
@@ -412,5 +772,18 @@
   
     </section>
   </div>
+
+  <footer>
+    <div class="footer-line">
+      <div class="footer-line-bar cyan"></div>
+      <span class="footer-wordmark">ARC Raiders Skill Tree</span>
+      <div class="footer-line-bar purple"></div>
+    </div>
+    <p class="footer-copy">
+      © 2025 ARC Raiders Skill Tree Builder &nbsp;·&nbsp;
+      <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="mailto:support@arcraiderskill.com">support@arcraiderskill.com</a>
+    </p>
+  </footer>
 </body>
 </html>

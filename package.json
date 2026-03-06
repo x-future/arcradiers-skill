@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run generate-blog && vite",
-    "build": "npm run generate-blog && npm run update-sitemap && npm run generate-rss && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "generate-blog": "node scripts/generate-blog.js",
     "update-sitemap": "node scripts/update-sitemap.js",

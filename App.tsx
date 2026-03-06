@@ -243,38 +243,117 @@ const handleScreenshot = () => {
     <div className="flex flex-col min-h-screen bg-[#050505] text-zinc-300 overflow-x-hidden font-body selection:bg-arc-mob selection:text-black">
       
       {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full bg-arc-bg/90 backdrop-blur-md z-50 border-b border-zinc-900 py-3">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3 text-arc-mob font-display font-bold text-xl">
-            <img 
-              src="/apple-touch-icon.png" 
-              alt="ARC Radiers Skill Tree Builder" 
-              className="h-10 w-auto object-contain"
+      <nav className="fixed top-0 w-full z-50 border-b border-zinc-800/50"
+        style={{ background: 'rgba(7,8,13,0.88)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}>
+        {/* Top accent line */}
+        <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,212,255,0.6) 40%, rgba(147,51,234,0.6) 60%, transparent)' }} />
+        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3 group">
+            <img
+              src="/apple-touch-icon.png"
+              alt="ARC Raiders Skill Tree Builder"
+              className="h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
             />
-            ARC Radiers Skill Tree Builder
-          </div>
-          <ul className="hidden md:flex gap-8 text-sm font-medium text-zinc-300">
-             <li><a href="#features" className="hover:text-arc-mob transition-colors">Features</a></li>
-             <li><a href="#skill-trees" className="hover:text-arc-mob transition-colors">Skill Trees</a></li>
-             <li><a href="#scenarios" className="hover:text-arc-mob transition-colors">Scenarios</a></li>
-             <li><a href="#faq" className="hover:text-arc-mob transition-colors">FAQ</a></li>
-             <li><a href="/wiki.html" className="hover:text-arc-mob transition-colors">Wiki</a></li>
-             <li><a href="/screenshots.html" className="hover:text-arc-mob transition-colors">Gallery</a></li>
-             <li><a href="/blog.html" className="hover:text-arc-mob transition-colors">Blog</a></li>
+            <div>
+              <div className="font-display font-black text-base uppercase tracking-wider leading-none"
+                style={{ background: 'linear-gradient(135deg, #00d4ff, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                ARC Raiders
+              </div>
+              <div className="text-[9px] uppercase tracking-[0.25em] text-zinc-500 leading-none mt-0.5 font-display">Skill Tree Builder</div>
+            </div>
+          </a>
+
+          {/* Nav links */}
+          <ul className="hidden md:flex items-center gap-1 text-xs font-display font-bold uppercase tracking-[0.12em]">
+            {[
+              { label: 'Features', href: '#features' },
+              { label: 'Skill Trees', href: '#skill-trees' },
+              { label: 'Builds', href: '#scenarios' },
+              { label: 'Videos', href: '#videos' },
+              { label: 'FAQ', href: '#faq' },
+              { label: 'Wiki', href: '/wiki.html' },
+              { label: 'Gallery', href: '/screenshots.html' },
+              { label: 'Blog', href: '/blog.html' },
+            ].map(item => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="relative px-3 py-2 text-zinc-400 hover:text-white transition-colors duration-200 group block"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-3 right-3 h-px bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                </a>
+              </li>
+            ))}
+            <li className="ml-3">
+              <a
+                href="https://store.steampowered.com/app/1808500/ARC_Raiders/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-1.5 rounded border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+                style={{ boxShadow: '0 0 12px rgba(0,212,255,0.1)' }}
+              >
+                Play Now
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
 
       {/* Main Interactive Builder Section ("Hero") */}
-      <div 
+      <div
         ref={containerRef}
-        className={`relative h-[92vh] w-full overflow-hidden bg-[#050505] border-b border-zinc-900 mt-14 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`relative h-[92vh] w-full overflow-hidden border-b border-zinc-900/60 mt-14 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        style={{ background: '#07080d' }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
       >
          
+         {/* Background image with layered dark overlays */}
+         <div className="absolute inset-0 pointer-events-none z-0">
+           {/* Game art background */}
+           <div
+             className="absolute inset-0"
+             style={{
+               backgroundImage: 'url(/images/blog-arc-news1.webp)',
+               backgroundSize: 'cover',
+               backgroundPosition: 'center 30%',
+               backgroundRepeat: 'no-repeat',
+               filter: 'saturate(0.45) brightness(0.28)',
+             }}
+           />
+           {/* Dark fill — moderate, keeps image faintly visible */}
+           <div
+             className="absolute inset-0"
+             style={{ background: 'rgba(7,8,13,0.38)' }}
+           />
+           {/* Edge vignette — darken outer frame only */}
+           <div
+             className="absolute inset-0"
+             style={{
+               background: 'radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(7,8,13,0.85) 100%)',
+             }}
+           />
+           {/* Top & bottom fade */}
+           <div
+             className="absolute inset-0"
+             style={{
+               background: 'linear-gradient(180deg, rgba(7,8,13,0.75) 0%, transparent 18%, transparent 72%, rgba(7,8,13,0.9) 100%)',
+             }}
+           />
+           {/* Subtle grid overlay */}
+           <div
+             className="absolute inset-0 opacity-15"
+             style={{
+               backgroundImage: `linear-gradient(rgba(0,212,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.08) 1px, transparent 1px)`,
+               backgroundSize: '40px 40px',
+             }}
+           />
+         </div>
+
          {/* PROMINENT TITLE OVERLAY */}
          <div className="absolute top-8 left-0 w-full z-40 text-center pointer-events-none">
             <h1 className="text-4xl md:text-6xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-500 drop-shadow-2xl tracking-tighter uppercase">

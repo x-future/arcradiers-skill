@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – ARC Raiders Skill Tree Builder</title>
+  <meta name="description" content="Privacy Policy for ARC Raiders Skill Tree Builder. Learn how we collect, use, and protect your data.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:        #07080d;
+      --panel:     #0e0f16;
+      --border:    rgba(255,255,255,0.07);
+      --cyan:      #00d4ff;
+      --purple:    #a855f7;
+      --text:      #d4d4d8;
+      --muted:     #71717a;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-top: 60px;
+    }
+
+    /* ── Grid background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: rgba(7,8,13,0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-accent {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.6) 40%, rgba(168,85,247,0.6) 60%, transparent);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.65rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .nav-brand img { height: 36px; width: auto; opacity: 0.9; }
+    .nav-brand-text { display: flex; flex-direction: column; }
+    .nav-brand-main {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #00d4ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .nav-brand-sub {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1;
+      margin-top: 3px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #71717a;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0.75rem; right: 0.75rem;
+      height: 1px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      margin-left: 0.75rem;
+      padding: 0.35rem 1rem !important;
+      border: 1px solid rgba(0,212,255,0.4) !important;
+      border-radius: 4px;
+      color: var(--cyan) !important;
+    }
+    .nav-cta:hover { background: rgba(0,212,255,0.08) !important; }
+    @media (max-width: 767px) { .nav-links { display: none; } }
+
+    /* ── Page content ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    /* Hero header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      border: 1px solid rgba(0,212,255,0.25);
+      border-radius: 999px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(0,212,255,0.05);
+      margin-bottom: 1.25rem;
+    }
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .page-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Sections */
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2rem 1.75rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.25), transparent);
+    }
+    .section:hover { border-color: rgba(0,212,255,0.15); }
+
+    .section-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      opacity: 0.7;
+      margin-bottom: 0.4rem;
+    }
+    .section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .section p {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul {
+      list-style: none;
+      margin: 0.5rem 0 0.9rem;
+    }
+    .section ul li {
+      font-size: 0.875rem;
+      color: var(--text);
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+      line-height: 1.65;
+    }
+    .section ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 0.75rem;
+      top: 0.4rem;
+    }
+    .section a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,212,255,0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .section a:hover {
+      color: #fff;
+      border-color: rgba(0,212,255,0.7);
+    }
+
+    /* Contact card */
+    .contact-card {
+      margin-top: 2.5rem;
+      padding: 1.75rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(168,85,247,0.25);
+      background: rgba(168,85,247,0.04);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,0.5), transparent);
+    }
+    .contact-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #a855f7;
+      margin-bottom: 0.5rem;
+    }
+    .contact-card p { font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid rgba(168,85,247,0.4);
+      border-radius: 6px;
+      color: #a855f7;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+      background: rgba(168,85,247,0.05);
+    }
+    .contact-email:hover {
+      background: rgba(168,85,247,0.12);
+      border-color: rgba(168,85,247,0.7);
+      color: #c084fc;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .footer-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .footer-line-bar {
+      flex: 1;
+      max-width: 180px;
+      height: 1px;
+    }
+    .footer-line-bar.cyan { background: linear-gradient(90deg, transparent, rgba(0,212,255,0.35), transparent); }
+    .footer-line-bar.purple { background: linear-gradient(90deg, transparent, rgba(168,85,247,0.35), transparent); }
+    .footer-wordmark {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #3f3f46;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .footer-copy a { color: var(--cyan); text-decoration: none; }
+    .footer-copy a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-accent"></div>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/apple-touch-icon.png" alt="ARC Raiders Skill Tree Builder" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-main">ARC Raiders</span>
+          <span class="nav-brand-sub">Skill Tree Builder</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#skill-trees">Skill Trees</a></li>
+        <li><a href="/#scenarios">Builds</a></li>
+        <li><a href="/wiki.html">Wiki</a></li>
+        <li><a href="/screenshots.html">Gallery</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="https://store.steampowered.com/app/1808500/ARC_Raiders/" class="nav-cta" target="_blank" rel="noopener">Play Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="page-wrap">
+
+    <div class="page-header">
+      <div class="page-badge">Legal Document</div>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-meta">Last updated: March 2026 &nbsp;·&nbsp; ARC Raiders Skill Tree Builder</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">01 / Overview</div>
+      <h2>Introduction</h2>
+      <p>Welcome to <strong>ARC Raiders Skill Tree Builder</strong> ("we", "our", or "us"). This Privacy Policy explains how we collect, use, and protect information when you visit <strong>arcraiderskill.com</strong>.</p>
+      <p>This is a fan-made, community tool and is not affiliated with or endorsed by the developers of ARC Raiders. By using this site, you agree to the practices described below.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02 / Data We Collect</div>
+      <h2>Information We Collect</h2>
+      <p>We collect minimal data to operate and improve the site:</p>
+      <ul>
+        <li><strong>Usage data</strong> — pages visited, time on site, and referral source, collected anonymously via Google Analytics.</li>
+        <li><strong>Build data</strong> — skill tree builds are encoded in URL hash fragments and stored only in your browser. We do not store builds on our servers.</li>
+        <li><strong>Cookies</strong> — we use essential and analytics cookies. No advertising or tracking cookies are used.</li>
+        <li><strong>Contact information</strong> — if you email us, we store your email address solely to reply to your inquiry.</li>
+      </ul>
+      <p>We do not collect names, addresses, payment details, or any sensitive personal data.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03 / Analytics</div>
+      <h2>Google Analytics</h2>
+      <p>We use Google Analytics (GA4) to understand how visitors use the site. Google Analytics collects anonymized data such as device type, browser, country, and pages visited. This data is processed by Google in accordance with their Privacy Policy.</p>
+      <p>You can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a> or by enabling "Do Not Track" in your browser settings.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04 / Third-Party Content</div>
+      <h2>Embedded Third-Party Content</h2>
+      <p>Some pages embed YouTube videos. When you play an embedded video, YouTube may collect data about your interaction in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We use YouTube's privacy-enhanced mode where possible.</p>
+      <p>We do not sell, rent, or trade your data to any third parties for marketing purposes.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05 / Your Rights</div>
+      <h2>Your Rights & Choices</h2>
+      <p>Depending on your location you may have rights to access, correct, or delete your personal data. Because we collect very little personal information, most requests can be handled by:</p>
+      <ul>
+        <li>Clearing your browser cookies and local storage to remove any site-stored data.</li>
+        <li>Using your browser's private/incognito mode to browse without cookies.</li>
+        <li>Contacting us at the email address below for any other requests.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06 / Data Security</div>
+      <h2>Security</h2>
+      <p>All traffic to this site is served over HTTPS. We do not operate databases containing personal user accounts or passwords. Skill builds are stored only in URL parameters on your device.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07 / Changes</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected with an updated "Last updated" date at the top of this page. Continued use of the site after changes constitutes acceptance of the revised policy.</p>
+    </div>
+
+    <!-- Contact card -->
+    <div class="contact-card">
+      <h3>Questions or Concerns?</h3>
+      <p>If you have any questions about this Privacy Policy or how your data is handled, please reach out — we're happy to help.</p>
+      <a href="mailto:support@arcraiderskill.com" class="contact-email">
+        ✉ support@arcraiderskill.com
+      </a>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <footer>
+    <div class="footer-line">
+      <div class="footer-line-bar cyan"></div>
+      <span class="footer-wordmark">ARC Raiders Skill Tree</span>
+      <div class="footer-line-bar purple"></div>
+    </div>
+    <p class="footer-copy">
+      © 2025 ARC Raiders Skill Tree Builder &nbsp;·&nbsp;
+      <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="mailto:support@arcraiderskill.com">support@arcraiderskill.com</a>
+    </p>
+  </footer>
+
+  <!-- Google Analytics -->
+  <div style="display:none">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE151Y4ZR0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LE151Y4ZR0');
+    </script>
+  </div>
+</body>
+</html>

@@ -75,52 +75,51 @@ const SkillNode: React.FC<SkillNodeProps> = ({
       {/* 
         Node Circle 
       */}
-      <div 
+      <div
         className={`
           w-full h-full rounded-full flex items-center justify-center transition-all duration-200 border-[3px]
         `}
         style={{
-           backgroundColor: isMaxed ? baseColor : '#0a0a0c',
-           borderColor: isActive || isUnlocked ? baseColor : '#27272a',
-           boxShadow: isActive ? `0 0 15px ${baseColor}40` : 'none'
+           backgroundColor: isMaxed ? baseColor : 'rgba(8,9,14,0.82)',
+           borderColor: isActive || isUnlocked ? baseColor : 'rgba(255,255,255,0.22)',
+           boxShadow: isActive
+             ? `0 0 18px ${baseColor}60, inset 0 0 8px ${baseColor}20`
+             : isUnlocked
+               ? `0 0 8px ${baseColor}30`
+               : '0 0 6px rgba(255,255,255,0.04)',
         }}
       >
         {/* Generated Vector Icon */}
-        <SkillIcon 
+        <SkillIcon
           iconName={skill.icon}
           size={iconSize}
           className="relative z-10 transition-all duration-200 select-none pointer-events-none"
           style={{
-            // Visual Logic:
-            // Maxed: Black Icon (on colored bg)
-            // Active/Unlocked: Colored Icon (on dark bg) using current 'color' prop isn't enough for SVG stroke
-            // Locked: Dimmed Grey
-            
-            color: isMaxed ? '#000000' : (isActive || isUnlocked ? baseColor : '#52525b'),
-            opacity: !isUnlocked ? 0.3 : 1
+            color: isMaxed ? '#000000' : (isActive || isUnlocked ? baseColor : 'rgba(255,255,255,0.35)'),
+            opacity: !isUnlocked ? 0.55 : 1
           }}
         />
 
         {/* Lock Overlay */}
         {!isUnlocked && (
-          <div className="absolute -bottom-1 -right-1 bg-black rounded-full p-0.5 border border-zinc-700 z-20">
-             <Lock size={10} className="text-zinc-500" />
+          <div className="absolute -bottom-1 -right-1 bg-[#0a0a0e] rounded-full p-0.5 border border-white/20 z-20">
+             <Lock size={10} style={{ color: 'rgba(255,255,255,0.4)' }} />
           </div>
         )}
       </div>
 
       {/* Rank Pill */}
-      <div 
+      <div
         className={`
-          absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 
+          absolute -bottom-2.5 left-1/2 transform -translate-x-1/2
           px-1.5 py-0.5 rounded-full text-[9px] font-bold font-mono tracking-tighter border z-30
           flex items-center justify-center min-w-[28px]
           transition-colors duration-200
         `}
-        style={{ 
-          backgroundColor: isMaxed ? baseColor : '#0a0a0c',
-          color: isMaxed ? '#000000' : (!isUnlocked ? '#52525b' : baseColor),
-          borderColor: !isUnlocked ? '#27272a' : baseColor
+        style={{
+          backgroundColor: isMaxed ? baseColor : 'rgba(8,9,14,0.88)',
+          color: isMaxed ? '#000000' : (!isUnlocked ? 'rgba(255,255,255,0.4)' : baseColor),
+          borderColor: !isUnlocked ? 'rgba(255,255,255,0.2)' : baseColor
         }}
       >
         {currentRank}/{skill.maxRank}
