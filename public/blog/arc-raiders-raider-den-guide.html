@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Raider Den Guide — Base Upgrades & Features | arcraiderskill.com</title>
+  <meta name="description" content="Complete Raider Den guide for ARC Raiders. Learn all base features, upgrade priorities, crafting, storage, and how to optimize your Den for faster progression.">
+  <link rel="canonical" href="https://arcraiderskill.com/blog/arc-raiders-raider-den-guide.html">
+  <link rel="icon" href="/favicon.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"ARC Raiders Raider Den — Complete Base Guide","description":"Complete Raider Den guide for ARC Raiders. Learn all base features, upgrade priorities, crafting, storage, and how to optimize your Den for faster progression.","datePublished":"2026-03-10","dateModified":"2026-03-10","author":{"@type":"Organization","name":"ARC Raiders Skill Tree Builder"},"publisher":{"@type":"Organization","name":"arcraiderskill.com"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#07080d;--panel:#0e0f16;--border:rgba(255,255,255,0.07);--cyan:#00d4ff;--purple:#a855f7;--text:#d4d4d8;--muted:#71717a;--green:#4ade80}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;padding-top:60px}
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.025) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(7,8,13,0.92);backdrop-filter:blur(16px)}
+    .nav-accent{height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.6) 40%,rgba(168,85,247,0.6) 60%,transparent)}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0.65rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+    .nav-brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none}
+    .nav-brand img{height:36px;width:auto;opacity:0.9}
+    .nav-brand-text{display:flex;flex-direction:column}
+    .nav-brand-main{font-family:'Orbitron',sans-serif;font-weight:900;font-size:0.875rem;letter-spacing:0.1em;text-transform:uppercase;background:linear-gradient(135deg,#00d4ff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+    .nav-brand-sub{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:#52525b;line-height:1;margin-top:3px}
+    .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none}
+    .nav-links a{display:block;padding:0.4rem 0.75rem;font-family:'Orbitron',sans-serif;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#71717a;text-decoration:none;transition:color 0.2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0.75rem;right:0.75rem;height:1px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform 0.2s}
+    .nav-links a:hover{color:#fff}.nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta{margin-left:0.75rem;padding:0.35rem 1rem!important;border:1px solid rgba(0,212,255,0.4)!important;border-radius:4px;color:var(--cyan)!important}
+    .nav-cta:hover{background:rgba(0,212,255,0.08)!important}
+    @media(max-width:767px){.nav-links{display:none}}
+    .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:3rem 1.5rem 5rem}
+    .breadcrumb{font-size:0.75rem;color:var(--muted);margin-bottom:2rem}
+    .breadcrumb a{color:var(--cyan);text-decoration:none}
+    .tag{display:inline-block;padding:0.2rem 0.7rem;border-radius:4px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-right:0.4rem;margin-bottom:0.4rem}
+    .tag-base{background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2)}
+    .tag-prog{background:rgba(168,85,247,0.1);color:var(--purple);border:1px solid rgba(168,85,247,0.2)}
+    h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:1rem;text-transform:uppercase}
+    .meta{font-size:0.8rem;color:var(--muted);margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+    .lead{font-size:1.05rem;color:#e4e4e7;line-height:1.8;margin-bottom:2rem}
+    h2{font-family:'Orbitron',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+    h3{font-size:1rem;font-weight:700;color:#e4e4e7;margin:1.75rem 0 0.6rem}
+    p{margin-bottom:1rem}strong{color:#fff;font-weight:600}
+    a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}
+    ul,ol{padding-left:1.5rem;margin-bottom:1rem}li{margin-bottom:0.4rem}
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.75rem;margin:1.25rem 0}
+    .stat-box{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem}
+    .stat-box .rank{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:var(--cyan);opacity:0.4;line-height:1}
+    .stat-box .name{font-size:0.85rem;font-weight:700;color:#fff;margin:0.3rem 0}
+    .stat-box .why{font-size:0.75rem;color:var(--muted)}
+    .build-card{background:var(--panel);border:1px solid rgba(74,222,128,0.2);border-radius:12px;padding:1.5rem;margin:1.25rem 0;position:relative;overflow:hidden}
+    .build-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
+    .tip{background:rgba(0,212,255,0.04);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:1rem 0;font-size:0.9rem}
+    .warn{background:rgba(250,204,21,0.04);border-left:3px solid #facc15;border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:1rem 0;font-size:0.9rem}
+    .related{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:3rem}
+    .related-title{font-family:'Orbitron',sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:1rem}
+    .related-links a{display:block;color:var(--text);font-size:0.9rem;padding:0.4rem 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .related-links a:hover{color:var(--cyan)}
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.5rem;text-align:center;background:#040509;margin-top:4rem}
+    .footer-line{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:0.75rem}
+    .flb{flex:1;max-width:180px;height:1px}.flb.c{background:linear-gradient(90deg,transparent,rgba(0,212,255,0.35),transparent)}.flb.p{background:linear-gradient(90deg,transparent,rgba(168,85,247,0.35),transparent)}
+    .fw{font-family:'Orbitron',sans-serif;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:#3f3f46}
+    .fc{font-size:0.75rem;color:#52525b}.fc a{color:var(--cyan);text-decoration:none}
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774598933307185"
+       crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-accent"></div>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><img src="/apple-touch-icon.png" alt="ARC Raiders Skill Tree Builder"><div class="nav-brand-text"><span class="nav-brand-main">ARC Raiders</span><span class="nav-brand-sub">Skill Tree Builder</span></div></a>
+    <ul class="nav-links">
+      <li><a href="/#features">Features</a></li><li><a href="/#skill-trees">Skill Trees</a></li><li><a href="/#scenarios">Builds</a></li>
+      <li><a href="/wiki.html">Wiki</a></li><li><a href="/screenshots.html">Gallery</a></li><li><a href="/blog.html">Blog</a></li>
+      <li><a href="https://store.steampowered.com/app/1808500/ARC_Raiders/" target="_blank" rel="noopener" class="nav-cta">Play Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <p class="breadcrumb"><a href="/">Home</a> › <a href="/blog.html">Blog</a> › Raider Den Guide</p>
+  <span class="tag tag-base">Base Guide</span><span class="tag tag-prog">Progression</span>
+
+  <h1>ARC Raiders Raider Den — Complete Base Guide</h1>
+  <p class="meta">March 10, 2026 &nbsp;·&nbsp; 10 min read &nbsp;·&nbsp; Progression & base management</p>
+
+  <p class="lead">
+    The <strong>Raider Den</strong> is your persistent headquarters between raids — the one place where progress accumulates regardless of whether you die or extract. Understanding the Den deeply is what separates Raiders who grow steadily from those who grind in circles. Every upgrade you make here compounds across every future raid. This guide breaks down every feature, every upgrade priority, and every decision that makes your Den work for you.
+  </p>
+
+  <h2>What Is the Raider Den?</h2>
+  <p>The Raider Den is your persistent base of operations in ARC Raiders. Unlike the raid zones where everything you carry in can be lost, the Den exists outside the risk loop — resources you extract and invest here are safe, permanent, and compound over time into meaningful advantages for every future run.</p>
+  <p>The Den serves five core functions: <strong>item storage</strong> for your extracted loot, <strong>crafting</strong> to convert raw materials into weapons and gear, <strong>loadout preparation</strong> before raids, <strong>skill tree management</strong> through the skill terminal, and <strong>mission tracking</strong> through the mission board. Each function feeds the others — better storage lets you hold more crafting materials, better crafting produces better loadouts, better loadouts support more ambitious raids.</p>
+  <p>Your Den persists through death. This is the crucial distinction: you may lose your in-raid inventory when you die, but Den upgrades, stored items, and account-level progress remain intact. The Den is your safety net and your multiplier simultaneously.</p>
+
+  <h2>Raider Den Features Overview</h2>
+  <h3>Storage System</h3>
+  <p>Your stash holds every item you've successfully extracted from raids. Starting storage is limited — you'll hit capacity quickly if you're not managing inventory. Items in storage are safe between sessions, organized by category, and accessible for crafting, loadout building, or selling.</p>
+
+  <h3>Crafting Station</h3>
+  <p>The crafting station converts raw materials into usable weapons, gear, consumables, and upgrade components. As you upgrade the station, more recipes become available and crafting quality improves. Early in the game, looting is typically faster than crafting, but mid-to-late game the crafting station becomes your primary source of consistent high-quality gear.</p>
+
+  <h3>Skill Tree Terminal</h3>
+  <p>The terminal is where you spend skill points to upgrade your Raider's capabilities across the three branches: Conditioning, Mobility, and Survival. Access the <a href="/">interactive skill tree builder</a> at arcraiderskill.com to plan your allocations before committing them at the terminal.</p>
+
+  <h3>Loadout Preparation</h3>
+  <p>Before every raid, you configure your loadout here from your stored items. This is where pre-raid strategy is executed — choosing the right gear for the run's objective, setting a budget, and ensuring you're not carrying more than you're willing to risk.</p>
+
+  <h3>Mission Board</h3>
+  <p>The board tracks available missions with specific objectives, completion conditions, and reward structures. Daily and weekly missions provide targeted resource income and occasionally unlock items not available through standard looting or crafting.</p>
+
+  <h2>Upgrade Priority Guide</h2>
+  <p>The Den has multiple upgrade paths and limited early resources. This priority order represents the fastest path to compounding advantage:</p>
+
+  <div class="stat-grid">
+    <div class="stat-box"><div class="rank">01</div><div class="name">Storage Capacity</div><div class="why">More storage = more extracted loot retained. Every run is wasted if you're leaving items behind due to overflow.</div></div>
+    <div class="stat-box"><div class="rank">02</div><div class="name">Crafting Station</div><div class="why">Unlocks mid-tier and high-tier recipes. Required to stop relying entirely on looted gear by mid-game.</div></div>
+    <div class="stat-box"><div class="rank">03</div><div class="name">Skill Terminal</div><div class="why">Faster skill point unlock cadence. Higher-level terminal unlocks higher-tier skill nodes.</div></div>
+    <div class="stat-box"><div class="rank">04</div><div class="name">Workbench</div><div class="why">Enables weapon modification and repair. Essential for maintaining high-tier weapons without constant replacement cost.</div></div>
+  </div>
+
+  <div class="warn">
+    <strong>Critical warning:</strong> Never neglect Storage Capacity. Running out of storage means items extracted from dangerous runs are deleted or left behind. The first Den resource investment should always go to storage — even a partial upgrade prevents significant waste.
+  </div>
+
+  <h2>Storage System Deep Dive</h2>
+  <p>Effective storage management is as strategically important as in-raid decisions. A full, chaotic stash slows you down at every stage of the loop: it delays loadout prep, makes crafting material identification harder, and creates confusion about what resources you're actually working with.</p>
+
+  <h3>What to Keep vs Sell vs Use</h3>
+  <ul>
+    <li><strong>Keep:</strong> Crafting materials needed for current recipe goals, high-tier weapons you actively use, consumables below your maintained minimum stock</li>
+    <li><strong>Sell:</strong> Duplicate items beyond your stock targets, low-tier loot once you've upgraded past needing it, items with no crafting use in your current recipe set</li>
+    <li><strong>Use immediately:</strong> Consumables that expire or degrade, healing items that can replenish your loadout stock, upgrade components you've been saving toward</li>
+  </ul>
+
+  <h3>Organizing by Tier</h3>
+  <p>Sort your storage into clear tier categories — budget gear in one section, mid-tier in another, premium items in a designated area. This makes loadout building faster and prevents accidentally equipping valuable gear on budget runs. The time saved compounds significantly across hundreds of raid cycles.</p>
+
+  <div class="tip">
+    <strong>Efficiency tip:</strong> Set minimum stock targets for your most-used consumables (e.g., "always maintain 10 healing items, 5 stamina items, 3 grenades") and replenish toward those targets after each extraction. This eliminates the decision fatigue of figuring out what to bring every run.
+  </div>
+
+  <h2>Crafting System Explained</h2>
+  <p>The crafting system converts raw materials extracted from raids into finished items of defined quality. Understanding the math behind crafting helps you decide when to craft vs loot and where to direct your material gathering efforts.</p>
+
+  <h3>Recipe Unlocks</h3>
+  <p>Recipes are unlocked through a combination of Crafting Station upgrade level and mission completion. Early recipes cover basic consumables and budget-tier weapons. Higher-level recipes unlock as the station is upgraded, progressing through mid-tier gear to high-tier and eventually elite-quality items.</p>
+
+  <h3>Crafting vs Looting — When Each Is Better</h3>
+  <p><strong>Loot when:</strong> You're in a zone with high item density and can efficiently collect specific materials. Early game, looting is almost always more time-efficient than crafting equivalent items.</p>
+  <p><strong>Craft when:</strong> You have accumulated excess raw materials, you need a specific item that isn't dropping reliably from loot, or you need consistent quality gear for premium runs. Mid-to-late game crafting becomes your most reliable source of high-quality consumables.</p>
+
+  <h2>Mission Board Strategy</h2>
+  <p>Missions are one of the most underutilized progression tools in ARC Raiders. Players who ignore the mission board and purely free-loot miss significant structured resource income and exclusive unlock opportunities.</p>
+
+  <h3>Daily vs Weekly Missions</h3>
+  <p><strong>Daily missions</strong> are low-effort objectives with modest but reliable rewards — typically consumables, basic materials, and small resource bundles. Complete these as a byproduct of normal raiding rather than going out of your way. If a daily mission aligns with your planned run's objective, execute it. If not, skip it without guilt.</p>
+  <p><strong>Weekly missions</strong> are the high-value targets. Weekly missions have larger reward pools including materials not available elsewhere, exclusive cosmetics, and significant resource injections. Prioritize planning at least one dedicated mission run per week toward the current weekly objectives.</p>
+
+  <h2>Den Upgrades and Skill Tree Synergy</h2>
+  <p>Den upgrades and skill tree investments are not independent — they amplify each other when chosen in aligned directions.</p>
+  <ul>
+    <li><strong>Storage upgrades + Survival tree:</strong> The Quick Loot Survival node lets you gather more per run. Expanded storage means that larger volume of looted material doesn't overflow. Together, they dramatically accelerate resource accumulation rate.</li>
+    <li><strong>Crafting Station + Conditioning tree:</strong> Higher-tier crafting enables manufacturing the defensive consumables that Conditioning builds rely on. Investing in both simultaneously reduces your dependence on market pricing for critical supplies.</li>
+    <li><strong>Workbench + Mobility tree:</strong> Weapon modification at the Workbench enables equipping suppressors and stock modifications that reduce your acoustic footprint — directly enhancing the stealth component of high-Mobility playstyles.</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+  <h3>Does the Raider Den persist when I die in a raid?</h3>
+  <p>Yes. The Den and all its contents — stored items, upgrade levels, crafted goods — persist completely through death. Only what you carried into the raid is lost on death. The Den is never at risk during standard play.</p>
+
+  <h3>How many total Den upgrades are there?</h3>
+  <p>The total upgrade count expands with each major content update. The core upgrade tracks (Storage, Crafting, Terminal, Workbench) each have multiple tiers, with late-game tiers requiring significant material investment and mission completion to unlock. Plan your upgrade path in advance rather than upgrading randomly to avoid resource bottlenecks.</p>
+
+  <h3>What's the single most important first Den upgrade?</h3>
+  <p>Storage Capacity, unambiguously. Running out of storage causes tangible material loss — items you risked your life to extract are wasted. Every other upgrade is meaningless if your storage is capped and items are being discarded. Storage first, always.</p>
+
+  <div class="related">
+    <p class="related-title">Related Articles</p>
+    <div class="related-links">
+      <a href="/blog/arc-raiders-beginner-guide-2026.html">ARC Raiders Complete Beginner Guide 2026</a>
+      <a href="/blog/arc-raiders-extraction-loop-guide.html">ARC Raiders Extraction Loop Complete Tutorial</a>
+      <a href="/blog/arc-raiders-character-reset-guide.html">ARC Raiders Character Reset System Guide</a>
+      <a href="/blog/arc-raiders-survival-tips.html">10 Survival Tips Veterans Won't Tell You</a>
+      <a href="/blog/beginners-complete-guide.html">Skill Tree Beginner's Complete Guide</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-line"><div class="flb c"></div><span class="fw">ARC Raiders Skill Tree</span><div class="flb p"></div></div>
+  <p class="fc">© 2026 ARC Raiders Skill Tree Builder &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:support@arcraiderskill.com">support@arcraiderskill.com</a></p>
+</footer>
+<div style="display:none"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE151Y4ZR0"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LE151Y4ZR0');</script></div>
+</body>
+</html>
