@@ -286,6 +286,14 @@ const handleScreenshot = () => {
                 </a>
               </li>
             ))}
+            <li className="ml-1">
+              <a
+                href="/ai-see.html"
+                className="px-4 py-1.5 rounded border border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-200"
+              >
+                AI See
+              </a>
+            </li>
             <li className="ml-3">
               <a
                 href="https://store.steampowered.com/app/1808500/ARC_Raiders/"

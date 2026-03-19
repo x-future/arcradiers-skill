@@ -630,8 +630,8 @@ const LandingSections = () => {
           <div>
             <h4 className="text-zinc-300 font-display font-bold mb-4 text-sm uppercase tracking-[0.15em]">Community</h4>
             <ul className="space-y-2.5 text-zinc-500 text-sm">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><MessageSquare size={13} /> Reddit Discussion</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><Users size={13} /> Discord Community</a></li>
+              <li><a href="https://x.com/xfutureagi" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><MessageSquare size={13} /> Follow on X</a></li>
+              <li><a href="https://discord.com/channels/1484119117090001031/1484119117874204753" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><Users size={13} /> Discord Community</a></li>
             </ul>
           </div>
         </div>
