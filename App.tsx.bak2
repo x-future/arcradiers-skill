@@ -7,7 +7,6 @@ import ConnectionLines from './components/ConnectionLines';
 import Tooltip from './components/Tooltip';
 import GeminiAssistant from './components/GeminiAssistant';
 import LandingSections from './components/LandingSections';
-import ScreenshotViewer from './components/ScreenshotViewer';
 import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move, Camera } from 'lucide-react';
 
 // Configuration for Grid Cropping & Sizing
@@ -31,13 +30,8 @@ export default function App() {
 
   // Screenshot State
   const [showScreenshotPreview, setShowScreenshotPreview] = useState(false);
-  const [showFirstTimeHint, setShowFirstTimeHint] = useState(true);
   const [screenshotDataUrl, setScreenshotDataUrl] = useState<string | null>(null);
-  const [screenshotUrl, setScreenshotUrl] = useState<string | null>(null);
-
-  // Routing State
-  const [currentShortId, setCurrentShortId] = useState<string | null>(null);
-
+  const [screenshotUrl, setScreenshotUrl] = useState<string | null>(null);  
   // Viewport State
   const [scale, setScale] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
@@ -72,116 +66,6 @@ export default function App() {
   const handleMouseLeave = () => setIsDragging(false);
 
   // Wheel Zoom Logic
-
-const handleScreenshot = async () => {
-    const element = document.getElementById('skill-tree-container');
-    if (!element) {
-      alert('Could not find skill tree to capture');
-      return;
-    }
-
-    try {
-      // Import html2canvas dynamically
-      const html2canvas = (await import('html2canvas')).default;
-      
-      // Reset transform for clean capture
-      const originalTransform = element.style.transform;
-      element.style.transform = 'translate(-50%, -50%) scale(1)';
-      
-      // Capture the element
-      const canvas = await html2canvas(element, {
-        backgroundColor: '#0a0a0f',
-        scale: 2, // High resolution
-        logging: false,
-        useCORS: true,
-        allowTaint: true
-      });
-      
-      // Restore original transform
-      element.style.transform = originalTransform;
-      
-      // Convert to data URL
-      const dataUrl = canvas.toDataURL('image/png');
-      setScreenshotDataUrl(dataUrl);
-      
-      // Generate a unique short ID (9 characters)
-      const generateShortId = () => {
-        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        let result = '';
-        for (let i = 0; i < 9; i++) {
-          result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
-      };
-      
-      const buildHash = btoa(JSON.stringify(buildState.skills));
-      const shortId = generateShortId();
-      const filename = `arcraiders-build-${shortId}.png`;
-      const url = `${window.location.origin}/s/${shortId}`;
-      setScreenshotUrl(url);
-
-      // Store screenshot data in localStorage for the viewer page
-      const storageKey = `arcraiders_screenshot_${shortId}`;
-      localStorage.setItem(storageKey, JSON.stringify({
-        buildState: buildState,
-        screenshotDataUrl: dataUrl,
-        timestamp: Date.now(),
-        shortId: shortId
-      }));
-
-      // Show preview
-      setShowScreenshotPreview(true);
-      
-    } catch (error) {
-      console.error('Screenshot failed:', error);
-      alert('Screenshot failed. Please try again.');
-    }
-  };
-
-  const copyImageToClipboard = async () => {
-    if (!screenshotDataUrl) return;
-    
-    try {
-      const response = await fetch(screenshotDataUrl);
-      const blob = await response.blob();
-      await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob })
-      ]);
-      alert('Image copied to clipboard!');
-    } catch (error) {
-      console.error('Copy failed:', error);
-      alert('Failed to copy image. Your browser may not support this feature.');
-    }
-  };
-
-  const copyImageUrlToClipboard = () => {
-    if (!screenshotUrl) return;
-    navigator.clipboard.writeText(screenshotUrl);
-    alert('Link copied to clipboard!');
-  };
-
-  const downloadScreenshot = () => {
-    if (!screenshotDataUrl) return;
-    const link = document.createElement('a');
-    link.href = screenshotDataUrl;
-    link.download = `arcraiders-build-${Date.now()}.png`;
-    link.click();
-  };
-
-  // Check current URL for screenshot route
-  useEffect(() => {
-    const path = window.location.pathname;
-    const match = path.match(/^\/s\/([a-zA-Z0-9]{9})$/);
-    console.log('Route check:', { path, match });
-    if (match) {
-      console.log('Setting currentShortId to:', match[1]);
-      setCurrentShortId(match[1]);
-    } else {
-      console.log('No match, showing main app');
-      setCurrentShortId(null);
-    }
-  }, []);
-
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -313,6 +197,16 @@ const handleScreenshot = async () => {
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
+const handleScreenshot = () => {
+    const element = document.getElementById('skill-tree-container');
+    if (!element) {
+      alert('Could not find skill tree to capture');
+      return;
+    }
+    
+    // Using browser's native capture API or alert for now
+    alert('📸 Screenshot Feature\n\nTo take a screenshot of your build:\n1. Use your system screenshot tool (Win+Shift+S or Cmd+Shift+4)\n2. Or wait for our upcoming built-in screenshot feature!\n\nTip: Screenshots will be shareable in our Gallery soon!');
+  };
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -348,17 +242,6 @@ const handleScreenshot = async () => {
   };
 
   const headerTopPos = (10 - GRID_OFFSET_Y) * CELL_HEIGHT;
-
-  // Handle back to main page
-  const handleBack = () => {
-    window.history.pushState({}, '', window.location.pathname.replace(/\/s\/[a-zA-Z0-9]{9}$/, '') || '/');
-    setCurrentShortId(null);
-  };
-
-  // Show screenshot viewer if we have a short ID, otherwise show main app
-  if (currentShortId) {
-    return <ScreenshotViewer shortId={currentShortId} onBack={handleBack} />;
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-[#050505] text-zinc-300 overflow-x-hidden font-body selection:bg-arc-mob selection:text-black">
@@ -519,18 +402,10 @@ const handleScreenshot = async () => {
                 </button>
                 <button
                   onClick={handleScreenshot}
-                  className="relative text-zinc-400 hover:text-white transition-colors p-2"
-                  title="Take Screenshot (NEW!)"
+                  className="text-zinc-400 hover:text-white transition-colors p-2"
+                  title="Take Screenshot"
                 >
                    <Camera size={18} />
-                   <span className="absolute -top-1 -right-1 flex items-center justify-center">
-                     <span className="relative flex h-4 w-4">
-                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                       <span className="relative inline-flex rounded-full h-4 w-4 items-center justify-center bg-green-500 text-[8px] font-bold text-white">
-                         NEW
-                       </span>
-                     </span>
-                   </span>
                 </button>
             </div>
 
@@ -669,68 +544,6 @@ const handleScreenshot = async () => {
 
       {/* AI Assistant */}
       <GeminiAssistant treeData={treeData} onApplyBuild={handleApplyAIBuild} />
-
-      {/* Screenshot Preview Modal */}
-      {showScreenshotPreview && screenshotDataUrl && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.85)' }}>
-          <div className="relative max-w-4xl w-full bg-zinc-900 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-zinc-900/50">
-              <div>
-                <h3 className="text-lg font-display font-bold text-white">Build Screenshot</h3>
-                <p className="text-sm text-zinc-400 mt-1">Your ARC Raiders skill tree build</p>
-              </div>
-              <button
-                onClick={() => setShowScreenshotPreview(false)}
-                className="text-zinc-400 hover:text-white transition-colors p-2 hover:bg-zinc-800 rounded-lg"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Image Preview */}
-            <div className="p-6 bg-zinc-950/50">
-              <div className="rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900/50">
-                <img src={screenshotDataUrl} alt="Skill Tree Build" className="w-full h-auto" />
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="px-6 py-4 border-t border-zinc-800 bg-zinc-900/50">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <button
-                  onClick={copyImageToClipboard}
-                  className="flex items-center justify-center gap-2 px-4 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/20 transition-all text-cyan-400 font-semibold text-sm"
-                >
-                  📋 Copy Image
-                </button>
-                <button
-                  onClick={copyImageUrlToClipboard}
-                  className="flex items-center justify-center gap-2 px-4 py-3 bg-purple-500/10 border border-purple-500/30 rounded-lg hover:bg-purple-500/20 transition-all text-purple-400 font-semibold text-sm"
-                >
-                  🔗 Copy Link
-                </button>
-                <button
-                  onClick={downloadScreenshot}
-                  className="flex items-center justify-center gap-2 px-4 py-3 bg-orange-500/10 border border-orange-500/30 rounded-lg hover:bg-orange-500/20 transition-all text-orange-400 font-semibold text-sm"
-                >
-                  ⬇️ Download
-                </button>
-              </div>
-              {screenshotUrl && (
-                <div className="mt-4 p-3 bg-zinc-800/50 rounded-lg border border-zinc-700/50">
-                  <p className="text-xs text-zinc-400 mb-2">Share this URL:</p>
-                  <div className="flex items-center gap-2">
-                    <code className="flex-1 text-xs text-zinc-300 bg-zinc-900/50 px-3 py-2 rounded font-mono break-all">
-                      {screenshotUrl}
-                    </code>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
       
     </div>
   );
