@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "build": "vite build",
+    "start": "NODE_ENV=production node server.mjs",
     "preview": "NODE_ENV=production node server.mjs",
     "generate-blog": "node scripts/generate-blog.js",
     "update-sitemap": "node scripts/update-sitemap.js",

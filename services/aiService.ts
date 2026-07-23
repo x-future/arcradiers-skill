@@ -62,9 +62,16 @@ export async function requestAIAdvice(
     }),
   });
 
-  const payload = await response.json().catch(() => ({}));
+  const contentType = response.headers.get('content-type') || '';
+  const payload = contentType.includes('application/json')
+    ? await response.json().catch(() => ({}))
+    : {};
   if (!response.ok) {
-    throw new Error(payload.error || 'AI service is unavailable.');
+    if (typeof payload.error === 'string') throw new Error(payload.error);
+    if (response.status === 404) {
+      throw new Error('AI endpoint is not deployed. Please contact the site administrator.');
+    }
+    throw new Error(`AI service is unavailable (HTTP ${response.status}).`);
   }
 
   return payload as AIAdvisorResult;

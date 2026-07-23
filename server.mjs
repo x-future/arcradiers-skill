@@ -3,12 +3,20 @@ import https from 'node:https';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createServer as createViteServer, loadEnv } from 'vite';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
+const isMainModule = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
-const fileEnv = loadEnv(mode, rootDir, '');
+let createViteServer;
+let fileEnv = {};
+
+if (isMainModule) {
+  const viteModule = await import('vite');
+  createViteServer = viteModule.createServer;
+  fileEnv = viteModule.loadEnv(mode, rootDir, '');
+}
+
 const env = { ...fileEnv, ...process.env };
 const port = Number(env.PORT || 3000);
 const host = env.HOST || '127.0.0.1';
@@ -16,7 +24,7 @@ const rapidApiHost = env.RAPIDAPI_HOST || 'gpt-5-6-sol.p.rapidapi.com';
 const rapidApiModel = env.RAPIDAPI_MODEL || 'gpt-5.6-sol';
 const requestCounts = new Map();
 
-const vite = isProduction
+const vite = !isMainModule || isProduction
   ? null
   : await createViteServer({
       root: rootDir,
@@ -48,7 +56,10 @@ async function readJson(req) {
 
 function isRateLimited(req) {
   const now = Date.now();
-  const ip = req.socket.remoteAddress || 'unknown';
+  const forwardedFor = req.headers?.['x-forwarded-for'];
+  const ip = (Array.isArray(forwardedFor) ? forwardedFor[0] : forwardedFor?.split(',')[0]?.trim())
+    || req.socket?.remoteAddress
+    || 'unknown';
   const current = requestCounts.get(ip);
 
   if (!current || now - current.startedAt > 60_000) {
@@ -259,7 +270,7 @@ function validateResult(raw, input) {
   };
 }
 
-async function handleAiRequest(req, res) {
+export async function handleAiRequest(req, res) {
   if (req.method !== 'POST') {
     sendJson(res, 405, { error: 'Method not allowed.' });
     return;
@@ -332,23 +343,25 @@ async function serveProduction(req, res) {
   }
 }
 
-const server = http.createServer(async (req, res) => {
-  const pathname = new URL(req.url, 'http://localhost').pathname;
-  if (pathname === '/api/ai/build') {
-    await handleAiRequest(req, res);
-    return;
-  }
+if (isMainModule) {
+  const server = http.createServer(async (req, res) => {
+    const pathname = new URL(req.url, 'http://localhost').pathname;
+    if (pathname === '/api/ai/build') {
+      await handleAiRequest(req, res);
+      return;
+    }
 
-  if (vite) {
-    vite.middlewares(req, res, () => {
-      res.writeHead(404).end('Not found');
-    });
-    return;
-  }
+    if (vite) {
+      vite.middlewares(req, res, () => {
+        res.writeHead(404).end('Not found');
+      });
+      return;
+    }
 
-  await serveProduction(req, res);
-});
+    await serveProduction(req, res);
+  });
 
-server.listen(port, host, () => {
-  console.log(`ARC Raiders server running at http://${host}:${port}`);
-});
+  server.listen(port, host, () => {
+    console.log(`ARC Raiders server running at http://${host}:${port}`);
+  });
+}

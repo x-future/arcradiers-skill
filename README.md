@@ -147,6 +147,12 @@ npm run build
 npm run preview
 ```
 
+### Deploying to Vercel
+
+The repository includes a Serverless Function at `/api/ai/build`. Add `RAPIDAPI_KEY`
+to the Vercel project's Production environment variables before deploying. Set
+`RAPIDAPI_HOST` and `RAPIDAPI_MODEL` only when overriding their documented defaults.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
