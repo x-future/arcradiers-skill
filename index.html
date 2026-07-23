@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARC Raiders Skill Tree Builder & Best Builds Guide</title>
-    <meta name="description" content="Build and optimize your ARC Raiders skill tree with our interactive calculator. Master Conditioning, Mobility, and Survival with expert build guides.">
+    <meta name="description" content="Build and optimize your ARC Raiders skill tree with an interactive calculator and AI Build Advisor for personalized builds and build reviews.">
     <meta name="keywords" content="ARC Skill Tree, best skill tree, game guide, skill builds, build guide">
     <meta name="author" content="ARC Raiders Player">
     <!--Icon-->
@@ -17,6 +17,7 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://arcraiderskill.com/">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable site summary">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -27,6 +28,45 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ARC Skill Tree - Best Builds">
     <meta name="twitter:description" content="ARC Raiders Tree guide with best build recommendations">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://arcraiderskill.com/#website",
+          "name": "ARC Raiders Skill Tree Builder",
+          "url": "https://arcraiderskill.com/",
+          "description": "Interactive ARC Raiders skill tree planner with build guides and AI-assisted recommendations.",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://arcraiderskill.com/#app",
+          "name": "ARC Raiders Skill Tree Builder",
+          "url": "https://arcraiderskill.com/",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Any modern web browser",
+          "description": "Plan ARC Raiders skill allocations across Conditioning, Mobility, and Survival, then generate or review builds with the AI Build Advisor.",
+          "featureList": [
+            "Interactive skill tree planning",
+            "AI-generated builds based on point budget, squad size, focus, and playstyle",
+            "AI review of the current skill allocation",
+            "Shareable builds and screenshots"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "isPartOf": {
+            "@id": "https://arcraiderskill.com/#website"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774598933307185"
@@ -91,7 +131,6 @@
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }

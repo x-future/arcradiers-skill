@@ -8,7 +8,7 @@ import Tooltip from './components/Tooltip';
 import GeminiAssistant from './components/GeminiAssistant';
 import LandingSections from './components/LandingSections';
 import ScreenshotViewer from './components/ScreenshotViewer';
-import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move, Camera } from 'lucide-react';
+import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move, Camera, Sparkles } from 'lucide-react';
 
 // Configuration for Grid Cropping & Sizing
 // Flatter aspect ratio: Width 18, Height 12
@@ -28,6 +28,8 @@ export default function App() {
   const [hoveredSkillId, setHoveredSkillId] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [copySuccess, setCopySuccess] = useState(false);
+  const [isAIAdvisorOpen, setIsAIAdvisorOpen] = useState(false);
+  const [previousBuild, setPreviousBuild] = useState<BuildState | null>(null);
 
   // Screenshot State
   const [showScreenshotPreview, setShowScreenshotPreview] = useState(false);
@@ -286,6 +288,11 @@ const handleScreenshot = async () => {
   };
 
   const handleApplyAIBuild = (suggestions: { skillId: string; rank: number }[]) => {
+    setPreviousBuild({
+      pointsSpent: buildState.pointsSpent,
+      skills: { ...buildState.skills }
+    });
+
     const newSkills: { [id: string]: number } = {};
     Object.keys(treeData.skills).forEach(id => newSkills[id] = 0);
     
@@ -303,6 +310,12 @@ const handleScreenshot = async () => {
       pointsSpent: points,
       skills: newSkills
     });
+  };
+
+  const handleUndoAIBuild = () => {
+    if (!previousBuild) return;
+    setBuildState(previousBuild);
+    setPreviousBuild(null);
   };
 
   const generateShareLink = () => {
@@ -430,10 +443,24 @@ const handleScreenshot = async () => {
         </div>
       </nav>
 
+      <button
+        type="button"
+        onClick={() => setIsAIAdvisorOpen(true)}
+        className="group mt-14 flex min-h-10 w-full items-center justify-center gap-2 border-b border-orange-500/30 bg-orange-500/10 px-4 py-2 text-center text-xs font-semibold text-orange-100 transition-colors hover:bg-orange-500/15"
+      >
+        <Sparkles size={15} className="shrink-0 text-orange-400" />
+        <span>
+          New: AI Build Advisor is live. Generate a build for your playstyle or review your current setup.
+        </span>
+        <span className="hidden shrink-0 font-display font-bold uppercase text-orange-400 sm:inline">
+          Try it now
+        </span>
+      </button>
+
       {/* Main Interactive Builder Section ("Hero") */}
       <div
         ref={containerRef}
-        className={`relative h-[92vh] w-full overflow-hidden border-b border-zinc-900/60 mt-14 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`relative h-[calc(92vh-2.5rem)] min-h-[640px] w-full overflow-hidden border-b border-zinc-900/60 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         style={{ background: '#07080d' }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -484,13 +511,10 @@ const handleScreenshot = async () => {
          </div>
 
          {/* PROMINENT TITLE OVERLAY */}
-         <div className="absolute top-8 left-0 w-full z-40 text-center pointer-events-none">
-            <h1 className="text-4xl md:text-6xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-500 drop-shadow-2xl tracking-tighter uppercase">
+         <div className="absolute left-0 top-5 z-40 hidden w-full text-center pointer-events-none lg:block">
+            <h1 className="text-3xl xl:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-500 drop-shadow-2xl tracking-tighter uppercase">
                ARC Raiders Skill Tree
             </h1>
-            <p className="text-xl md:text-2xl font-display font-bold text-arc-mob tracking-widest mt-2 uppercase drop-shadow-lg">
-               Best Tree Build
-            </p>
          </div>
 
          {/* Controls Panel */}
@@ -531,6 +555,19 @@ const handleScreenshot = async () => {
                        </span>
                      </span>
                    </span>
+                </button>
+                <div className="h-8 w-px bg-zinc-800"></div>
+                <button
+                  onClick={() => setIsAIAdvisorOpen(true)}
+                  className={`hidden h-9 items-center gap-2 border px-3 text-xs font-bold uppercase transition-colors sm:flex ${
+                    isAIAdvisorOpen
+                      ? 'border-orange-400 bg-orange-500 text-black'
+                      : 'border-orange-500/40 bg-orange-500/10 text-orange-400 hover:bg-orange-500/20'
+                  }`}
+                  title="Open AI Build Advisor"
+                >
+                  <Sparkles size={15} />
+                  <span className="hidden xl:inline">AI Advisor</span>
                 </button>
             </div>
 
@@ -645,6 +682,15 @@ const handleScreenshot = async () => {
          </div>
       </div>
 
+      <button
+        onClick={() => setIsAIAdvisorOpen(true)}
+        className="fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center border border-orange-400 bg-orange-500 text-black shadow-xl sm:hidden"
+        title="Open AI Build Advisor"
+        aria-label="Open AI Build Advisor"
+      >
+        <Sparkles size={20} />
+      </button>
+
       {/* SEO Landing Content Sections */}
       <LandingSections />
 
@@ -668,7 +714,15 @@ const handleScreenshot = async () => {
       )}
 
       {/* AI Assistant */}
-      <GeminiAssistant treeData={treeData} onApplyBuild={handleApplyAIBuild} />
+      <GeminiAssistant
+        treeData={treeData}
+        buildState={buildState}
+        isOpen={isAIAdvisorOpen}
+        onOpenChange={setIsAIAdvisorOpen}
+        onApplyBuild={handleApplyAIBuild}
+        onUndo={handleUndoAIBuild}
+        canUndo={previousBuild !== null}
+      />
 
       {/* Screenshot Preview Modal */}
       {showScreenshotPreview && screenshotDataUrl && (
