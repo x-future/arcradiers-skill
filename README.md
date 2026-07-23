@@ -20,10 +20,10 @@ An interactive skill tree builder and planner for **ARC Raiders**, allowing play
 - **Reset Function**: Quickly reset your entire build
 - **Tooltips**: Hover over skills to see detailed information
 
-### 🤖 AI Assistant
-- **Gemini AI Integration**: Get AI-powered build suggestions
-- **Scenario-based Builds**: Request builds for specific playstyles (Solo, Team Combat, PvP)
-- **Smart Recommendations**: AI analyzes your preferences and suggests optimal builds
+### AI Build Advisor
+- **Generate or review builds**: Create a build from preferences or analyze the current tree
+- **Structured recommendations**: See point changes, reasoning, and tradeoffs before applying
+- **Server-side API access**: RapidAPI credentials remain on the Node.js server
 
 ### 📊 Skill Categories
 
@@ -58,18 +58,20 @@ Improve looting speed, inventory capacity, and resource management. Essential fo
 
 3. Set up environment variables:
    - Create a `.env.local` file in the root directory
-   - Add your Gemini API key:
+   - Add your RapidAPI configuration:
      ```
-     GEMINI_API_KEY=your_api_key_here
+     RAPIDAPI_KEY=your_rotated_api_key
+     RAPIDAPI_HOST=gpt-5-6-sol.p.rapidapi.com
+     RAPIDAPI_MODEL=gpt-5.6-sol
      ```
-   - Note: The AI assistant feature requires a Gemini API key. The skill tree builder works without it.
+   - The skill tree builder works without a key, but AI requests will remain disabled.
 
 4. Run the development server:
    ```bash
    npm run dev
    ```
 
-5. Open your browser and navigate to `http://localhost:5173`
+5. Open your browser and navigate to `http://localhost:3000`
 
 ## Usage
 
@@ -112,7 +114,7 @@ Improve looting speed, inventory capacity, and resource management. Essential fo
 - **Vite** - Build tool and dev server
 - **Tailwind CSS** - Styling
 - **Lucide React** - Icons
-- **Google Gemini AI** - AI assistant integration
+- **Node.js HTTPS** - Server-side RapidAPI integration
 
 ## Project Structure
 
@@ -122,11 +124,12 @@ arcradiersskill/
 │   ├── SkillNode.tsx          # Individual skill node component
 │   ├── ConnectionLines.tsx     # Skill tree connections
 │   ├── Tooltip.tsx             # Skill information tooltip
-│   ├── GeminiAssistant.tsx     # AI assistant panel
+│   ├── GeminiAssistant.tsx     # AI build advisor panel
 │   └── LandingSections.tsx     # Landing page content
 ├── data.ts                     # Skill tree data definitions
 ├── types.ts                    # TypeScript type definitions
 ├── App.tsx                     # Main application component
+├── server.mjs                  # Vite host and server-side AI proxy
 └── index.html                  # HTML entry point
 ```
 
@@ -156,7 +159,7 @@ This project is for educational and community use. ARC Raiders is a trademark of
 
 - Built for the ARC Raiders community
 - Skill data based on official game information
-- AI assistance powered by Google Gemini
+- AI assistance is provided through the configured RapidAPI model
 
 ---
 

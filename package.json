@@ -4,16 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server.mjs",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "NODE_ENV=production node server.mjs",
     "generate-blog": "node scripts/generate-blog.js",
     "update-sitemap": "node scripts/update-sitemap.js",
     "generate-rss": "node scripts/generate-rss.js || exit 0",
     "watch-sitemap": "node scripts/update-sitemap.js --watch"
   },
   "dependencies": {
-    "@google/genai": "^1.30.0",
     "@types/html2canvas": "^0.5.35",
     "date-fns": "^4.1.0",
     "fuse.js": "^7.1.0",

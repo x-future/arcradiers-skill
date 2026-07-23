@@ -7,6 +7,19 @@ const __dirname = path.dirname(__filename);
 
 const ROOT_DIR = path.dirname(__dirname);
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
+const PAGE_CONFIG = {
+  '/': { priority: '1.0', changefreq: 'weekly' },
+  '/ai-see.html': { priority: '0.9', changefreq: 'weekly' },
+  '/blog.html': { priority: '0.9', changefreq: 'weekly' },
+  '/wiki.html': { priority: '0.9', changefreq: 'monthly' },
+  '/faq.html': { priority: '0.8', changefreq: 'monthly' },
+};
+
+function getPageConfig(url) {
+  if (PAGE_CONFIG[url]) return PAGE_CONFIG[url];
+  if (url.startsWith('/blog/')) return { priority: '0.7', changefreq: 'monthly' };
+  return { priority: '0.5', changefreq: 'monthly' };
+}
 
 // Get file modification time
 function getFileModDate(filePath) {
@@ -39,7 +52,7 @@ function scanDirectory(dir, baseUrl = '') {
               files.push({
                 url: '/blog/' + blogEntry.name,
                 modDate: getFileModDate(filePath),
-                priority: '0.7'
+                ...getPageConfig('/blog/' + blogEntry.name)
               });
             }
           }
@@ -60,20 +73,10 @@ function scanDirectory(dir, baseUrl = '') {
         const fullUrl = url.startsWith('/') ? url : '/' + url;
         const modDate = getFileModDate(fullPath);
         
-        // Determine priority based on URL
-        let priority = '0.5';
-        if (fullUrl === '/index.html' || fullUrl === '/') {
-          priority = '1.0';
-        } else if (fullUrl === '/wiki.html' || fullUrl === '/blog.html') {
-          priority = '0.9';
-        } else if (fullUrl.startsWith('/blog/')) {
-          priority = '0.7';
-        }
-        
         files.push({
           url: fullUrl,
           modDate: modDate,
-          priority: priority
+          ...getPageConfig(fullUrl)
         });
       }
     }
@@ -91,7 +94,7 @@ function generateSitemap(files) {
     return `    <url>
       <loc>${fullUrl}</loc>
       <lastmod>${file.modDate}</lastmod>
-      <changefreq>monthly</changefreq>
+      <changefreq>${file.changefreq}</changefreq>
       <priority>${file.priority}</priority>
     </url>`;
   }).join('\n');
@@ -117,7 +120,7 @@ try {
   files.unshift({
     url: '/',
     modDate: getFileModDate(path.join(ROOT_DIR, 'index.html')),
-    priority: '1.0'
+    ...getPageConfig('/')
   });
 
   console.log('🔄 Updating sitemap.xml...');

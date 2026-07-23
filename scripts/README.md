@@ -6,9 +6,7 @@ This script automatically updates `sitemap.xml` based on HTML files in the `publ
 
 - ✅ Automatically scans for HTML files in `public/` directory
 - ✅ Updates `lastmod` dates based on file modification times
-- ✅ Includes hash fragment URLs (anchor links)
 - ✅ Configurable priorities and change frequencies
-- ✅ Runs automatically before build
 
 ## Usage
 
@@ -17,16 +15,6 @@ This script automatically updates `sitemap.xml` based on HTML files in the `publ
 ```bash
 npm run update-sitemap
 ```
-
-### Automatic Update
-
-The sitemap is automatically updated when you run:
-
-```bash
-npm run build
-```
-
-This is handled by the Vite plugin in `vite-plugin-sitemap.js`.
 
 ## Configuration
 
@@ -42,7 +30,6 @@ Edit `scripts/update-sitemap.js` to modify:
 3. Generates sitemap.xml with proper XML structure
 4. Includes:
    - Homepage (`/`)
-   - Hash fragment URLs (`/#features`, `/#skill-trees`, etc.)
    - All HTML files in public directory
 
 ## Adding New Pages
@@ -56,6 +43,5 @@ const PAGE_CONFIG = {
   '/new-page.html': { priority: '0.9', changefreq: 'weekly' },
 };
 ```
-
 
 
