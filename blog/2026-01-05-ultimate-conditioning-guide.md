@@ -231,4 +231,4 @@ Avoid pure Conditioning if you:
 
 **Conclusion**: The Conditioning branch offers unparalleled survivability and team utility. While it may not be the most glamorous choice, it's often the most valuable. Master Conditioning, and you'll become the foundation your team can rely on.
 
-> 💡 **Next Steps**: Check out our [Mobility Branch Guide](/blog/mobility-guide.html) and [Survival Branch Guide](/blog/survival-guide.html) to complete your skill tree knowledge!
+> 💡 **Next Steps**: Check out our [Mobility Branch Guide](/blog/mobility-mastery-guide.html) and [Survival Branch Guide](/blog/survival-branch-complete-guide.html) to complete your skill tree knowledge!

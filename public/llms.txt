@@ -9,6 +9,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 - [Interactive Skill Tree Builder](https://arcraiderskill.com/): Plan skill ranks, inspect prerequisites, track branch totals, share builds, and capture screenshots
 - [AI Build Advisor](https://arcraiderskill.com/): Generate a personalized build or review a current allocation using point budget, squad size, focus, playstyle, and optional priorities
 - [AI See](https://arcraiderskill.com/ai-see.html): Machine-readable overview of the site's capabilities, skill-tree structure, data notes, and citation routes
+- [Full site content](https://arcraiderskill.com/llms-full.txt): Complete machine-readable text for all public pages and guides
 
 ## Skill tree resources
 
