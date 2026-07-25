@@ -311,6 +311,7 @@ const mimeTypes = {
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
+  '.txt': 'text/plain; charset=utf-8',
   '.webp': 'image/webp',
   '.xml': 'application/xml; charset=utf-8',
 };
@@ -318,7 +319,8 @@ const mimeTypes = {
 async function serveProduction(req, res) {
   const distDir = path.join(rootDir, 'dist');
   const requestPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-  let filePath = path.resolve(distDir, `.${requestPath}`);
+  const requestedFile = requestPath === '/' ? '/index.html' : requestPath;
+  let filePath = path.resolve(distDir, `.${requestedFile}`);
   if (!filePath.startsWith(distDir)) {
     res.writeHead(403).end('Forbidden');
     return;
@@ -328,7 +330,12 @@ async function serveProduction(req, res) {
     const stat = await fs.stat(filePath);
     if (stat.isDirectory()) filePath = path.join(filePath, 'index.html');
   } catch {
-    filePath = path.join(distDir, 'index.html');
+    res.writeHead(404, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'X-Content-Type-Options': 'nosniff',
+    });
+    res.end('Not found');
+    return;
   }
 
   try {

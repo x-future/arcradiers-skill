@@ -298,4 +298,4 @@ This branch is perfect for:
 
 **Conclusion**: The Mobility branch offers the highest skill ceiling and most exciting gameplay. Master it, and you'll outplay opponents who can't keep up with your speed and unpredictability.
 
-> 💡 **Recommended Reading**: Complete your mastery with our [Conditioning Guide](/blog/ultimate-conditioning-guide.html) and [Survival Guide](/blog/survival-branch-guide.html)!
+> 💡 **Recommended Reading**: Complete your mastery with our [Conditioning Guide](/blog/ultimate-conditioning-guide.html) and [Survival Guide](/blog/survival-branch-complete-guide.html)!

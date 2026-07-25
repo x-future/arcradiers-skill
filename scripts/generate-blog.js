@@ -347,7 +347,7 @@ fs.writeFileSync(path.join(PUBLIC_DIR, 'blog.html'), fullHTML);
 
 // Generate individual blog posts
 for (const post of posts) {
-  let html = post.content;
+  let html = post.content.replace(/^# .*(?:\r?\n)+/, '');
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
@@ -366,6 +366,7 @@ for (const post of posts) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${post.meta.title} | ARC Raiders</title>
   <meta name="description" content="${post.meta.description || ''}">
+  <link rel="canonical" href="https://arcraiderskill.com/blog/${post.meta.slug}.html">
   <link rel="icon" href="/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
