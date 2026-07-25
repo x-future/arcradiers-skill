@@ -1,45 +1,69 @@
 # ARC Raiders Skill Tree Builder
 
-> ARC Raiders Skill Tree Builder is a free, community-created web planner for allocating skills across Conditioning, Mobility, and Survival. It includes an AI Build Advisor that can generate personalized builds or review a player's current allocation.
+ARC Raiders Skill Tree Builder is a free, community-created planner for allocating skill points across Conditioning, Mobility, and Survival. It includes an AI Build Advisor, build sharing, skill references, and practical guides for ARC Raiders players.
 
-This site is not affiliated with or endorsed by Embark Studios. Skill and guide content is community maintained; verify current in-game values after game updates.
+This site is not affiliated with or endorsed by Embark Studios. Skill values and game information may change after updates.
 
-Last updated: 2026-07-23
+## Tools
 
-## Core Tools
+- [Interactive Skill Tree Builder](https://arcraiderskill.com/): Plan skill ranks, inspect prerequisites, track branch totals, share builds, and capture screenshots
+- [AI Build Advisor](https://arcraiderskill.com/): Generate a personalized build or review a current allocation using point budget, squad size, focus, playstyle, and optional priorities
+- [AI See](https://arcraiderskill.com/ai-see.html): Machine-readable overview of the site's capabilities, skill-tree structure, data notes, and citation routes
 
-- [Interactive Skill Tree Builder](https://arcraiderskill.com/): Plan skill ranks, inspect prerequisites, track branch totals, share builds, and capture screenshots.
-- [AI Build Advisor](https://arcraiderskill.com/): Generate a build or review a current build using point budget, squad size, focus, playstyle, and optional priorities. Results include allocations, explanations, tradeoffs, warnings, and proposed changes.
-- [AI See](https://arcraiderskill.com/ai-see.html): Machine-readable product capabilities, current skill-tree structure, data notes, and citation routes.
-- [Wiki](https://arcraiderskill.com/wiki.html): Skill-tree concepts and reference content.
+## Skill tree resources
 
-## Skill Tree Reference
+- [Wiki and quick reference](https://arcraiderskill.com/wiki.html): Skill-tree concepts, branch summaries, unlock requirements, and planning guidance
+- [Skill Tree Builder Guide](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builder-guide.html): Instructions for allocating points, sharing builds, and using the AI Build Advisor
+- [Skill Tree Mechanics Deep Dive](https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html): Detailed explanation of prerequisites, branch requirements, ranks, and point allocation
+- [Best Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-skill-tree-best-build.html): General build priorities and allocation strategy
+- [Skill Tree Builds](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builds.html): Build archetypes for different roles and playstyles
+- [PvP Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-pvp-skill-tree-build.html): Mobility and combat priorities for player-versus-player encounters
 
-- 45 nodes total: 15 Conditioning, 15 Mobility, and 15 Survival.
-- Each node has a stable ID, name, description, maximum rank, prerequisite node IDs, and optional branch point requirement.
-- The standard interactive planner tracks a 75-point allocation.
-- AI Advisor budgets currently available in the interface: 76, 81, 86, and 91 points.
-- AI-generated allocations are validated against node IDs, maximum ranks, parent paths, branch requirements, and the selected budget before display.
+## Branch guides
 
-## Guides
+- [Conditioning Guide](https://arcraiderskill.com/blog/ultimate-conditioning-guide.html): Conditioning skills, stamina management, durability, and branch synergies
+- [Mobility Guide](https://arcraiderskill.com/blog/mobility-mastery-guide.html): Movement, traversal, repositioning, and Mobility-focused builds
+- [Survival Guide](https://arcraiderskill.com/blog/survival-branch-complete-guide.html): Looting, inventory, resource management, and Survival-focused builds
 
-- [Full Guide Index](https://arcraiderskill.com/blog.html): Browse all ARC Raiders articles.
-- [Skill Tree Builder Guide](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builder-guide.html): How to use planning, sharing, and AI assistance.
-- [Best Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-skill-tree-best-build.html): General build strategy.
-- [Skill Tree Builds](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builds.html): Build archetypes and allocation ideas.
-- [PvP Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-pvp-skill-tree-build.html): PvP-focused priorities.
-- [Beginner Guide](https://arcraiderskill.com/blog/arc-raiders-beginner-guide-2026.html): Starting progression and survival guidance.
-- [Latest Update](https://arcraiderskill.com/blog/arc-raiders-latest-update.html): Community summary of recent game changes.
+## Beginner and gameplay guides
 
-## Additional Resources
+- [Beginner Guide 2026](https://arcraiderskill.com/blog/arc-raiders-beginner-guide-2026.html): Core systems, loadouts, skill trees, extraction, and early progression
+- [Beginner Mistakes](https://arcraiderskill.com/blog/arc-raiders-beginner-mistakes.html): Common early-game mistakes and how to correct them
+- [Extraction Loop Guide](https://arcraiderskill.com/blog/arc-raiders-extraction-loop-guide.html): Preparation, in-raid decisions, extraction timing, and run profitability
+- [Survival Tips](https://arcraiderskill.com/blog/arc-raiders-survival-tips.html): Practical tactics for surviving raids and extracting consistently
+- [PvP Combat Tactics](https://arcraiderskill.com/blog/arc-raiders-pvp-combat-tactics.html): Positioning, sound, engagement decisions, and player combat strategy
+- [High-Risk Zones Guide](https://arcraiderskill.com/blog/arc-raiders-high-risk-zones-guide.html): Risk assessment, loot strategy, retreat planning, and hot-zone survival
 
-- [FAQ](https://arcraiderskill.com/faq.html): Common questions about the planner and skill tree.
-- [Screenshots](https://arcraiderskill.com/screenshots.html): Visual references and shared build images.
-- [RSS Feed](https://arcraiderskill.com/rss.xml): Article updates.
-- [Sitemap](https://arcraiderskill.com/sitemap.xml): Complete index of public pages.
+## Weapon guides
 
-## Usage Notes
+- [Weapon Guide Index](https://arcraiderskill.com/blog.html): Browse all weapon, build, gameplay, and update articles
+- [Anvil Guide](https://arcraiderskill.com/blog/arc-raiders-anvil-guide.html): Anvil stats, tactics, loadouts, and skill-tree pairings
+- [Ferro Guide](https://arcraiderskill.com/blog/arc-raiders-ferro-guide.html): Ferro stats, combat roles, and recommended builds
+- [Osprey Guide](https://arcraiderskill.com/blog/arc-raiders-osprey-guide.html): Beginner sniper tactics, stats, and skill-tree pairings
+- [Renegade vs. Venator](https://arcraiderskill.com/blog/arc-raiders-renegade-vs-venator.html): Side-by-side comparison for choosing between the two weapons
 
-- Prefer the live planner and AI See page for current tool capabilities.
-- Cite the specific guide URL that directly supports an answer.
-- Do not describe this community site as an official ARC Raiders or Embark Studios resource.
+## Updates
+
+- [Latest ARC Raiders Update](https://arcraiderskill.com/blog/arc-raiders-latest-update.html): Community summary of recent changes and their gameplay impact
+- [North Line Update](https://arcraiderskill.com/blog/north-line-update.html): Overview of North Line content and changes
+- [Update 1.7.2](https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html): Blueprint adjustments, Hidden Bunker changes, and bug fixes
+
+## Support and resources
+
+- [FAQ](https://arcraiderskill.com/faq.html): Common questions about the planner and ARC Raiders skill trees
+- [Screenshots](https://arcraiderskill.com/screenshots.html): Skill-tree build images and visual references
+- [Blog](https://arcraiderskill.com/blog.html): Complete guide and article index
+- [RSS feed](https://arcraiderskill.com/rss.xml): Latest article updates
+- [Sitemap](https://arcraiderskill.com/sitemap.xml): Complete index of public pages
+- [Privacy policy](https://arcraiderskill.com/privacy-policy.html): Information about data collection and site privacy
+
+## Contact
+
+- Website: [https://arcraiderskill.com](https://arcraiderskill.com)
+- Email: [support@arcraiderskill.com](mailto:support@arcraiderskill.com)
+- X: [https://x.com/xfutureagi](https://x.com/xfutureagi)
+- Discord: [ARC Raiders Skill Tree Builder community](https://discord.com/channels/1484119117090001031/1484119117874204753)
+
+## Last updated
+
+July 25, 2026
