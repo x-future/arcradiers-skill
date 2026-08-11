@@ -23,6 +23,13 @@ const host = env.HOST || '127.0.0.1';
 const rapidApiHost = env.RAPIDAPI_HOST || 'gpt-5-6-sol.p.rapidapi.com';
 const rapidApiModel = env.RAPIDAPI_MODEL || 'gpt-5.6-sol';
 const requestCounts = new Map();
+const permanentRedirects = new Map([
+  ['/blog/arc-raiders-kettle-guide.html', '/wiki/weapons/kettle/'],
+  ['/blog/arc-raiders-stitcher-guide.html', '/wiki/weapons/stitcher/'],
+  ['/blog/arc-raiders-venator-guide.html', '/wiki/weapons/venator/'],
+  ['/blog/arc-raiders-renegade-vs-venator.html', '/wiki/weapons/'],
+  ['/blog/arc-raiders-rattler-guide.html', '/wiki/weapons/'],
+]);
 
 const vite = !isMainModule || isProduction
   ? null
@@ -316,6 +323,38 @@ const mimeTypes = {
   '.xml': 'application/xml; charset=utf-8',
 };
 
+async function serveDirectoryIndex(req, res, baseDir) {
+  const requestUrl = new URL(req.url, 'http://localhost');
+  const pathname = decodeURIComponent(requestUrl.pathname);
+  if (pathname === '/' || path.extname(pathname)) return false;
+
+  const directoryPath = path.resolve(baseDir, `.${pathname}`);
+  const indexPath = path.join(directoryPath, 'index.html');
+  if (!directoryPath.startsWith(`${baseDir}${path.sep}`)) return false;
+
+  try {
+    const stat = await fs.stat(indexPath);
+    if (!stat.isFile()) return false;
+  } catch {
+    return false;
+  }
+
+  if (!pathname.endsWith('/')) {
+    res.writeHead(301, { Location: `${pathname}/${requestUrl.search}` });
+    res.end();
+    return true;
+  }
+
+  const content = await fs.readFile(indexPath);
+  res.writeHead(200, {
+    'Content-Type': 'text/html; charset=utf-8',
+    'Cache-Control': isProduction ? 'public, max-age=300' : 'no-cache',
+    'X-Content-Type-Options': 'nosniff',
+  });
+  res.end(content);
+  return true;
+}
+
 async function serveProduction(req, res) {
   const distDir = path.join(rootDir, 'dist');
   const requestPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -352,11 +391,22 @@ async function serveProduction(req, res) {
 
 if (isMainModule) {
   const server = http.createServer(async (req, res) => {
-    const pathname = new URL(req.url, 'http://localhost').pathname;
+    const requestUrl = new URL(req.url, 'http://localhost');
+    const pathname = requestUrl.pathname;
+    const redirectTarget = permanentRedirects.get(pathname);
+    if (redirectTarget) {
+      res.writeHead(301, { Location: `${redirectTarget}${requestUrl.search}` });
+      res.end();
+      return;
+    }
+
     if (pathname === '/api/ai/build') {
       await handleAiRequest(req, res);
       return;
     }
+
+    const staticDir = isProduction ? path.join(rootDir, 'dist') : path.join(rootDir, 'public');
+    if (await serveDirectoryIndex(req, res, staticDir)) return;
 
     if (vite) {
       vite.middlewares(req, res, () => {

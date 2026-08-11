@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/wiki/",
+    "title": "ARC Raiders Wiki: Weapons, Items, Maps & Enemies",
+    "description": "Explore the ARC Raiders wiki for weapons, items, resources, enemies, maps, armor, gadgets, official source notes and practical community guides."
+  },
+  {
+    "path": "/wiki/weapons/",
+    "title": "ARC Raiders Weapons: Best Guns & Tier Guide | Wiki",
+    "description": "Explore ARC Raiders weapons, current official damage changes, role-based gun picks, best builds, loadouts, unlock notes and detailed weapon guides."
+  },
+  {
+    "path": "/wiki/items/",
+    "title": "ARC Raiders Items Guide: Loot, Ammo & Blueprints | Wiki",
+    "description": "Browse ARC Raiders items by purpose, including ammunition, blueprints, consumables, quest items, access items and trinkets with official source notes."
+  },
+  {
+    "path": "/wiki/resources/",
+    "title": "ARC Raiders Resources & Crafting Materials Guide | Wiki",
+    "description": "Find ARC Raiders resources and crafting materials, from basic parts to ARC components, with workshop uses, official recipe examples and inventory guidance."
+  },
+  {
+    "path": "/wiki/enemies/",
+    "title": "ARC Raiders Enemies & Bosses: ARC Machines Guide | Wiki",
+    "description": "Identify ARC Raiders enemies, bosses and machines, including Bastion, Queen, Tick, Firefly, Comet and ARC Turbine, with official behavior notes."
+  },
+  {
+    "path": "/wiki/maps/",
+    "title": "ARC Raiders Maps Guide: Locations & Conditions | Wiki",
+    "description": "Explore ARC Raiders maps and locations, including Dam Battlegrounds, Buried City, Spaceport, Blue Gate, Stella Montis and Riven Tides."
+  },
+  {
+    "path": "/wiki/armor/",
+    "title": "ARC Raiders Armor, Shields & Augments Guide | Wiki",
+    "description": "Understand ARC Raiders armor terminology, shields and Augments, including light versus heavy setups, weight tradeoffs and tactical build choices."
+  },
+  {
+    "path": "/wiki/gadgets/",
+    "title": "ARC Raiders Gadgets, Grenades & Utility Guide | Wiki",
+    "description": "Browse ARC Raiders gadgets, grenades, deployables and traversal tools, including ziplines, mines, Powered Descender, Crash Mat and utility picks."
+  },
+  {
+    "path": "/wiki/weapons/kettle/",
+    "title": "ARC Raiders Kettle: Stats, Best Build & Loadout Guide",
+    "description": "ARC Raiders Kettle guide with current official base damage and fire rate, best build skills, unlock guidance, attachments and a practical mid-range loadout."
+  },
+  {
+    "path": "/wiki/weapons/stitcher/",
+    "title": "ARC Raiders Stitcher: Stats, Best Build & Loadout Guide",
+    "description": "ARC Raiders Stitcher guide with current official damage and headshot values, best Mobility skills, unlock notes, attachments and close-range loadouts."
+  },
+  {
+    "path": "/wiki/weapons/venator/",
+    "title": "ARC Raiders Venator: Stats, Best Build & Loadout Guide",
+    "description": "ARC Raiders Venator pistol guide with current official damage, headshot multiplier, weight, upgrade fire-rate scaling, best skills and loadout advice."
+  },
+  {
+    "path": "/wiki/enemies/bastion/",
+    "title": "ARC Raiders Bastion Guide: Weak Spots & How to Beat It",
+    "description": "Learn how to fight the ARC Raiders Bastion, including official weak-point and audio-cue notes, best weapon approach, positioning, squad roles and mistakes."
+  }
+]

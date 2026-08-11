@@ -56,6 +56,12 @@ const shortDescriptions = {
 };
 
 const linkFixes = {
+  '/wiki.html': '/wiki/',
+  '/blog/arc-raiders-kettle-guide.html': '/wiki/weapons/kettle/',
+  '/blog/arc-raiders-stitcher-guide.html': '/wiki/weapons/stitcher/',
+  '/blog/arc-raiders-venator-guide.html': '/wiki/weapons/venator/',
+  '/blog/arc-raiders-renegade-vs-venator.html': '/wiki/weapons/',
+  '/blog/arc-raiders-rattler-guide.html': '/wiki/weapons/',
   '/blog/survival-branch-guide.html': '/blog/survival-branch-complete-guide.html',
   '/blog/mobility-guide.html': '/blog/mobility-mastery-guide.html',
   '/blog/survival-guide.html': '/blog/survival-branch-complete-guide.html',

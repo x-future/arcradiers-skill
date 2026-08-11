@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "npm run apply-seo && npm run generate-llms-full && npm run update-sitemap",
+    "prebuild": "npm run generate-wiki && npm run apply-seo && npm run update-sitemap && npm run generate-llms-full",
     "dev": "node server.mjs",
     "build": "vite build",
     "start": "NODE_ENV=production node server.mjs",
     "preview": "NODE_ENV=production node server.mjs",
+    "generate-wiki": "node scripts/generate-wiki.js",
     "generate-blog": "node scripts/generate-blog.js",
     "generate-llms-full": "node scripts/generate-llms-full.js",
     "apply-seo": "node scripts/apply-seo.js",
