@@ -322,7 +322,7 @@ const fullHTML = `<!DOCTYPE html>
         ARC Raiders Skill Tree Builder
       </a>
       <div class="nav-links">
-        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/wiki/" class="nav-link">Wiki</a>
         <a href="/blog.html" class="nav-link">Blog</a>
         <a href="/faq.html" class="nav-link">FAQ</a>
         <a href="/screenshots.html" class="nav-link">Gallery</a>
@@ -535,7 +535,7 @@ for (const post of posts) {
         ARC Raiders Skill Tree Builder
       </a>
       <div class="nav-links">
-        <a href="/wiki.html" class="nav-link">Wiki</a>
+        <a href="/wiki/" class="nav-link">Wiki</a>
         <a href="/blog.html" class="nav-link">Blog</a>
         <a href="/faq.html" class="nav-link">FAQ</a>
         <a href="/screenshots.html" class="nav-link">Gallery</a>

@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/arc-raiders-kettle-guide.html",
+      "destination": "/wiki/weapons/kettle/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arc-raiders-stitcher-guide.html",
+      "destination": "/wiki/weapons/stitcher/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arc-raiders-venator-guide.html",
+      "destination": "/wiki/weapons/venator/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arc-raiders-renegade-vs-venator.html",
+      "destination": "/wiki/weapons/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arc-raiders-rattler-guide.html",
+      "destination": "/wiki/weapons/",
+      "permanent": true
+    }
+  ]
+}

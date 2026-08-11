@@ -96,7 +96,7 @@ const quickTools = [
   { label: 'Skill Branches', href: '#skill-trees', color: 'text-cyan-400' },
   { label: 'Video Guides', href: '#videos', color: 'text-orange-400' },
   { label: 'FAQ', href: '#faq', color: 'text-purple-400' },
-  { label: 'Wiki', href: '/wiki.html', color: 'text-cyan-400' },
+  { label: 'Wiki', href: '/wiki/', color: 'text-cyan-400' },
   { label: 'Gallery', href: '/screenshots.html', color: 'text-orange-400' },
   { label: 'Blog', href: '/blog.html', color: 'text-purple-400' },
 ];

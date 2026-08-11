@@ -83,7 +83,10 @@ function getMeta(html, name) {
 function localPathForUrl(url) {
   const pathname = new URL(url).pathname;
   if (pathname === '/') return null;
-  return path.join(PUBLIC_DIR, pathname.replace(/^\//, ''));
+  const relative = pathname.replace(/^\//, '');
+  return pathname.endsWith('/')
+    ? path.join(PUBLIC_DIR, relative, 'index.html')
+    : path.join(PUBLIC_DIR, relative);
 }
 
 const sitemap = fs.readFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), 'utf8');

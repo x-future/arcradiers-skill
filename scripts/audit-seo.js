@@ -38,7 +38,11 @@ function metaContent(html, name) {
 
 function expectedUrl(filePath) {
   if (filePath === path.join(ROOT_DIR, 'index.html')) return `${SITE_ORIGIN}/`;
-  return `${SITE_ORIGIN}/${path.relative(PUBLIC_DIR, filePath).split(path.sep).join('/')}`;
+  const relative = path.relative(PUBLIC_DIR, filePath).split(path.sep).join('/');
+  if (path.basename(filePath) === 'index.html') {
+    return `${SITE_ORIGIN}/${path.dirname(relative).replace(/\.$/, '').replace(/\/$/, '')}/`;
+  }
+  return `${SITE_ORIGIN}/${relative}`;
 }
 
 function targetPath(rawUrl) {
@@ -50,7 +54,7 @@ function targetPath(rawUrl) {
   }
   if (url.origin !== SITE_ORIGIN || url.pathname === '/') return null;
   const decodedPath = decodeURIComponent(url.pathname).replace(/^\//, '');
-  const resolved = path.resolve(PUBLIC_DIR, decodedPath);
+  const resolved = path.resolve(PUBLIC_DIR, decodedPath, url.pathname.endsWith('/') ? 'index.html' : '');
   return resolved.startsWith(PUBLIC_DIR) ? resolved : null;
 }
 
@@ -75,6 +79,10 @@ for (const filePath of htmlFiles) {
   const canonical = firstMatch(html, /<link\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)
     || firstMatch(html, /<link\s+[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["']/i);
   const expected = expectedUrl(filePath);
+
+  if (/\b(?:href|src)=["'](?:undefined|null)["']/i.test(html)) {
+    report('ERROR', filePath, 'Contains an undefined or null URL reference.');
+  }
 
   if (!title) report('ERROR', filePath, 'Missing title.');
   else {

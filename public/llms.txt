@@ -13,7 +13,8 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Skill tree resources
 
-- [Wiki and quick reference](https://arcraiderskill.com/wiki.html): Skill-tree concepts, branch summaries, unlock requirements, and planning guidance
+- [ARC Raiders Wiki](https://arcraiderskill.com/wiki/): Source-led database for weapons, items, resources, enemies, maps, armor, and gadgets
+- [Skill tree quick reference](https://arcraiderskill.com/wiki.html): Skill-tree concepts, branch summaries, unlock requirements, and planning guidance
 - [Skill Tree Builder Guide](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builder-guide.html): Instructions for allocating points, sharing builds, and using the AI Build Advisor
 - [Skill Tree Mechanics Deep Dive](https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html): Detailed explanation of prerequisites, branch requirements, ranks, and point allocation
 - [Best Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-skill-tree-best-build.html): General build priorities and allocation strategy
@@ -37,11 +38,24 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Weapon guides
 
-- [Weapon Guide Index](https://arcraiderskill.com/blog.html): Browse all weapon, build, gameplay, and update articles
+- [Weapon Wiki](https://arcraiderskill.com/wiki/weapons/): Role-based weapon index, official balance references, build fit, and loadout guidance
+- [Kettle Guide](https://arcraiderskill.com/wiki/weapons/kettle/): Current official damage and fire-rate references, best skills, unlock notes, and loadout
+- [Stitcher Guide](https://arcraiderskill.com/wiki/weapons/stitcher/): Current official damage and headshot values, Mobility build, and close-range tactics
+- [Venator Guide](https://arcraiderskill.com/wiki/weapons/venator/): Correct pistol classification, current official stats, weight, build, and loadout
+- [Weapon Article Index](https://arcraiderskill.com/blog.html): Browse older weapon, build, gameplay, and update articles
 - [Anvil Guide](https://arcraiderskill.com/blog/arc-raiders-anvil-guide.html): Anvil stats, tactics, loadouts, and skill-tree pairings
 - [Ferro Guide](https://arcraiderskill.com/blog/arc-raiders-ferro-guide.html): Ferro stats, combat roles, and recommended builds
 - [Osprey Guide](https://arcraiderskill.com/blog/arc-raiders-osprey-guide.html): Beginner sniper tactics, stats, and skill-tree pairings
-- [Renegade vs. Venator](https://arcraiderskill.com/blog/arc-raiders-renegade-vs-venator.html): Side-by-side comparison for choosing between the two weapons
+
+## Field wiki
+
+- [Items](https://arcraiderskill.com/wiki/items/): Ammunition, blueprints, consumables, quest items, keys, and trinkets
+- [Resources](https://arcraiderskill.com/wiki/resources/): Basic Materials, ARC components, and official crafting examples
+- [Enemies and Bosses](https://arcraiderskill.com/wiki/enemies/): ARC machine behavior, threat classes, and encounter preparation
+- [Bastion Guide](https://arcraiderskill.com/wiki/enemies/bastion/): Weak spots, target-switch cue, squad strategy, and loadout
+- [Maps](https://arcraiderskill.com/wiki/maps/): Rust Belt locations and map conditions with official descriptions
+- [Armor, Shields and Augments](https://arcraiderskill.com/wiki/armor/): Defense terminology, weight tradeoffs, and supporting skills
+- [Gadgets](https://arcraiderskill.com/wiki/gadgets/): Traversal, deployables, throwables, recovery, and squad utility
 
 ## Updates
 

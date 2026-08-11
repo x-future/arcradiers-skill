@@ -7,16 +7,35 @@ const __dirname = path.dirname(__filename);
 
 const ROOT_DIR = path.dirname(__dirname);
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
+const REDIRECT_PATHS = new Set([
+  '/blog/arc-raiders-kettle-guide.html',
+  '/blog/arc-raiders-stitcher-guide.html',
+  '/blog/arc-raiders-venator-guide.html',
+  '/blog/arc-raiders-renegade-vs-venator.html',
+  '/blog/arc-raiders-rattler-guide.html',
+]);
 const PAGE_CONFIG = {
   '/': { priority: '1.0', changefreq: 'weekly' },
   '/ai-see.html': { priority: '0.9', changefreq: 'weekly' },
   '/blog.html': { priority: '0.9', changefreq: 'weekly' },
-  '/wiki.html': { priority: '0.9', changefreq: 'monthly' },
+  '/wiki/': { priority: '0.95', changefreq: 'weekly' },
+  '/wiki/weapons/': { priority: '0.9', changefreq: 'weekly' },
+  '/wiki/enemies/': { priority: '0.9', changefreq: 'weekly' },
+  '/wiki/maps/': { priority: '0.85', changefreq: 'weekly' },
+  '/wiki/items/': { priority: '0.85', changefreq: 'weekly' },
+  '/wiki/resources/': { priority: '0.8', changefreq: 'weekly' },
+  '/wiki/armor/': { priority: '0.8', changefreq: 'weekly' },
+  '/wiki/gadgets/': { priority: '0.8', changefreq: 'weekly' },
+  '/wiki.html': { priority: '0.6', changefreq: 'monthly' },
   '/faq.html': { priority: '0.8', changefreq: 'monthly' },
 };
 
 function getPageConfig(url) {
   if (PAGE_CONFIG[url]) return PAGE_CONFIG[url];
+  if (url.startsWith('/wiki/weapons/') || url.startsWith('/wiki/enemies/')) {
+    return { priority: '0.8', changefreq: 'weekly' };
+  }
+  if (url.startsWith('/wiki/')) return { priority: '0.7', changefreq: 'weekly' };
   if (url.startsWith('/blog/')) return { priority: '0.7', changefreq: 'monthly' };
   return { priority: '0.5', changefreq: 'monthly' };
 }
@@ -69,7 +88,9 @@ function scanDirectory(dir, baseUrl = '') {
       // Add HTML files
       if (entry.name.endsWith('.html')) {
         // Ensure URL starts with /
-        const url = baseUrl + entry.name;
+        const url = entry.name === 'index.html' && baseUrl
+          ? baseUrl
+          : baseUrl + entry.name;
         const fullUrl = url.startsWith('/') ? url : '/' + url;
         const modDate = getFileModDate(fullPath);
         
@@ -114,7 +135,7 @@ try {
     process.exit(0);
   }
 
-  const files = scanDirectory(PUBLIC_DIR);
+  const files = scanDirectory(PUBLIC_DIR).filter((file) => !REDIRECT_PATHS.has(file.url));
 
   // Add root URL (homepage)
   files.unshift({

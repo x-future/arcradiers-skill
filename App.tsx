@@ -406,7 +406,7 @@ const handleScreenshot = async () => {
               { label: 'Builds', href: '#scenarios' },
               { label: 'Videos', href: '#videos' },
               { label: 'FAQ', href: '#faq' },
-              { label: 'Wiki', href: '/wiki.html' },
+              { label: 'Wiki', href: '/wiki/' },
               { label: 'Gallery', href: '/screenshots.html' },
               { label: 'Blog', href: '/blog.html' },
             ].map(item => (
