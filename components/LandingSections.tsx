@@ -541,6 +541,35 @@ const LandingSections = () => {
         </div>
       </section>
 
+      <section className="relative py-16 px-6 border-t border-zinc-800/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <p className="text-xs uppercase text-zinc-500 font-display mb-2">Third-party games</p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white">Play Online</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {[
+              { title: 'Online Game 1', src: 'https://html5.gamemonetize.co/t2a672cdfu2471c0ek19v6fr26za27z7/' },
+              { title: 'Online Game 2', src: 'https://html5.gamemonetize.co/uxr3kxepth5mgt3ydzlca5z3ecb02pci/' },
+            ].map(game => (
+              <div key={game.src} className="w-full max-w-[800px] mx-auto">
+                <h3 className="text-sm font-semibold text-zinc-300 mb-3">{game.title}</h3>
+                <div className="w-full aspect-[4/3] overflow-hidden bg-black">
+                  <iframe
+                    className="w-full h-full block border-0"
+                    src={game.src}
+                    title={game.title}
+                    scrolling="no"
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ============================================================ */}
       {/*  FAQ                                                           */}
       {/* ============================================================ */}
@@ -632,6 +661,11 @@ const LandingSections = () => {
             <ul className="space-y-2.5 text-zinc-500 text-sm">
               <li><a href="https://x.com/xfutureagi" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><MessageSquare size={13} /> Follow on X</a></li>
               <li><a href="https://discord.com/channels/1484119117090001031/1484119117874204753" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><Users size={13} /> Discord Community</a></li>
+            </ul>
+            <h4 className="text-zinc-300 font-display font-bold mt-6 mb-4 text-sm uppercase tracking-[0.15em]">Friends</h4>
+            <ul className="space-y-2.5 text-zinc-500 text-sm">
+              <li><a href="https://www.xfutureagi.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">xfutureagi.com</a></li>
+              <li><a href="https://rentokenai.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">rentokenai.com</a></li>
             </ul>
           </div>
         </div>
