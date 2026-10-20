@@ -39,6 +39,11 @@ const SkillIcon: React.FC<SkillIconProps> = ({ iconName, size, className, style 
     case 'sky_clearing_swing': return <Crosshair {...props} />;
     case 'back_on_your_feet': return <ArrowUpCircle {...props} />;
     case 'flyswatter': return <Gavel {...props} />;
+    case 'vault_n_carry': return <Package {...props} />;
+    case 'mules_gallop': return <FastForward {...props} />;
+    case 'speedy_mule': return <ChevronsRight {...props} />;
+    case 'weapon_bash': return <Gavel {...props} />;
+    case 'bull_rush': return <Swords {...props} />;
 
     // === MOBILITY ===
     case 'nimble_climber': return <TrendingUp {...props} />;
@@ -56,6 +61,12 @@ const SkillIcon: React.FC<SkillIconProps> = ({ iconName, size, className, style 
     case 'ready_to_roll': return <Watch {...props} />;
     case 'vaults_on_vaults_on_vaults': return <Layers {...props} />;
     case 'vault_spring': return <ArrowUp {...props} />;
+    case 'sure_footed_scrambler': return <TrendingUp {...props} />;
+    case 'right_back_at_it': return <RefreshCw {...props} />;
+    case 'swift_start': return <Rocket {...props} />;
+    case 'sprinting_on_fumes': return <Wind {...props} />;
+    case 'wall_run': return <ArrowUpRight {...props} />;
+    case 'in_the_flow': return <Activity {...props} />;
 
     // === SURVIVAL ===
     case 'agile_croucher': return <Minimize2 {...props} />;
@@ -73,6 +84,11 @@ const SkillIcon: React.FC<SkillIconProps> = ({ iconName, size, className, style 
     case 'three_deep_breaths': return <Cloud {...props} />;
     case 'security_breach': return <Unlock {...props} />;
     case 'minesweeper': return <Scissors {...props} />;
+    case 'quick_roll': return <RotateCcw {...props} />;
+    case 'stylish_landing': return <ArrowDown {...props} />;
+    case 'road_warrior': return <Wrench {...props} />;
+    case 'nomadic_crafting': return <Briefcase {...props} />;
+    case 'field_repair': return <Hammer {...props} />;
 
     // Fallback
     default: return <Hexagon {...props} />;

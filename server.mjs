@@ -3,6 +3,7 @@ import https from 'node:https';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { validateBuild } from './buildRules.mjs';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const isMainModule = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
@@ -86,6 +87,7 @@ function sanitizeInput(body) {
 
   if (!allowedModes.has(body?.mode)) throw new Error('INVALID_MODE');
   if (!allowedBudgets.has(preferences.budget)) throw new Error('INVALID_BUDGET');
+  if (body?.treeVersion !== 'frozen-trail-2.0') throw new Error('INVALID_TREE_VERSION');
   if (rawSkills.length === 0) throw new Error('INVALID_SKILLS');
 
   const skills = rawSkills.map((skill) => ({
@@ -98,6 +100,8 @@ function sanitizeInput(body) {
       ? skill.parentIds.slice(0, 4).map((id) => String(id).slice(0, 80))
       : [],
     reqPointsInTree: Math.max(0, Math.min(91, Number(skill.reqPointsInTree) || 0)),
+    choiceGroup: String(skill.choiceGroup || '').slice(0, 80),
+    nodeType: String(skill.nodeType || '').slice(0, 20),
   }));
 
   const validIds = new Set(skills.map((skill) => skill.id));
@@ -126,7 +130,7 @@ function sanitizeInput(body) {
 function buildMessages(input) {
   const system = `You are an expert ARC Raiders skill-tree advisor. Return JSON only, without markdown fences.
 
-Use only the supplied skill IDs. Respect every maxRank, parent path, branch spending requirement, and the point budget. A skill with parents is available when at least one parent has a rank above zero. Branch requirements use the final total points in that category.
+Use only the supplied skill IDs. Respect every maxRank, parent path, and point budget. In each branch pick only one middle choice after 10 earlier points. Pick at most two final skills: the first after 30 earlier branch points and the second after 40 total branch points. A skill with parents needs at least one parent allocated. Do not use old skill tree nodes.
 
 For generate mode, allocate exactly the requested budget. For review mode, analyze the current build and return a valid improved allocation using no more than the budget.
 
@@ -228,19 +232,9 @@ function validateResult(raw, input) {
     throw new Error('AI_BUILD_INCOMPLETE');
   }
 
-  const categoryPoints = new Map();
-  for (const item of allocations) {
-    const category = skillMap.get(item.skillId).category;
-    categoryPoints.set(category, (categoryPoints.get(category) || 0) + item.rank);
-  }
-
-  for (const item of allocations) {
-    const skill = skillMap.get(item.skillId);
-    const hasParent =
-      skill.parentIds.length === 0 || skill.parentIds.some((id) => (allocationMap.get(id) || 0) > 0);
-    const meetsBranchRequirement =
-      !skill.reqPointsInTree || (categoryPoints.get(skill.category) || 0) >= skill.reqPointsInTree;
-    if (!hasParent || !meetsBranchRequirement) throw new Error('AI_BUILD_BREAKS_REQUIREMENTS');
+  if (!validateBuild(Object.fromEntries(input.skills.map((skill) => [skill.id, skill])),
+    Object.fromEntries(allocationMap), input.preferences.budget)) {
+    throw new Error('AI_BUILD_BREAKS_REQUIREMENTS');
   }
 
   const rawChanges = new Map(

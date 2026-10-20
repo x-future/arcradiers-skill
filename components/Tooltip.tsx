@@ -9,9 +9,10 @@ interface TooltipProps {
   isUnlocked: boolean;
   reqPoints: number;
   currentCategoryPoints: number;
+  selectedInGroup: number;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ skill, currentRank, isUnlocked, reqPoints, currentCategoryPoints }) => {
+const Tooltip: React.FC<TooltipProps> = ({ skill, currentRank, isUnlocked, reqPoints, currentCategoryPoints, selectedInGroup }) => {
   let headerColor = 'bg-slate-500';
   let textColor = 'text-slate-500';
 
@@ -27,8 +28,11 @@ const Tooltip: React.FC<TooltipProps> = ({ skill, currentRank, isUnlocked, reqPo
   }
 
   // Determine lock reason
-  const isTierLocked = reqPoints > 0 && currentCategoryPoints < reqPoints;
-  const isParentLocked = !isUnlocked && !isTierLocked; // If tiered unlocked but still locked, must be parent
+  const requiredPoints = skill.nodeType === 'final' && selectedInGroup === 1 ? 40 : reqPoints;
+  const isTierLocked = requiredPoints > 0 && currentCategoryPoints < requiredPoints;
+  const isChoiceLocked = skill.nodeType === 'choice' && selectedInGroup > 0 && currentRank === 0;
+  const isFinalLocked = skill.nodeType === 'final' && selectedInGroup >= 2 && currentRank === 0;
+  const isParentLocked = !isUnlocked && !isTierLocked && !isChoiceLocked && !isFinalLocked;
 
   return (
     <div className="bg-zinc-950 border border-zinc-800 p-0 rounded-lg shadow-2xl backdrop-blur-xl max-w-xs w-80 pointer-events-none z-50 overflow-hidden relative">
@@ -75,7 +79,7 @@ const Tooltip: React.FC<TooltipProps> = ({ skill, currentRank, isUnlocked, reqPo
               {isTierLocked && (
                 <div className="flex items-center gap-2 text-xs text-red-400 font-mono bg-red-950/20 p-2 rounded border border-red-900/30">
                    <Lock size={12} />
-                   <span>REQ: {reqPoints} Points in {skill.category} (Current: {currentCategoryPoints})</span>
+                   <span>REQ: {requiredPoints} Points in {skill.category} (Current: {currentCategoryPoints})</span>
                 </div>
               )}
               {isParentLocked && skill.parentIds.length > 0 && (
@@ -83,6 +87,12 @@ const Tooltip: React.FC<TooltipProps> = ({ skill, currentRank, isUnlocked, reqPo
                    <AlertTriangle size={12} />
                    <span>REQ: Connected Skill</span>
                  </div>
+              )}
+              {(isChoiceLocked || isFinalLocked) && (
+                <div className="flex items-center gap-2 text-xs text-orange-400 font-mono bg-orange-950/20 p-2 rounded border border-orange-900/30">
+                  <Lock size={12} />
+                  <span>{isChoiceLocked ? 'Other middle choice selected' : 'Two final skills already selected'}</span>
+                </div>
               )}
             </div>
           )}

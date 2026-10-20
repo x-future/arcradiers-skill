@@ -9,10 +9,10 @@ An interactive skill tree builder and planner for **ARC Raiders**, allowing play
 ## Features
 
 ### 🎯 Interactive Skill Tree
-- **Visual Skill Tree**: Navigate through 45+ skill nodes across three branches
-- **Real-time Point Tracking**: Monitor your skill point allocation (max 75 points)
+- **Visual Skill Tree**: Navigate through 48 Frozen Trail skill nodes across three branches
+- **Real-time Point Tracking**: Plan with 76 base points or 81, 86, and 91-point Expedition budgets
 - **Prerequisite System**: Visual connections show skill dependencies
-- **Category Requirements**: Some skills require minimum points in their category tree
+- **Category Requirements**: Choose one middle skill after 10 branch points and up to two final skills after 30 and 40
 
 ### 🎨 User Experience
 - **Zoom & Pan**: Drag to pan, scroll to zoom (0.4x - 2.5x)
@@ -86,26 +86,11 @@ Improve looting speed, inventory capacity, and resource management. Essential fo
 ### Skill Tree Mechanics
 
 - **Prerequisites**: Some skills require parent skills to be unlocked first
-- **Category Requirements**: High-tier skills may require minimum points in their category (e.g., 15, 36 points)
+- **Category Requirements**: Middle choices unlock after 10 branch points; final picks unlock after 30 and 40
 - **Max Ranks**: Each skill has a maximum rank (typically 1 or 5)
-- **Point Limit**: Total skill points are capped at 75
+- **Point Limit**: Select a 76, 81, 86, or 91-point budget before allocating
 
-## Build Examples
-
-### Solo Raider (Looter Build)
-- **Survival**: 40-50 points
-- **Mobility**: Low investment
-- **Focus**: Silent infiltration, rapid looting, inventory capacity
-
-### Team Combat (Tank Build)
-- **Conditioning**: 40-50 points
-- **Survival**: Moderate supplement
-- **Focus**: Damage absorption, stamina recovery, shield efficiency
-
-### PvP Combat (Flanker Build)
-- **Mobility**: 45-55 points
-- **Conditioning**: Low investment
-- **Focus**: High mobility, tactical dodging, climbing speed
+The 48-node dataset is adapted from the [Frozen Trail community skill tree](https://arc-raiders.build/frozen-trail-skill-tree-changes/) and checked against the [official 2.0 skill-tree rules](https://arcraiders.com/news/frozen-trail-2-0-update). See the [PvPvE build guide](https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html) for example allocations. Verify patch-sensitive values in game.
 
 ## Technology Stack
 

@@ -22,7 +22,7 @@ const titles = {
   'public/blog/arc-raiders-ferro-guide.html': 'ARC Raiders Ferro Guide | Stats, Best Build & Tips',
   'public/blog/arc-raiders-high-risk-zones-guide.html': 'ARC Raiders High-Risk Zones Guide | Loot & Survival',
   'public/blog/arc-raiders-kettle-guide.html': 'ARC Raiders Kettle Guide | Stats, Loadout & Best Build',
-  'public/blog/arc-raiders-latest-update.html': 'ARC Raiders Latest Update 2026 | New Content Guide',
+  'public/blog/arc-raiders-latest-update.html': 'ARC Raiders Update 2.1.0 | Frozen Trail Skill Tree Changes',
   'public/blog/arc-raiders-osprey-guide.html': 'ARC Raiders Osprey Sniper Guide | Stats & Best Build',
   'public/blog/arc-raiders-pvp-combat-tactics.html': 'ARC Raiders PvP Combat Tactics | Win More Fights',
   'public/blog/arc-raiders-pvp-skill-tree-build.html': 'ARC Raiders PvP Skill Tree Build | Flanker Guide',

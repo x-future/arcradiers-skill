@@ -21,9 +21,10 @@ import { BuildState, SkillTreeData } from '../types';
 interface GeminiAssistantProps {
   treeData: SkillTreeData;
   buildState: BuildState;
+  pointBudget: number;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  onApplyBuild: (skills: { skillId: string; rank: number }[]) => void;
+  onApplyBuild: (skills: { skillId: string; rank: number }[]) => boolean;
   onUndo: () => void;
   canUndo: boolean;
 }
@@ -42,6 +43,7 @@ const selectClass =
 const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
   treeData,
   buildState,
+  pointBudget,
   isOpen,
   onOpenChange,
   onApplyBuild,
@@ -77,7 +79,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
     setError(null);
     setResult(null);
     try {
-      setResult(await requestAIAdvice(mode, preferences, treeData, buildState));
+      setResult(await requestAIAdvice(mode, { ...preferences, budget: pointBudget as AIAdvisorPreferences['budget'] }, treeData, buildState));
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'AI request failed.');
     } finally {
@@ -131,20 +133,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <label className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">
-            Point Budget
-            <select
-              className={selectClass}
-              value={preferences.budget}
-              onChange={(event) =>
-                updatePreference('budget', Number(event.target.value) as AIAdvisorPreferences['budget'])
-              }
-            >
-              {[76, 81, 86, 91].map((budget) => (
-                <option key={budget} value={budget}>{budget} points</option>
-              ))}
-            </select>
-          </label>
+          <div className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">Point Budget<div className="flex h-10 items-center border border-zinc-700 bg-zinc-950 px-3 text-sm text-zinc-200">{pointBudget} points</div></div>
 
           <label className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">
             Squad
@@ -290,7 +279,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
           <Undo2 size={14} /> Undo
         </button>
         <button
-          onClick={() => result && onApplyBuild(result.allocations)}
+          onClick={() => result && !onApplyBuild(result.allocations) && setError('This build does not meet the current skill tree rules.')}
           disabled={!result}
           className="flex h-10 flex-1 items-center justify-center gap-2 bg-green-500 text-xs font-bold uppercase text-black hover:bg-green-400 disabled:cursor-not-allowed disabled:opacity-30"
         >

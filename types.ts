@@ -19,6 +19,8 @@ export interface Skill {
   icon: string; // Icon identifier
   reqPointsInTree: number; // Points required in THIS CATEGORY to unlock
   impactedStat?: string; // Additional metadata from JSON
+  choiceGroup?: string;
+  nodeType?: string;
 }
 
 export interface SkillTreeData {

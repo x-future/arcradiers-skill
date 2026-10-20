@@ -38,7 +38,7 @@ const featureCards = [
     accentColor: 'border-cyan-500/30 hover:border-cyan-400/60 shadow-cyan-500/10',
     titleColor: 'text-cyan-400',
     title: 'Interactive Skill Planner',
-    desc: 'Plan your full 75-point build before spending a single point in-game. Drag, zoom, and share instantly.',
+    desc: 'Plan a 76-point base build or an Expedition build up to 91 points. Drag, zoom, and share instantly.',
   },
   {
     icon: <Zap size={28} />,
@@ -122,8 +122,8 @@ const LandingSections = () => {
         />
         <div className="relative max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: '45+', label: 'Skill Nodes', color: 'text-cyan-400' },
-            { value: '75', label: 'Max Points', color: 'text-purple-400' },
+            { value: '48', label: 'Skill Nodes', color: 'text-cyan-400' },
+            { value: '91', label: 'Max Points', color: 'text-purple-400' },
             { value: '3', label: 'Skill Branches', color: 'text-orange-400' },
             { value: '∞', label: 'Build Combos', color: 'text-cyan-400' },
           ].map(stat => (
@@ -304,7 +304,7 @@ const LandingSections = () => {
                 color: 'text-cyan-400',
                 shadowColor: 'rgba(0,212,255,0.15)',
                 title: 'ARC Raiders Skill Points',
-                body: <>Earn one <strong className="text-zinc-200">ARC Raiders Skill</strong> point per level. Maximize your 75 points to complete your <strong className="text-zinc-200">Skill Tree</strong> build.</>,
+                body: <>Plan with <strong className="text-zinc-200">76 base points</strong> at level 75, or up to 91 with Expedition bonuses.</>,
               },
               {
                 icon: <Box size={30} />,
@@ -317,8 +317,8 @@ const LandingSections = () => {
                 icon: <Zap size={30} />,
                 color: 'text-orange-400',
                 shadowColor: 'rgba(249,115,22,0.15)',
-                title: '45 Skill Tree Nodes',
-                body: <>~15 <strong className="text-zinc-200">Skill</strong> nodes per branch. Master prerequisites in the <strong className="text-zinc-200">ARC Raiders Skill Tree</strong> for deep customization.</>,
+                title: '48 Skill Tree Nodes',
+                body: <>16 <strong className="text-zinc-200">Skill</strong> nodes per branch, including a middle choice and up to two final picks.</>,
               },
             ].map(item => (
               <div key={item.title} className="flex flex-col items-center text-center p-6 rounded-xl border border-zinc-800/40 bg-zinc-900/30 hover:border-zinc-700/60 transition-all">
@@ -486,7 +486,7 @@ const LandingSections = () => {
               ARC Raiders Skill Tree Video Guides
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto text-sm">
-              Prefer learning by watching? These community videos walk through early priorities, full 75-point builds, and common mistakes to avoid.
+              Prefer learning by watching? These older community videos show earlier skill trees; check node names and point totals against Frozen Trail before following a build.
             </p>
           </div>
 
@@ -592,7 +592,7 @@ const LandingSections = () => {
             {[
               {
                 q: 'How to earn ARC Raiders Skill points?',
-                a: <>Earn experience through character leveling to gain one <strong className="text-zinc-200">Skill</strong> point per level. Currently, a maximum of 75 <strong className="text-zinc-200">ARC Raiders Skill</strong> points are available by default.</>,
+                a: <>The Frozen Trail tree provides 76 base <strong className="text-zinc-200">Skill</strong> points by level 75. Three Expeditions can add up to 15 more, for 91 total.</>,
               },
               {
                 q: 'Can I reset my ARC Raiders Skill Tree?',
@@ -635,7 +635,7 @@ const LandingSections = () => {
             <p className="text-zinc-600 text-xs leading-relaxed">
               © 2025 ARC Raiders Skill Tree Build Guide.<br />
               This website is not official.<br /><br />
-              Version: V1.0 (Dec 2025)
+              Tree data: Frozen Trail 2.0 (Oct 2026)
             </p>
           </div>
 

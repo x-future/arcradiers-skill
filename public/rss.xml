@@ -6,7 +6,21 @@
     <description>Latest ARC Raiders Skill Tree guides and tutorials</description>
     <language>en-us</language>
     <atom:link href="https://arcraiderskill.com/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 12 Jan 2026 08:07:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>ARC Raiders Update 2.1.0: What Changed for Builds</title>
+      <link>https://arcraiderskill.com/blog/arc-raiders-latest-update.html</link>
+      <guid>https://arcraiderskill.com/blog/arc-raiders-latest-update.html</guid>
+      <description>Official Frozen Trail 2.0 skill-tree changes, 2.1.0 stamina fixes and the PvE toggle beta.</description>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>ARC Raiders 2.0 PvPvE Skill Tree Builds for Solo and Squad</title>
+      <link>https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html</link>
+      <guid>https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html</guid>
+      <description>Four source-attributed 76-point PvPvE routes for solo, squad, mobility and loot runs, with a builder-version warning.</description>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>ARC Raiders Skill Tree Complete Beginner's Guide 2025</title>
       <link>https://arcraiderskill.com/blog/beginners-complete-guide.html</link>
@@ -50,7 +64,7 @@
       <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>ARC Raiders Update 1.7.2: Blueprint Adjustments & Hidden Bunker Returns</title>
+      <title>ARC Raiders Update 1.7.2: Blueprint Adjustments &amp; Hidden Bunker Returns</title>
       <link>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</link>
       <guid>https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html</guid>
       <description>ARC Raiders Update 1.7.2 released! Hidden Bunker returns with optimized blueprint drop rates. Includes critical bug fixes for interactions, indoor cold damage, and quest system improvements.</description>
