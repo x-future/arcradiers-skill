@@ -61,6 +61,11 @@ const SkillNode: React.FC<SkillNodeProps> = ({
   return (
     <div
       className="absolute flex items-center justify-center z-20 group"
+      role="button"
+      tabIndex={0}
+      data-skill-id={skill.id}
+      aria-label={`${skill.name}, rank ${currentRank} of ${skill.maxRank}${!isUnlocked && !isActive ? ', locked' : ''}`}
+      title={`${skill.name} (${currentRank}/${skill.maxRank})`}
       style={{
         left: (skill.x - offsetX) * cellWidth + cellWidth / 2 - nodeSize / 2,
         top: (skill.y - offsetY) * cellHeight + cellHeight / 2 - nodeSize / 2,
@@ -71,6 +76,18 @@ const SkillNode: React.FC<SkillNodeProps> = ({
       onMouseLeave={() => setHoveredSkill(null)}
       onClick={handleClick}
       onContextMenu={handleClick}
+      onFocus={() => setHoveredSkill(skill.id)}
+      onBlur={() => setHoveredSkill(null)}
+      onKeyDown={(event) => {
+        if ((event.key === 'Enter' || event.key === ' ') && !isMaxed && isUnlocked && canAfford) {
+          event.preventDefault();
+          onIncrement(skill.id);
+        }
+        if (event.key === 'Backspace' && currentRank > 0) {
+          event.preventDefault();
+          onDecrement(skill.id);
+        }
+      }}
     >
       {/* 
         Node Circle 

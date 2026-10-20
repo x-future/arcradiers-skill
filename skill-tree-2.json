@@ -1,0 +1,846 @@
+{
+  "version": "frozen-trail-2.0",
+  "source": "https://arc-raiders.build/frozen-trail-skill-tree-changes/",
+  "branches": [
+    {
+      "id": "conditioning",
+      "choiceGroups": [
+        {
+          "id": "conditioning_pick10",
+          "maxPicks": 1,
+          "thresholds": [
+            10
+          ],
+          "options": [
+            "mules_gallop",
+            "back_on_your_feet"
+          ]
+        },
+        {
+          "id": "conditioning_final",
+          "maxPicks": 2,
+          "thresholds": [
+            30,
+            40
+          ],
+          "options": [
+            "security_breach",
+            "weapon_bash",
+            "bull_rush"
+          ]
+        }
+      ],
+      "talents": [
+        {
+          "id": "used_to_the_weight",
+          "name": "Used to the Weight",
+          "tier": 0,
+          "lane": "root",
+          "nodeType": "root",
+          "maxPoints": 1,
+          "description": "Wearing a shield doesn't slow you down as much.",
+          "detail": "Exact value not currently known.",
+          "parents": [],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "stubborn_mule",
+          "name": "Stubborn Mule",
+          "tier": 1,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Your stamina regeneration is less affected by being over-encumbered.",
+          "detail": "Overload buffer: 10 / 15 / 20 / 25 / 30 weight.",
+          "parents": [
+            "used_to_the_weight"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "three_deep_breaths",
+          "name": "Three Deep Breaths",
+          "tier": 1,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "After an ability drains your stamina, you recover more quickly.",
+          "detail": "Exhaustion ends at: 18 / 16 / 14 / 12 / 10 stamina.",
+          "parents": [
+            "used_to_the_weight"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "vault_n_carry",
+          "name": "Vault 'N' Carry",
+          "tier": 2,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Lets you vault while holding a carryable.",
+          "detail": "Lets you vault while holding a carryable.",
+          "parents": [
+            "stubborn_mule"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "vigorous_vaulter",
+          "name": "Vigorous Vaulter",
+          "tier": 2,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Vaulting is no longer slowed down while exhausted.",
+          "detail": "Maintain full vault speed even with empty stamina bar.",
+          "parents": [
+            "three_deep_breaths"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "mules_gallop",
+          "name": "Mule's Gallop",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "Lets you sprint while over-encumbered.",
+          "detail": "Overloaded sprint speed: 52.5%.",
+          "parents": [
+            "vault_n_carry",
+            "vigorous_vaulter"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "conditioning_pick10"
+        },
+        {
+          "id": "back_on_your_feet",
+          "name": "Back on Your Feet",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "When you're critically hurt, your health regenerates until a certain limit.",
+          "detail": "Regenerates health up to 40 while critically hurt. Delay before regen starts: Exact value not currently known.",
+          "parents": [
+            "vault_n_carry",
+            "vigorous_vaulter"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "conditioning_pick10"
+        },
+        {
+          "id": "loaded_arms",
+          "name": "Loaded Arms",
+          "tier": 4,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Your equipped weapon has less impact on your encumbrance.",
+          "detail": "Equipped weapon weight: -50%.",
+          "parents": [
+            "mules_gallop",
+            "back_on_your_feet"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "broad_shoulders",
+          "name": "Broad Shoulders",
+          "tier": 4,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Increases the maximum weight you can carry.",
+          "detail": "Carry limit: +2 / +4 / +6 / +8 / +10.",
+          "parents": [
+            "mules_gallop",
+            "back_on_your_feet"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "downed_but_determined",
+          "name": "Downed But Determined",
+          "tier": 4,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "When you're downed, it takes longer before you collapse.",
+          "detail": "Bleed-out rate: -5% / -10% / -15% / -20% / -25%.",
+          "parents": [
+            "mules_gallop",
+            "back_on_your_feet"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "proficient_pryer",
+          "name": "Proficient Pryer",
+          "tier": 5,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Breaching doors and containers takes less time.",
+          "detail": "Breach time: -5% / -10% / -15% / -20% / -30%.",
+          "parents": [
+            "loaded_arms"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "speedy_mule",
+          "name": "Speedy Mule",
+          "tier": 5,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Reduces the speed penalty when severely over-encumbered.",
+          "detail": "Overloaded move speed: +10% / +17.5% / +25% / +32.5% / +40%.",
+          "parents": [
+            "broad_shoulders"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "crawl_before_you_walk",
+          "name": "Crawl Before You Walk",
+          "tier": 5,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "When you're downed, you crawl faster.",
+          "detail": "Crawl speed: +10% / +20% / +30% / +40% / +50%.",
+          "parents": [
+            "downed_but_determined"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "security_breach",
+          "name": "Security Breach",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Lets you breach Security Lockers.",
+          "detail": "Lets you breach Security Lockers, including lockers that were already breached.",
+          "parents": [
+            "proficient_pryer",
+            "speedy_mule",
+            "crawl_before_you_walk"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "conditioning_final"
+        },
+        {
+          "id": "weapon_bash",
+          "name": "Weapon Bash",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Lets you perform a melee attack using your equipped weapon.",
+          "detail": "Lets you perform a melee attack using your equipped weapon. Exact values not currently known.",
+          "parents": [
+            "proficient_pryer",
+            "speedy_mule",
+            "crawl_before_you_walk"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "conditioning_final"
+        },
+        {
+          "id": "bull_rush",
+          "name": "Bull Rush",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "When your weapon is stowed, allows you to knock back players and ARC while sprinting.",
+          "detail": "Needs: 3.25 m/s sprint, weapon stowed.",
+          "parents": [
+            "proficient_pryer",
+            "speedy_mule",
+            "crawl_before_you_walk"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "conditioning_final"
+        }
+      ]
+    },
+    {
+      "id": "mobility",
+      "choiceGroups": [
+        {
+          "id": "mobility_pick10",
+          "maxPicks": 1,
+          "thresholds": [
+            10
+          ],
+          "options": [
+            "vault_spring",
+            "vaults_on_vaults_on_vaults"
+          ]
+        },
+        {
+          "id": "mobility_final",
+          "maxPicks": 2,
+          "thresholds": [
+            30,
+            40
+          ],
+          "options": [
+            "sprinting_on_fumes",
+            "wall_run",
+            "in_the_flow"
+          ]
+        }
+      ],
+      "talents": [
+        {
+          "id": "youthful_lungs",
+          "name": "Youthful Lungs",
+          "tier": 0,
+          "lane": "root",
+          "nodeType": "root",
+          "maxPoints": 1,
+          "description": "Increases your max stamina.",
+          "detail": "Exact value not currently known.",
+          "parents": [],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "sure_footed_scrambler",
+          "name": "Sure-Footed Scrambler",
+          "tier": 1,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "While sprinting, increases the time you can scramble up steep slopes.",
+          "detail": "Scramble time: +0.5s / +0.8s / +1.2s / +1.6s / +2s.",
+          "parents": [
+            "youthful_lungs"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "nimble_climber",
+          "name": "Nimble Climber",
+          "tier": 1,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You can climb and vault more quickly.",
+          "detail": "Ladder & vault speed: +3% / +6% / +9% / +12% / +15%.",
+          "parents": [
+            "youthful_lungs"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "ready_to_roll",
+          "name": "Ready to Roll",
+          "tier": 2,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "When falling, your timing window to perform a Recovery Roll is increased.",
+          "detail": "Recovery roll window: +10% / +20% / +30% / +40% / +50%.",
+          "parents": [
+            "sure_footed_scrambler"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "fight_or_flight",
+          "name": "Fight or Flight",
+          "tier": 2,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "When you're hurt in combat, regain a fixed amount of stamina. Has a cooldown between uses.",
+          "detail": "Stamina when hit: +5 / +10 / +15 / +20 / +25.",
+          "parents": [
+            "nimble_climber"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "vault_spring",
+          "name": "Vault Spring",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "Lets you jump at the end of a vault.",
+          "detail": "Unlocks vault-to-jump combo for extended mobility.",
+          "parents": [
+            "ready_to_roll",
+            "fight_or_flight"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "mobility_pick10"
+        },
+        {
+          "id": "vaults_on_vaults_on_vaults",
+          "name": "Vaults on Vaults on Vaults",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "Vaulting no longer costs stamina.",
+          "detail": "Vault stamina cost: 0 (normally up to 15).",
+          "parents": [
+            "ready_to_roll",
+            "fight_or_flight"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "mobility_pick10"
+        },
+        {
+          "id": "effortless_roll",
+          "name": "Effortless Roll",
+          "tier": 4,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Dodge Rolls cost less stamina.",
+          "detail": "Roll stamina cost: -7% / -14% / -21% / -27% / -34%.",
+          "parents": [
+            "vault_spring",
+            "vaults_on_vaults_on_vaults"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "right_back_at_it",
+          "name": "Right Back At It",
+          "tier": 4,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Reduces the time to get back up after a heavy landing.",
+          "detail": "Landing recovery: 1.25x faster.",
+          "parents": [
+            "vault_spring",
+            "vaults_on_vaults_on_vaults"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "marathon_runner",
+          "name": "Marathon Runner",
+          "tier": 4,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Moving around costs less stamina.",
+          "detail": "Movement stamina cost: -3% / -6% / -9% / -12% / -15%.",
+          "parents": [
+            "vault_spring",
+            "vaults_on_vaults_on_vaults"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "slip_and_slide",
+          "name": "Slip and Slide",
+          "tier": 5,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You can slide further and faster.",
+          "detail": "Slide friction: -5% / -10% / -15% / -20% / -25%.",
+          "parents": [
+            "effortless_roll"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "off_the_wall",
+          "name": "Off the Wall",
+          "tier": 5,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You can Wall Leap further.",
+          "detail": "Wall leap speed: +10% / +20% / +30% / +40% / +50%.",
+          "parents": [
+            "right_back_at_it"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "swift_start",
+          "name": "Swift Start",
+          "tier": 5,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Increases the duration of the high speed at the start of a sprint.",
+          "detail": "Sprint boost: +2.5s / +4s / +6s / +7.5s / +10s.",
+          "parents": [
+            "marathon_runner"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "sprinting_on_fumes",
+          "name": "Sprinting on Fumes",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Stamina never fully drains while sprinting. Any action or damage cancels the skill. Recovery time scales with duration.",
+          "detail": "Kicks in at: 2.2 stamina or less.",
+          "parents": [
+            "slip_and_slide",
+            "off_the_wall",
+            "swift_start"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "mobility_final"
+        },
+        {
+          "id": "wall_run",
+          "name": "Wall Run",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Sprinting at a wall allows you to run up it for a few steps.",
+          "detail": "Needs speed of: 4 m/s.",
+          "parents": [
+            "slip_and_slide",
+            "off_the_wall",
+            "swift_start"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "mobility_final"
+        },
+        {
+          "id": "in_the_flow",
+          "name": "In the Flow",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Chaining together mobility moves while sprinting increases the speed, and reduces the stamina cost.",
+          "detail": "At full flow: -65% stamina costs, +25% vault speed.",
+          "parents": [
+            "slip_and_slide",
+            "off_the_wall",
+            "swift_start"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "mobility_final"
+        }
+      ]
+    },
+    {
+      "id": "survival",
+      "choiceGroups": [
+        {
+          "id": "survival_pick10",
+          "maxPicks": 1,
+          "thresholds": [
+            10
+          ],
+          "options": [
+            "quick_roll",
+            "minesweeper"
+          ]
+        },
+        {
+          "id": "survival_final",
+          "maxPicks": 2,
+          "thresholds": [
+            30,
+            40
+          ],
+          "options": [
+            "road_warrior",
+            "nomadic_crafting",
+            "field_repair"
+          ]
+        }
+      ],
+      "talents": [
+        {
+          "id": "in_round_crafting",
+          "name": "In-Round Crafting",
+          "tier": 0,
+          "lane": "root",
+          "nodeType": "root",
+          "maxPoints": 1,
+          "description": "Unlocks the ability to field-craft items while topside.",
+          "detail": "Unlocks field crafting for base consumables and throwables while topside.",
+          "parents": [],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "looters_instincts",
+          "name": "Looter's Instincts",
+          "tier": 1,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "When searching a container, loot is revealed faster.",
+          "detail": "Search time: -5% / -10% / -15% / -20% / -25%.",
+          "parents": [
+            "in_round_crafting"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "sturdy_ankles",
+          "name": "Sturdy Ankles",
+          "tier": 1,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You take less fall damage when falling from a non-lethal height.",
+          "detail": "Fall damage: -3% / -6% / -9% / -12% / -15%.",
+          "parents": [
+            "in_round_crafting"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "silent_scavenger",
+          "name": "Silent Scavenger",
+          "tier": 2,
+          "lane": "a",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You make less noise when looting.",
+          "detail": "Looting sound: -10% / -20% / -30% / -40% / -50%.",
+          "parents": [
+            "looters_instincts"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "agile_croucher",
+          "name": "Agile Croucher",
+          "tier": 2,
+          "lane": "b",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "Your movement speed while crouching is increased.",
+          "detail": "Crouch speed: +3% / +6% / +9% / +12% / +15%.",
+          "parents": [
+            "sturdy_ankles"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "quick_roll",
+          "name": "Quick Roll",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "A faster version of the Dodge Roll, at reduced stamina cost. Covers a shorter distance.",
+          "detail": "A faster version of the Dodge Roll, at reduced stamina cost. Covers a shorter distance. Exact values not currently known.",
+          "parents": [
+            "silent_scavenger",
+            "agile_croucher"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "survival_pick10"
+        },
+        {
+          "id": "minesweeper",
+          "name": "Minesweeper",
+          "tier": 3,
+          "lane": "hub",
+          "nodeType": "choice",
+          "maxPoints": 1,
+          "description": "Mines and explosive deployables can be defused when in close proximity.",
+          "detail": "Lets you defuse mines and explosive deployables nearby; slow-crouch walk to avoid triggering them.",
+          "parents": [
+            "silent_scavenger",
+            "agile_croucher"
+          ],
+          "requiredBranchPoints": 10,
+          "choiceGroup": "survival_pick10"
+        },
+        {
+          "id": "gentle_pressure",
+          "name": "Gentle Pressure",
+          "tier": 4,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You make less noise when breaching.",
+          "detail": "Breach sound: -10% / -20% / -30% / -40% / -50%.",
+          "parents": [
+            "quick_roll",
+            "minesweeper"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "traveling_tinkerer",
+          "name": "Traveling Tinkerer",
+          "tier": 4,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Unlocks additional items to field craft.",
+          "detail": "Unlocks additional field-crafted traps, Noisemaker, Herbal Bandage, and Raider Hatch Key.",
+          "parents": [
+            "quick_roll",
+            "minesweeper"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "stylish_landing",
+          "name": "Stylish Landing",
+          "tier": 4,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "You can use the Recovery Roll from higher up.",
+          "detail": "Recovery roll height: +50cm / +75cm / +100cm / +125cm / +150cm.",
+          "parents": [
+            "quick_roll",
+            "minesweeper"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "a_little_extra",
+          "name": "A Little Extra",
+          "tier": 5,
+          "lane": "left",
+          "nodeType": "normal",
+          "maxPoints": 1,
+          "description": "Breaching an object generates resources.",
+          "detail": "Breaching gives 1-2 crafting materials.",
+          "parents": [
+            "gentle_pressure"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "looters_luck",
+          "name": "Looter's Luck",
+          "tier": 5,
+          "lane": "center",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "While looting, there's a chance to reveal twice as many items at once.",
+          "detail": "Double loot chance: 6.6% / 13.2% / 19.8% / 26.4% / 33%.",
+          "parents": [
+            "traveling_tinkerer"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "turtle_crawl",
+          "name": "Turtle Crawl",
+          "tier": 5,
+          "lane": "right",
+          "nodeType": "normal",
+          "maxPoints": 5,
+          "description": "While downed, you take less damage.",
+          "detail": "Damage while downed: -6.6% / -13.2% / -19.8% / -26.4% / -33%.",
+          "parents": [
+            "stylish_landing"
+          ],
+          "requiredBranchPoints": 0,
+          "choiceGroup": null
+        },
+        {
+          "id": "road_warrior",
+          "name": "Road Warrior",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Increases the amount of ammo and ARC Powercells looted from ARC, and allows you to recycle at full efficiency while in a round.",
+          "detail": "Increases the amount of ammo and ARC Powercells looted from ARC, and allows you to recycle at full efficiency while in a round. Exact values not currently known.",
+          "parents": [
+            "a_little_extra",
+            "looters_luck",
+            "turtle_crawl"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "survival_final"
+        },
+        {
+          "id": "nomadic_crafting",
+          "name": "Nomadic Crafting",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Allows you to field craft a much wider range of items.",
+          "detail": "Allows you to field craft a much wider range of items. Exact values not currently known.",
+          "parents": [
+            "a_little_extra",
+            "looters_luck",
+            "turtle_crawl"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "survival_final"
+        },
+        {
+          "id": "field_repair",
+          "name": "Field Repair",
+          "tier": 6,
+          "lane": "final",
+          "nodeType": "final",
+          "maxPoints": 1,
+          "description": "Allows you to repair weapons, shields and gadgets up to 30% durability while in a round.",
+          "detail": "Allows you to repair weapons, shields and gadgets up to 30% durability while in a round.",
+          "parents": [
+            "a_little_extra",
+            "looters_luck",
+            "turtle_crawl"
+          ],
+          "requiredBranchPoints": 30,
+          "choiceGroup": "survival_final"
+        }
+      ]
+    }
+  ]
+}

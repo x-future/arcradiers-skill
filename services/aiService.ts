@@ -1,4 +1,5 @@
 import { BuildState, SkillTreeData } from '../types';
+import { TREE_VERSION } from '../data';
 
 export type AIAdvisorMode = 'generate' | 'review';
 
@@ -48,6 +49,8 @@ export async function requestAIAdvice(
     category: skill.category,
     parentIds: skill.parentIds,
     reqPointsInTree: skill.reqPointsInTree,
+    choiceGroup: skill.choiceGroup,
+    nodeType: skill.nodeType,
   }));
 
   const response = await fetch('/api/ai/build', {
@@ -58,7 +61,7 @@ export async function requestAIAdvice(
       preferences,
       currentBuild,
       skills,
-      treeVersion: '1.38.0',
+      treeVersion: TREE_VERSION,
     }),
   });
 

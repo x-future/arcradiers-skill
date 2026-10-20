@@ -6,7 +6,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Tools
 
-- [Interactive Skill Tree Builder](https://arcraiderskill.com/): Plan skill ranks, inspect prerequisites, track branch totals, share builds, and capture screenshots
+- [Interactive Skill Tree Builder](https://arcraiderskill.com/): Plan the Frozen Trail 48-skill tree with 76, 81, 86, or 91 points, inspect prerequisites, share builds, and capture screenshots
 - [AI Build Advisor](https://arcraiderskill.com/): Generate a personalized build or review a current allocation using point budget, squad size, focus, playstyle, and optional priorities
 - [AI See](https://arcraiderskill.com/ai-see.html): Machine-readable overview of the site's capabilities, skill-tree structure, data notes, and citation routes
 - [Full site content](https://arcraiderskill.com/llms-full.txt): Complete machine-readable text for all public pages and guides
@@ -19,6 +19,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 - [Skill Tree Mechanics Deep Dive](https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html): Detailed explanation of prerequisites, branch requirements, ranks, and point allocation
 - [Best Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-skill-tree-best-build.html): General build priorities and allocation strategy
 - [Skill Tree Builds](https://arcraiderskill.com/blog/arc-raiders-skill-tree-builds.html): Build archetypes for different roles and playstyles
+- [ARC Raiders 2.0 PvPvE Builds](https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html): Four source-attributed solo and squad routes with 76-point splits
 - [PvP Skill Tree Build](https://arcraiderskill.com/blog/arc-raiders-pvp-skill-tree-build.html): Mobility and combat priorities for player-versus-player encounters
 
 ## Branch guides
@@ -59,7 +60,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Updates
 
-- [Latest ARC Raiders Update](https://arcraiderskill.com/blog/arc-raiders-latest-update.html): Community summary of recent changes and their gameplay impact
+- [Frozen Trail 2.0 and Update 2.1.0](https://arcraiderskill.com/blog/arc-raiders-latest-update.html): Official-source summary of the skill tree revamp, 2.1.0 skill fixes and PvE toggle beta
 - [North Line Update](https://arcraiderskill.com/blog/north-line-update.html): Overview of North Line content and changes
 - [Update 1.7.2](https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html): Blueprint adjustments, Hidden Bunker changes, and bug fixes
 
@@ -81,4 +82,4 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Last updated
 
-July 25, 2026
+October 19, 2026

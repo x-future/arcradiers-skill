@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { INITIAL_DATA } from './data';
+import { INITIAL_DATA, POINT_BUDGETS, TREE_VERSION } from './data';
+import { validateBuild } from './buildRules.mjs';
 import { BuildState, SkillTreeData, SkillCategory, Skill } from './types';
 import SkillNode from './components/SkillNode';
 import ConnectionLines from './components/ConnectionLines';
@@ -25,6 +26,8 @@ export default function App() {
     pointsSpent: 0,
     skills: {}
   });
+  const [pointBudget, setPointBudget] = useState<number>(76);
+  const [buildNotice, setBuildNotice] = useState<string | null>(null);
   const [hoveredSkillId, setHoveredSkillId] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [copySuccess, setCopySuccess] = useState(false);
@@ -41,7 +44,7 @@ export default function App() {
   const [currentShortId, setCurrentShortId] = useState<string | null>(null);
 
   // Viewport State
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(() => window.innerWidth < 640 ? 0.5 : 1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const dragStartRef = useRef({ x: 0, y: 0 });
@@ -217,54 +220,27 @@ const handleScreenshot = async () => {
   const isSkillUnlocked = useCallback((skillId: string, currentSkills: { [id: string]: number }) => {
     const skill = treeData.skills[skillId];
     if (!skill) return false;
-
-    const catPoints = getCategoryPoints(skill.category, currentSkills);
-    if (skill.reqPointsInTree > 0 && catPoints < skill.reqPointsInTree) return false;
-
-    if (skill.parentIds.length === 0) return true;
-
-    return skill.parentIds.some(pid => (currentSkills[pid] || 0) > 0);
-  }, [treeData, getCategoryPoints]);
+    if ((currentSkills[skillId] || 0) >= skill.maxRank) return (currentSkills[skillId] || 0) > 0;
+    return validateBuild(treeData.skills, {
+      ...currentSkills,
+      [skillId]: (currentSkills[skillId] || 0) + 1,
+    }, pointBudget);
+  }, [treeData, pointBudget]);
 
   const canDecrement = useCallback((skillId: string, currentSkills: { [id: string]: number }) => {
-    const skill = treeData.skills[skillId];
-    if (!skill) return false;
-    if ((currentSkills[skillId] || 0) <= 0) return false;
-    
-    const activeChildren = skill.childrenIds.filter(childId => (currentSkills[childId] || 0) > 0);
-    
-    if (activeChildren.length > 0) {
-      for (const childId of activeChildren) {
-        const child = treeData.skills[childId];
-        const activeParents = child.parentIds.filter(pid => (currentSkills[pid] || 0) > 0);
-        if (activeParents.length <= 1) return false;
-      }
-    }
-    
-    const catPoints = getCategoryPoints(skill.category, currentSkills);
-    const categorySkills = (Object.values(treeData.skills) as Skill[]).filter(s => s.category === skill.category);
-    
-    for (const s of categorySkills) {
-      if ((currentSkills[s.id] || 0) > 0 && s.reqPointsInTree > 0) {
-         if (catPoints <= s.reqPointsInTree) {
-             if (s.id !== skillId) {
-               return false;
-             }
-         }
-      }
-    }
-
-    return true;
-  }, [treeData, getCategoryPoints]);
+    if (!treeData.skills[skillId] || (currentSkills[skillId] || 0) <= 0) return false;
+    return validateBuild(treeData.skills, {
+      ...currentSkills,
+      [skillId]: currentSkills[skillId] - 1,
+    }, pointBudget);
+  }, [treeData, pointBudget]);
 
   const handleIncrement = (skillId: string) => {
     setBuildState(prev => {
-      const currentRank = prev.skills[skillId] || 0;
-      if (currentRank >= treeData.skills[skillId].maxRank) return prev;
-      
+      if ((prev.skills[skillId] || 0) >= treeData.skills[skillId].maxRank || !isSkillUnlocked(skillId, prev.skills)) return prev;
       return {
         pointsSpent: prev.pointsSpent + 1,
-        skills: { ...prev.skills, [skillId]: currentRank + 1 }
+        skills: { ...prev.skills, [skillId]: (prev.skills[skillId] || 0) + 1 }
       };
     });
   };
@@ -288,28 +264,20 @@ const handleScreenshot = async () => {
   };
 
   const handleApplyAIBuild = (suggestions: { skillId: string; rank: number }[]) => {
-    setPreviousBuild({
-      pointsSpent: buildState.pointsSpent,
-      skills: { ...buildState.skills }
-    });
-
     const newSkills: { [id: string]: number } = {};
     Object.keys(treeData.skills).forEach(id => newSkills[id] = 0);
-    
-    let points = 0;
-    suggestions.forEach(s => {
-      if (treeData.skills[s.skillId]) {
-        let rank = s.rank;
-        if (rank > treeData.skills[s.skillId].maxRank) rank = treeData.skills[s.skillId].maxRank;
-        newSkills[s.skillId] = rank;
-        points += rank;
-      }
-    });
+    for (const suggestion of suggestions) {
+      if (!treeData.skills[suggestion.skillId] || newSkills[suggestion.skillId] !== 0) return false;
+      newSkills[suggestion.skillId] = suggestion.rank;
+    }
+    if (!validateBuild(treeData.skills, newSkills, pointBudget)) return false;
 
+    setPreviousBuild(buildState);
     setBuildState({
-      pointsSpent: points,
+      pointsSpent: Object.values(newSkills).reduce((sum, rank) => sum + rank, 0),
       skills: newSkills
     });
+    return true;
   };
 
   const handleUndoAIBuild = () => {
@@ -319,7 +287,7 @@ const handleScreenshot = async () => {
   };
 
   const generateShareLink = () => {
-    const json = JSON.stringify(buildState.skills);
+    const json = JSON.stringify({ version: TREE_VERSION, budget: pointBudget, skills: buildState.skills });
     const hash = btoa(json);
     window.location.hash = `build=${hash}`;
     navigator.clipboard.writeText(window.location.href);
@@ -333,19 +301,15 @@ const handleScreenshot = async () => {
       try {
         const base64 = hash.split('build=')[1];
         const json = atob(base64);
-        const loadedSkills = JSON.parse(json);
-        const validSkills: Record<string, number> = {};
-        let total = 0;
-        
-        Object.keys(treeData.skills).forEach(id => validSkills[id] = 0);
-        Object.entries(loadedSkills).forEach(([id, val]) => {
-           if (treeData.skills[id]) {
-             validSkills[id] = val as number;
-             total += val as number;
-           }
-        });
-        setBuildState({ skills: validSkills, pointsSpent: total });
-      } catch (e) { console.error("Failed to load build"); }
+        const saved = JSON.parse(json);
+        if (saved.version !== TREE_VERSION || !POINT_BUDGETS.includes(saved.budget) ||
+            !saved.skills || !validateBuild(treeData.skills, saved.skills, saved.budget)) {
+          setBuildNotice('This share link uses an older or invalid skill tree. Start a new Frozen Trail build.');
+          return;
+        }
+        setPointBudget(saved.budget);
+        setBuildState({ skills: saved.skills, pointsSpent: Object.values(saved.skills as Record<string, number>).reduce((sum, rank) => sum + rank, 0) });
+      } catch (e) { setBuildNotice('This share link could not be read. Start a new build.'); }
     }
   }, [treeData]);
 
@@ -356,7 +320,7 @@ const handleScreenshot = async () => {
   const handleZoomIn = () => setScale(s => Math.min(s + 0.1, 2.5));
   const handleZoomOut = () => setScale(s => Math.max(s - 0.1, 0.4));
   const handleZoomReset = () => {
-    setScale(1);
+    setScale(window.innerWidth < 640 ? 0.5 : 1);
     setPan({ x: 0, y: 0 });
   };
 
@@ -510,40 +474,40 @@ const handleScreenshot = async () => {
            />
          </div>
 
-         {/* PROMINENT TITLE OVERLAY */}
-         <div className="absolute left-0 top-5 z-40 hidden w-full text-center pointer-events-none lg:block">
-            <h1 className="text-3xl xl:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-500 drop-shadow-2xl tracking-tighter uppercase">
-               ARC Raiders Skill Tree
-            </h1>
-         </div>
-
          {/* Controls Panel */}
-         <div className="absolute top-8 right-8 z-40 flex flex-col items-end gap-4 pointer-events-auto">
-            <div className="bg-[#0f0f11]/90 backdrop-blur border border-zinc-800 px-6 py-2 rounded-full flex items-center gap-4 shadow-xl">
+         <div className="absolute top-3 left-3 right-3 z-40 flex flex-col items-end gap-3 pointer-events-auto sm:top-8 sm:left-auto sm:right-8 sm:gap-4">
+            <div className="bg-[#0f0f11]/90 backdrop-blur border border-zinc-800 w-full sm:w-auto px-2 sm:px-6 py-2 rounded-full flex items-center justify-between sm:justify-start gap-1 sm:gap-4 shadow-xl">
                <div className="flex flex-col items-end">
                   <span className="text-zinc-400 font-display font-bold text-[10px] tracking-widest uppercase">Total Points</span>
-                  <div className="text-2xl font-display font-bold text-white leading-none">
-                    {buildState.pointsSpent}
-                  </div>
+                  <div className="text-lg sm:text-2xl font-display font-bold text-white leading-none">{buildState.pointsSpent}/{pointBudget}</div>
                </div>
+                <select
+                  aria-label="Skill point budget"
+                  title="Skill point budget"
+                  value={pointBudget}
+                  onChange={(event) => setPointBudget(Number(event.target.value))}
+                  className="bg-zinc-950 border border-zinc-700 text-zinc-200 text-xs sm:text-sm px-1 sm:px-2 py-1"
+                >
+                  {POINT_BUDGETS.map((budget) => <option key={budget} value={budget} disabled={budget < buildState.pointsSpent}>{budget} points</option>)}
+                </select>
                <div className="h-8 w-px bg-zinc-800"></div>
                <button 
                   onClick={handleReset}
-                  className="text-zinc-400 hover:text-white transition-colors p-2"
+                  className="text-zinc-400 hover:text-white transition-colors p-1.5 sm:p-2"
                   title="Reset Tree"
                 >
                   <RotateCcw size={18} />
                 </button>
                 <button 
                   onClick={generateShareLink}
-                  className={`text-zinc-400 hover:text-white transition-colors p-2 ${copySuccess ? 'text-green-500' : ''}`}
+                  className={`text-zinc-400 hover:text-white transition-colors p-1.5 sm:p-2 ${copySuccess ? 'text-green-500' : ''}`}
                   title="Share Build"
                 >
                    <Share2 size={18} />
                 </button>
                 <button
                   onClick={handleScreenshot}
-                  className="relative text-zinc-400 hover:text-white transition-colors p-2"
+                  className="relative text-zinc-400 hover:text-white transition-colors p-1.5 sm:p-2"
                   title="Take Screenshot (NEW!)"
                 >
                    <Camera size={18} />
@@ -651,7 +615,7 @@ const handleScreenshot = async () => {
                   skill={skill}
                   currentRank={buildState.skills[skill.id] || 0}
                   isUnlocked={isSkillUnlocked(skill.id, buildState.skills)}
-                  canAfford={true}
+                  canAfford={buildState.pointsSpent < pointBudget}
                   cellWidth={CELL_WIDTH}
                   cellHeight={CELL_HEIGHT}
                   onIncrement={handleIncrement}
@@ -709,6 +673,9 @@ const handleScreenshot = async () => {
             isUnlocked={isSkillUnlocked(hoveredSkillId, buildState.skills)}
             reqPoints={treeData.skills[hoveredSkillId].reqPointsInTree}
             currentCategoryPoints={getCategoryPoints(treeData.skills[hoveredSkillId].category, buildState.skills)}
+            selectedInGroup={treeData.skills[hoveredSkillId].choiceGroup
+              ? Object.values(treeData.skills).filter((skill) => skill.choiceGroup === treeData.skills[hoveredSkillId].choiceGroup && buildState.skills[skill.id] > 0).length
+              : 0}
           />
         </div>
       )}
@@ -717,12 +684,14 @@ const handleScreenshot = async () => {
       <GeminiAssistant
         treeData={treeData}
         buildState={buildState}
+        pointBudget={pointBudget}
         isOpen={isAIAdvisorOpen}
         onOpenChange={setIsAIAdvisorOpen}
         onApplyBuild={handleApplyAIBuild}
         onUndo={handleUndoAIBuild}
         canUndo={previousBuild !== null}
       />
+      {buildNotice && <div role="alert" className="fixed bottom-5 left-5 z-50 max-w-sm border border-amber-500/60 bg-zinc-950 p-4 text-sm text-zinc-100 shadow-xl">{buildNotice}<button className="ml-3 text-amber-400" onClick={() => setBuildNotice(null)}>Dismiss</button></div>}
 
       {/* Screenshot Preview Modal */}
       {showScreenshotPreview && screenshotDataUrl && (
