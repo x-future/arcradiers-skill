@@ -17,11 +17,13 @@ import {
   requestAIAdvice,
 } from '../services/aiService';
 import { BuildState, SkillTreeData } from '../types';
+import { POINT_BUDGETS } from '../data';
 
 interface GeminiAssistantProps {
   treeData: SkillTreeData;
   buildState: BuildState;
   pointBudget: number;
+  onPointBudgetChange: (budget: number) => void;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   onApplyBuild: (skills: { skillId: string; rank: number }[]) => boolean;
@@ -44,6 +46,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
   treeData,
   buildState,
   pointBudget,
+  onPointBudgetChange,
   isOpen,
   onOpenChange,
   onApplyBuild,
@@ -133,7 +136,24 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">Point Budget<div className="flex h-10 items-center border border-zinc-700 bg-zinc-950 px-3 text-sm text-zinc-200">{pointBudget} points</div></div>
+          <label className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">
+            Point Budget
+            <select
+              className={selectClass}
+              value={pointBudget}
+              onChange={(event) => {
+                onPointBudgetChange(Number(event.target.value));
+                setResult(null);
+                setError(null);
+              }}
+            >
+              {POINT_BUDGETS.map((budget) => (
+                <option key={budget} value={budget} disabled={budget < buildState.pointsSpent}>
+                  {budget} points
+                </option>
+              ))}
+            </select>
+          </label>
 
           <label className="space-y-1.5 text-xs font-semibold uppercase text-zinc-500">
             Squad
