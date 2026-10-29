@@ -9,7 +9,7 @@ https://arcraiderskill.com
 ## Scope and usage
 
 - Language: English
-- Public HTML pages included: 47
+- Public HTML pages included: 48
 - Content includes the skill tree planner overview, AI Build Advisor, wiki, FAQ, guide index, gameplay guides, weapon guides, updates, gallery, and site policies.
 - This is a community-created ARC Raiders resource and is not affiliated with or endorsed by Embark Studios.
 - Game values and recommendations may change after patches; verify patch-sensitive information in game or against official sources.
@@ -80,6 +80,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Updates
 
+- [Live Update 2.3.0](https://arcraiderskill.com/blog/arc-raiders-live-update-2-3-0.html): Souls Offering, Noxious Set, Heavy Shield changes, item updates, map fixes, stability work, UI polish, and known issues
 - [Frozen Trail 2.0 and Update 2.1.0](https://arcraiderskill.com/blog/arc-raiders-latest-update.html): Official-source summary of the skill tree revamp, 2.1.0 skill fixes and PvE toggle beta
 - [North Line Update](https://arcraiderskill.com/blog/north-line-update.html): Overview of North Line content and changes
 - [Update 1.7.2](https://arcraiderskill.com/blog/arc-raiders-1-7-2-update.html): Blueprint adjustments, Hidden Bunker changes, and bug fixes
@@ -102,7 +103,7 @@ This site is not affiliated with or endorsed by Embark Studios. Skill values and
 
 ## Last updated
 
-October 19, 2026
+October 27, 2026
 
 ---
 
@@ -1905,6 +1906,77 @@ The 2.1.0 update opened a **test** scheduled for October 13-20, not a permanent 
 Reviewed against the [official news index](https://arcraiders.com/news) on October 19, 2026. Its October 15 entry is a photo competition; 2.1.0 is the latest listed gameplay patch at this review time.
 
 **Related reading**[PvPvE builds for solo and squad](https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html)[Earlier skill-tree mechanics guide](https://arcraiderskill.com/blog/skill-tree-mechanics-deep-dive.html)[All guides and updates](https://arcraiderskill.com/blog.html)
+
+---
+
+# ARC Raiders Live Update 2.3.0 | Noxious Set and Patch Notes
+
+**URL:** https://arcraiderskill.com/blog/arc-raiders-live-update-2-3-0.html
+
+Source-linked ARC Raiders Live Update 2.3.0 summary: Souls Offering, Noxious Set, Heavy Shield buff, Frigate and Pendola Pass fixes, stability work and known issues.
+
+---
+
+[Home](https://arcraiderskill.com/) / [Blog](https://arcraiderskill.com/blog.html) / Live Update 2.3.0
+
+Official Patch Review
+
+# ARC Raiders Live Update 2.3.0
+
+Updated October 27, 2026 · [Official source](https://arcraiders.com/news/live-update-2-3-0)
+
+Update 2.3 adds the Noxious Set and Souls Offering player project, then rolls through a wide set of ARC, equipment, map, UI, stability and visual fixes. Here are the changes that matter when planning raids and builds.
+
+Official Live Update 2.3.0 header image.
+
+**October 27**Live Update 2.3.0 release
+
+**80 to 90**Heavy Shield base charge
+
+**New project**Souls Offering
+
+## Souls Offering and Noxious Set
+
+Souls Offering is a new player project centered on remembering fallen Raiders and the marks they made against ARC. The Noxious Set is the headline store addition. The official announcement also includes three Souls Offering scenes, which are included below as source-attributed reference images.
+
+## ARC, Frigate and animation fixes
+
+- **Emperor loot:** lower-tier containers sit near the entrance while deeper areas have better reward distribution.
+- **ARC behavior:** dead rolling enemies no longer leave tracks, border movement is improved, and Vaporizer debris behaves more naturally.
+- **Frigate:** new visual hatches show puzzle progress, and collision gaps that enabled hiding or getting stuck are fixed.
+- **Animation:** Bull Rush camera motion is adjusted, and Bettina, Bobcat and Kettle magazines eject correctly during reloads.
+
+## Gameplay and equipment changes
+
+The Heavy Shield base charge rises from 80 to 90. The developer note describes this as a small survivability bump while keeping a meaningful difference from the Medium Shield. The patch also improves Frigate pings, expands exploit prevention in Emperor locked rooms, tightens barricade placement, adjusts Pendola Pass killboxes and fixes heavy landing behavior during dodge rolls.
+
+### Items
+
+- Flame Spray damage rises to 13/s from 10/s and its durability drain is reduced by 50%.
+- Firefly Burner now ignites on impact, leaves a fire trail and explodes after about three seconds.
+- Adrenaline Shot works at max stamina and refreshes its duration instead of stacking.
+- Furniture design drop rates are corrected, and several weapon blueprints can now drop in any major map condition.
+- Emperor Key blueprint odds from Redirection pods are reduced, with ARC parts and high-tier ARC loot added as compensation.
+
+### Grappling Hook, camera and zipline
+
+Grappling Hook reliability is improved inside the Matriarch shield, around breakable debris and when a rope wraps around an obstacle. The advanced camera gains Color Push and Black & White filters, while zipline entry and long-distance previews receive fixes.
+
+## Map, performance and stability
+
+Pendola Pass receives the largest collision pass, covering the fallen Emperor, gondola extraction, shelters, Storm Huts and an ammo box. Spaceport and Stella Montis also get fixes for stuck locations. FSR moves to 4.1.1, Xbox Series S audio memory is reduced, Frigate memory and crash behavior are improved, and an AMD RX 7000 ray-tracing crash workaround is included.
+
+## UI and quality-of-life updates
+
+The Expedition Vault is being disabled; purchased slots are compensated with Bronze Statuettes and stored items move to the stash. Other changes cover controller hints, widescreen camera HUD coverage, weapon mod and stencil details, Codex scrolling, Outpost furniture, Reward Pass layout, Weapon Amplification tooltips, Project notification dots and Workshop navigation.
+
+## Known issues
+
+The official list still includes the Raider Tool default-skin issue, incomplete quest objectives, lost quest-item blockers, Xbox instability, ARC Reclaimer docking and vaulting problems, oversized weapon models, Grappling Hook bounce behavior and a Railroad stuck spot on Pendola Pass. Check the [official notes](https://arcraiders.com/news/live-update-2-3-0) before treating any of these as resolved.
+
+Noxious Set image from the official update.
+
+**Related reading**[Frozen Trail 2.0 and Update 2.1.0](https://arcraiderskill.com/blog/arc-raiders-latest-update.html)[ARC Raiders 2.0 PvPvE builds](https://arcraiderskill.com/blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html)[All guides and updates](https://arcraiderskill.com/blog.html)
 
 ---
 
@@ -5698,6 +5770,11 @@ Guides, updates, and tips to master your skill tree
 
 34 posts published
 
+[October 27, 2026•8 min read
+ARC Raiders Live Update 2.3.0: Noxious Set and Patch Notes
+Souls Offering, Heavy Shield changes, item updates, Frigate fixes, stability improvements and known issues from the official notes.
+official update2.3.0patch notes](https://arcraiderskill.com/blog/arc-raiders-live-update-2-3-0.html)
+
 [October 19, 2026•6 min read
 ARC Raiders Update 2.1.0: What Changed for Builds
 Official Frozen Trail 2.0 skill-tree changes, 2.1.0 stamina fixes and the PvE toggle beta, with source links.
@@ -7440,5 +7517,5 @@ Branches, mechanics, and quick build guidance.
 
 ---
 
-Last generated: 2026-10-20T01:43:18.625Z
-Total pages included: 48
+Last generated: 2026-10-29T02:35:39.232Z
+Total pages included: 49

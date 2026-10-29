@@ -685,6 +685,7 @@ const handleScreenshot = async () => {
         treeData={treeData}
         buildState={buildState}
         pointBudget={pointBudget}
+        onPointBudgetChange={setPointBudget}
         isOpen={isAIAdvisorOpen}
         onOpenChange={setIsAIAdvisorOpen}
         onApplyBuild={handleApplyAIBuild}
