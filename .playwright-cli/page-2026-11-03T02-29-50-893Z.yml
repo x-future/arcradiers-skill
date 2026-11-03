@@ -1,0 +1,178 @@
+- generic [ref=f12e3]:
+  - link "Skip to content" [ref=f12e4] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f12e5]:
+    - link "ARCSKILLER RAIDERS FIELD GUIDE" [ref=f12e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f12e9]:
+        - text: ARCSKILLER
+        - generic [ref=f12e10]: RAIDERS FIELD GUIDE
+    - navigation "Main navigation" [ref=f12e11]:
+      - link "Skill Planner" [ref=f12e12] [cursor=pointer]:
+        - /url: /planner/
+      - link "Builds" [ref=f12e13] [cursor=pointer]:
+        - /url: /#builds
+      - link "Guides" [ref=f12e14] [cursor=pointer]:
+        - /url: /#guides
+      - link "Shop" [ref=f12e15] [cursor=pointer]:
+        - /url: /store/
+  - main [ref=f12e19]:
+    - generic [ref=f12e20]:
+      - generic [ref=f12e21]: WEAPONS & EQUIPMENT
+      - heading "Your next loadout." [level=1] [ref=f12e22]
+      - paragraph [ref=f12e23]: Choose your gear. Review current prices and available options before checkout.
+    - generic [ref=f12e24]:
+      - generic [ref=f12e25]:
+        - searchbox "Search products" [ref=f12e30]
+        - generic [ref=f12e31]:
+          - text: Category
+          - combobox "Category" [ref=f12e32]:
+            - option "All products" [selected]
+            - option "Blueprints"
+            - option "Weapons & gear"
+            - option "Resources & upgrades"
+            - option "Loadouts & bundles"
+      - status [ref=f12e33]: 16 of 16 products & services
+      - generic [ref=f12e34]:
+        - link "Blueprints Blueprints Blueprints Wide selection of blueprints View options & prices" [ref=f12e35] [cursor=pointer]:
+          - /url: /go/catalog/services-3
+          - img "Blueprints" [ref=f12e37]
+          - generic [ref=f12e38]:
+            - generic [ref=f12e39]: Blueprints
+            - heading "Blueprints" [level=2] [ref=f12e40]
+            - paragraph [ref=f12e41]: Wide selection of blueprints
+            - generic [ref=f12e42]: View options & prices
+        - link "Weapons Weapons & gear Weapons Upgraded weapons up to Mk. IV View options & prices" [ref=f12e46] [cursor=pointer]:
+          - /url: /go/catalog/services-1
+          - img "Weapons" [ref=f12e48]
+          - generic [ref=f12e49]:
+            - generic [ref=f12e50]: Weapons & gear
+            - heading "Weapons" [level=2] [ref=f12e51]
+            - paragraph [ref=f12e52]: Upgraded weapons up to Mk. IV
+            - generic [ref=f12e53]: View options & prices
+        - link "Scrappy Upgrade Resources & upgrades Scrappy Upgrade Upgrade Scrappy to any available level View options & prices" [ref=f12e57] [cursor=pointer]:
+          - /url: /go/catalog/services-12
+          - img "Scrappy Upgrade" [ref=f12e59]
+          - generic [ref=f12e60]:
+            - generic [ref=f12e61]: Resources & upgrades
+            - heading "Scrappy Upgrade" [level=2] [ref=f12e62]
+            - paragraph [ref=f12e63]: Upgrade Scrappy to any available level
+            - generic [ref=f12e64]: View options & prices
+        - link "Workshop Station Upgrades Resources & upgrades Workshop Station Upgrades Upgrade workshop stations to any available level View options & prices" [ref=f12e68] [cursor=pointer]:
+          - /url: /go/catalog/services-8
+          - img "Workshop Station Upgrades" [ref=f12e70]
+          - generic [ref=f12e71]:
+            - generic [ref=f12e72]: Resources & upgrades
+            - heading "Workshop Station Upgrades" [level=2] [ref=f12e73]
+            - paragraph [ref=f12e74]: Upgrade workshop stations to any available level
+            - generic [ref=f12e75]: View options & prices
+        - link "Items / Resources Resources & upgrades Items / Resources Items and resources for crafting View options & prices" [ref=f12e79] [cursor=pointer]:
+          - /url: /go/catalog/services-4
+          - img "Items / Resources" [ref=f12e81]
+          - generic [ref=f12e82]:
+            - generic [ref=f12e83]: Resources & upgrades
+            - heading "Items / Resources" [level=2] [ref=f12e84]
+            - paragraph [ref=f12e85]: Items and resources for crafting
+            - generic [ref=f12e86]: View options & prices
+        - link "Blueprint Sets Blueprints Blueprint Sets Ready-made sets or build your own with a 12.5% discount View options & prices" [ref=f12e90] [cursor=pointer]:
+          - /url: /go/catalog/services-26
+          - img "Blueprint Sets" [ref=f12e92]
+          - generic [ref=f12e93]:
+            - generic [ref=f12e94]: Blueprints
+            - heading "Blueprint Sets" [level=2] [ref=f12e95]
+            - paragraph [ref=f12e96]: Ready-made sets or build your own with a 12.5% discount
+            - generic [ref=f12e97]: View options & prices
+        - link "Custom Request Resources & upgrades Custom Request Cannot find what you need? Contact us and we will help with a custom request. View options & prices" [ref=f12e101] [cursor=pointer]:
+          - /url: /go/catalog/services-9
+          - img "Custom Request" [ref=f12e103]
+          - generic [ref=f12e104]:
+            - generic [ref=f12e105]: Resources & upgrades
+            - heading "Custom Request" [level=2] [ref=f12e106]
+            - paragraph [ref=f12e107]: Cannot find what you need? Contact us and we will help with a custom request.
+            - generic [ref=f12e108]: View options & prices
+        - link "Keys Resources & upgrades Keys Keys for rooms with high-value loot View options & prices" [ref=f12e112] [cursor=pointer]:
+          - /url: /go/catalog/services-16
+          - img "Keys" [ref=f12e114]
+          - generic [ref=f12e115]:
+            - generic [ref=f12e116]: Resources & upgrades
+            - heading "Keys" [level=2] [ref=f12e117]
+            - paragraph [ref=f12e118]: Keys for rooms with high-value loot
+            - generic [ref=f12e119]: View options & prices
+        - link "Currency Resources & upgrades Currency In-game coin purchases View options & prices" [ref=f12e123] [cursor=pointer]:
+          - /url: /go/catalog/services-17
+          - img "Currency" [ref=f12e125]
+          - generic [ref=f12e126]:
+            - generic [ref=f12e127]: Resources & upgrades
+            - heading "Currency" [level=2] [ref=f12e128]
+            - paragraph [ref=f12e129]: In-game coin purchases
+            - generic [ref=f12e130]: View options & prices
+        - link "Augments (Backpacks) Weapons & gear Augments (Backpacks) Wide selection of Mk. 3 augments View options & prices" [ref=f12e134] [cursor=pointer]:
+          - /url: /go/catalog/services-18
+          - img "Augments (Backpacks)" [ref=f12e136]
+          - generic [ref=f12e137]:
+            - generic [ref=f12e138]: Weapons & gear
+            - heading "Augments (Backpacks)" [level=2] [ref=f12e139]
+            - paragraph [ref=f12e140]: Wide selection of Mk. 3 augments
+            - generic [ref=f12e141]: View options & prices
+        - link "Shields Weapons & gear Shields Ready-to-use shields for raid runs View options & prices" [ref=f12e145] [cursor=pointer]:
+          - /url: /go/catalog/services-19
+          - img "Shields" [ref=f12e147]
+          - generic [ref=f12e148]:
+            - generic [ref=f12e149]: Weapons & gear
+            - heading "Shields" [level=2] [ref=f12e150]
+            - paragraph [ref=f12e151]: Ready-to-use shields for raid runs
+            - generic [ref=f12e152]: View options & prices
+        - link "Grenades Weapons & gear Grenades Ready grenade sets for raids View options & prices" [ref=f12e156] [cursor=pointer]:
+          - /url: /go/catalog/services-20
+          - img "Grenades" [ref=f12e158]
+          - generic [ref=f12e159]:
+            - generic [ref=f12e160]: Weapons & gear
+            - heading "Grenades" [level=2] [ref=f12e161]
+            - paragraph [ref=f12e162]: Ready grenade sets for raids
+            - generic [ref=f12e163]: View options & prices
+        - link "PvP/PvE loadout subscription Loadouts & bundles PvP/PvE loadout subscription Kit replacements for 1 or 7 days. View options & prices" [ref=f12e167] [cursor=pointer]:
+          - /url: /go/catalog/services-25
+          - img "PvP/PvE loadout subscription" [ref=f12e169]
+          - generic [ref=f12e170]:
+            - generic [ref=f12e171]: Loadouts & bundles
+            - heading "PvP/PvE loadout subscription" [level=2] [ref=f12e172]
+            - paragraph [ref=f12e173]: Kit replacements for 1 or 7 days.
+            - generic [ref=f12e174]: View options & prices
+        - link "Raider Loadout Loadouts & bundles Raider Loadout Weapons, attachments and gear for your playstyle View options & prices" [ref=f12e178] [cursor=pointer]:
+          - /url: /go/catalog/services-27
+          - img "Raider Loadout" [ref=f12e180]
+          - generic [ref=f12e181]:
+            - generic [ref=f12e182]: Loadouts & bundles
+            - heading "Raider Loadout" [level=2] [ref=f12e183]
+            - paragraph [ref=f12e184]: Weapons, attachments and gear for your playstyle
+            - generic [ref=f12e185]: View options & prices
+        - link "Amplified weapons Weapons & gear Amplified weapons Level V weapons with your choice of perks and attachments View options & prices" [ref=f12e189] [cursor=pointer]:
+          - /url: /go/catalog/services-28
+          - img "Amplified weapons" [ref=f12e191]
+          - generic [ref=f12e192]:
+            - generic [ref=f12e193]: Weapons & gear
+            - heading "Amplified weapons" [level=2] [ref=f12e194]
+            - paragraph [ref=f12e195]: Level V weapons with your choice of perks and attachments
+            - generic [ref=f12e196]: View options & prices
+        - link "Post-Wipe Recovery Loadouts & bundles Post-Wipe Recovery A recovery bundle for getting back on track after a wipe. View options & prices" [ref=f12e200] [cursor=pointer]:
+          - /url: /go/catalog/bundles-30
+          - img "Post-Wipe Recovery" [ref=f12e202]
+          - generic [ref=f12e203]:
+            - generic [ref=f12e204]: Loadouts & bundles
+            - heading "Post-Wipe Recovery" [level=2] [ref=f12e205]
+            - paragraph [ref=f12e206]: A recovery bundle for getting back on track after a wipe.
+            - generic [ref=f12e207]: View options & prices
+      - paragraph [ref=f12e211]: Checkout, fulfillment and order support are provided by ARC Store. Availability and final pricing are confirmed on the product page. We may earn a commission on purchases.
+  - contentinfo [ref=f12e212]:
+    - link "ARCSKILLER" [ref=f12e213] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f12e214]:
+      - link "Planner" [ref=f12e215] [cursor=pointer]:
+        - /url: /planner/
+      - link "Wiki" [ref=f12e216] [cursor=pointer]:
+        - /url: /wiki/
+      - link "Guides" [ref=f12e217] [cursor=pointer]:
+        - /url: /blog.html
+      - link "Shop" [ref=f12e218] [cursor=pointer]:
+        - /url: /store/
+    - paragraph [ref=f12e219]: Independent fan resource. Not affiliated with Embark Studios. Game imagery belongs to its respective owners. Store links may earn us a commission.

@@ -1,0 +1,133 @@
+{
+  "updatedAt": "2026-11-03T02:28:52.005Z",
+  "products": [
+    {
+      "id": "services-3",
+      "name": "Blueprints",
+      "destination": "/services/blueprints/",
+      "image": "https://arc-store.pro/assets/en-parity/blueprints.webp",
+      "description": "Wide selection of blueprints",
+      "group": "Blueprints"
+    },
+    {
+      "id": "services-1",
+      "name": "Weapons",
+      "destination": "/services/weapons/",
+      "image": "https://arc-store.pro/assets/en-parity/weapons.webp",
+      "description": "Upgraded weapons up to Mk. IV",
+      "group": "Weapons & gear"
+    },
+    {
+      "id": "services-12",
+      "name": "Scrappy Upgrade",
+      "destination": "/services/rooster-upgrades/",
+      "image": "https://arc-store.pro/assets/en-parity/rooster-upgrades.webp",
+      "description": "Upgrade Scrappy to any available level",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-8",
+      "name": "Workshop Station Upgrades",
+      "destination": "/services/workbench-upgrades/",
+      "image": "https://arc-store.pro/assets/en-parity/workbench-upgrades.webp",
+      "description": "Upgrade workshop stations to any available level",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-4",
+      "name": "Items / Resources",
+      "destination": "/services/items-and-resources/",
+      "image": "https://arc-store.pro/assets/en-parity/items-and-resources.webp",
+      "description": "Items and resources for crafting",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-26",
+      "name": "Blueprint Sets",
+      "destination": "/services/blueprint-sets/",
+      "image": "https://arc-store.pro/assets/en-parity/blueprint-sets.webp",
+      "description": "Ready-made sets or build your own with a 12.5% discount",
+      "group": "Blueprints"
+    },
+    {
+      "id": "services-9",
+      "name": "Custom Request",
+      "destination": "/services/individual-request/",
+      "image": "https://arc-store.pro/assets/en-parity/individual-request.webp",
+      "description": "Cannot find what you need? Contact us and we will help with a custom request.",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-16",
+      "name": "Keys",
+      "destination": "/services/keys-service/",
+      "image": "https://arc-store.pro/assets/en-parity/keys-service.webp",
+      "description": "Keys for rooms with high-value loot",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-17",
+      "name": "Currency",
+      "destination": "/services/currency/",
+      "image": "https://arc-store.pro/assets/en-parity/currency.webp",
+      "description": "In-game coin purchases",
+      "group": "Resources & upgrades"
+    },
+    {
+      "id": "services-18",
+      "name": "Augments (Backpacks)",
+      "destination": "/services/boosters-backpacks/",
+      "image": "https://arc-store.pro/assets/en-parity/boosters-backpacks.webp",
+      "description": "Wide selection of Mk. 3 augments",
+      "group": "Weapons & gear"
+    },
+    {
+      "id": "services-19",
+      "name": "Shields",
+      "destination": "/services/shields/",
+      "image": "https://arc-store.pro/assets/en-parity/shields.webp",
+      "description": "Ready-to-use shields for raid runs",
+      "group": "Weapons & gear"
+    },
+    {
+      "id": "services-20",
+      "name": "Grenades",
+      "destination": "/services/grenades/",
+      "image": "https://arc-store.pro/assets/en-parity/grenades.webp",
+      "description": "Ready grenade sets for raids",
+      "group": "Weapons & gear"
+    },
+    {
+      "id": "services-25",
+      "name": "PvP/PvE loadout subscription",
+      "destination": "/services/pvp-loadout-subscription/",
+      "image": "https://arc-store.pro/assets/en-parity/pvp-loadout-subscription.webp",
+      "description": "Kit replacements for 1 or 7 days.",
+      "group": "Loadouts & bundles"
+    },
+    {
+      "id": "services-27",
+      "name": "Raider Loadout",
+      "destination": "/services/raider-loadout/",
+      "image": "https://arc-store.pro/assets/en-parity/raider-loadout.webp",
+      "description": "Weapons, attachments and gear for your playstyle",
+      "group": "Loadouts & bundles"
+    },
+    {
+      "id": "services-28",
+      "name": "Amplified weapons",
+      "destination": "/services/weapons-level-5/",
+      "image": "https://arc-store.pro/assets/en-parity/weapons-level-5.webp",
+      "description": "Level V weapons with your choice of perks and attachments",
+      "group": "Weapons & gear"
+    },
+    {
+      "id": "bundles-30",
+      "name": "Post-Wipe Recovery",
+      "destination": "/bundles/post-wipe-recovery/",
+      "image": "https://arc-store.pro/assets/en-parity/post-wipe-recovery.webp",
+      "description": "A recovery bundle for getting back on track after a wipe.",
+      "group": "Loadouts & bundles"
+    }
+  ]
+}

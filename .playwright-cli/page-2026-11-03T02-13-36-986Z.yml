@@ -1,0 +1,482 @@
+- generic [ref=f1e3]:
+  - navigation [ref=f1e4]:
+    - link "ARC Raiders Skill Tree Builder ARC Raiders Skill Tree Builder" [ref=f1e7] [cursor=pointer]:
+      - /url: /
+      - img "ARC Raiders Skill Tree Builder" [ref=f1e8]
+      - generic [ref=f1e9]:
+        - generic [ref=f1e10]: ARC Raiders
+        - generic [ref=f1e11]: Skill Tree Builder
+  - 'button "New: AI Build Advisor is live. Generate a build for your playstyle or review your current setup." [ref=f1e12] [cursor=pointer]'
+  - generic [ref=f1e17]:
+    - generic [ref=f1e18]:
+      - generic [ref=f1e19]:
+        - generic [ref=f1e20]:
+          - generic [ref=f1e21]: Total Points
+          - generic [ref=f1e22]: 0/76
+        - combobox "Skill point budget" [ref=f1e23]:
+          - option "76 points" [selected]
+          - option "81 points"
+          - option "86 points"
+          - option "91 points"
+        - button "Reset Tree" [ref=f1e25] [cursor=pointer]
+        - button "Share Build" [ref=f1e29] [cursor=pointer]
+        - button "NEW" [ref=f1e36] [cursor=pointer]
+      - generic [ref=f1e45]:
+        - button "Zoom In" [ref=f1e46] [cursor=pointer]
+        - button "Reset View" [ref=f1e50] [cursor=pointer]
+        - button "Zoom Out" [ref=f1e56] [cursor=pointer]
+    - generic [ref=f1e61]:
+      - generic:
+        - generic: CONDITIONING
+        - generic: 0 Points
+      - generic:
+        - generic: MOBILITY
+        - generic: 0 Points
+      - generic:
+        - generic: SURVIVAL
+        - generic: 0 Points
+      - button "Used to the Weight, rank 0 of 1" [ref=f1e62] [cursor=pointer]:
+        - generic [ref=f1e64]: 0/1
+      - button "Stubborn Mule, rank 0 of 5, locked" [ref=f1e65] [cursor=pointer]:
+        - generic [ref=f1e71]: 0/5
+      - button "Three Deep Breaths, rank 0 of 5, locked" [ref=f1e72] [cursor=pointer]:
+        - generic [ref=f1e78]: 0/5
+      - button "Vault 'N' Carry, rank 0 of 1, locked" [ref=f1e79] [cursor=pointer]:
+        - generic [ref=f1e85]: 0/1
+      - button "Vigorous Vaulter, rank 0 of 1, locked" [ref=f1e86] [cursor=pointer]:
+        - generic [ref=f1e92]: 0/1
+      - button "Mule's Gallop, rank 0 of 1, locked" [ref=f1e93] [cursor=pointer]:
+        - generic [ref=f1e99]: 0/1
+      - button "Back on Your Feet, rank 0 of 1, locked" [ref=f1e100] [cursor=pointer]:
+        - generic [ref=f1e106]: 0/1
+      - button "Loaded Arms, rank 0 of 1, locked" [ref=f1e107] [cursor=pointer]:
+        - generic [ref=f1e113]: 0/1
+      - button "Broad Shoulders, rank 0 of 5, locked" [ref=f1e114] [cursor=pointer]:
+        - generic [ref=f1e120]: 0/5
+      - button "Downed But Determined, rank 0 of 5, locked" [ref=f1e121] [cursor=pointer]:
+        - generic [ref=f1e127]: 0/5
+      - button "Proficient Pryer, rank 0 of 5, locked" [ref=f1e128] [cursor=pointer]:
+        - generic [ref=f1e134]: 0/5
+      - button "Speedy Mule, rank 0 of 5, locked" [ref=f1e135] [cursor=pointer]:
+        - generic [ref=f1e141]: 0/5
+      - button "Crawl Before You Walk, rank 0 of 5, locked" [ref=f1e142] [cursor=pointer]:
+        - generic [ref=f1e148]: 0/5
+      - button "Security Breach, rank 0 of 1, locked" [ref=f1e149] [cursor=pointer]:
+        - generic [ref=f1e155]: 0/1
+      - button "Weapon Bash, rank 0 of 1, locked" [ref=f1e156] [cursor=pointer]:
+        - generic [ref=f1e162]: 0/1
+      - button "Bull Rush, rank 0 of 1, locked" [ref=f1e163] [cursor=pointer]:
+        - generic [ref=f1e169]: 0/1
+      - button "Youthful Lungs, rank 0 of 1" [ref=f1e170] [cursor=pointer]:
+        - generic [ref=f1e172]: 0/1
+      - button "Sure-Footed Scrambler, rank 0 of 5, locked" [ref=f1e173] [cursor=pointer]:
+        - generic [ref=f1e179]: 0/5
+      - button "Nimble Climber, rank 0 of 5, locked" [ref=f1e180] [cursor=pointer]:
+        - generic [ref=f1e186]: 0/5
+      - button "Ready to Roll, rank 0 of 5, locked" [ref=f1e187] [cursor=pointer]:
+        - generic [ref=f1e193]: 0/5
+      - button "Fight or Flight, rank 0 of 5, locked" [ref=f1e194] [cursor=pointer]:
+        - generic [ref=f1e200]: 0/5
+      - button "Vault Spring, rank 0 of 1, locked" [ref=f1e201] [cursor=pointer]:
+        - generic [ref=f1e207]: 0/1
+      - button "Vaults on Vaults on Vaults, rank 0 of 1, locked" [ref=f1e208] [cursor=pointer]:
+        - generic [ref=f1e214]: 0/1
+      - button "Effortless Roll, rank 0 of 5, locked" [ref=f1e215] [cursor=pointer]:
+        - generic [ref=f1e221]: 0/5
+      - button "Right Back At It, rank 0 of 1, locked" [ref=f1e222] [cursor=pointer]:
+        - generic [ref=f1e228]: 0/1
+      - button "Marathon Runner, rank 0 of 5, locked" [ref=f1e229] [cursor=pointer]:
+        - generic [ref=f1e235]: 0/5
+      - button "Slip and Slide, rank 0 of 5, locked" [ref=f1e236] [cursor=pointer]:
+        - generic [ref=f1e242]: 0/5
+      - button "Off the Wall, rank 0 of 5, locked" [ref=f1e243] [cursor=pointer]:
+        - generic [ref=f1e249]: 0/5
+      - button "Swift Start, rank 0 of 5, locked" [ref=f1e250] [cursor=pointer]:
+        - generic [ref=f1e256]: 0/5
+      - button "Sprinting on Fumes, rank 0 of 1, locked" [ref=f1e257] [cursor=pointer]:
+        - generic [ref=f1e263]: 0/1
+      - button "Wall Run, rank 0 of 1, locked" [ref=f1e264] [cursor=pointer]:
+        - generic [ref=f1e270]: 0/1
+      - button "In the Flow, rank 0 of 1, locked" [ref=f1e271] [cursor=pointer]:
+        - generic [ref=f1e277]: 0/1
+      - button "In-Round Crafting, rank 0 of 1" [ref=f1e278] [cursor=pointer]:
+        - generic [ref=f1e280]: 0/1
+      - button "Looter's Instincts, rank 0 of 5, locked" [ref=f1e281] [cursor=pointer]:
+        - generic [ref=f1e287]: 0/5
+      - button "Sturdy Ankles, rank 0 of 5, locked" [ref=f1e288] [cursor=pointer]:
+        - generic [ref=f1e294]: 0/5
+      - button "Silent Scavenger, rank 0 of 5, locked" [ref=f1e295] [cursor=pointer]:
+        - generic [ref=f1e301]: 0/5
+      - button "Agile Croucher, rank 0 of 5, locked" [ref=f1e302] [cursor=pointer]:
+        - generic [ref=f1e308]: 0/5
+      - button "Quick Roll, rank 0 of 1, locked" [ref=f1e309] [cursor=pointer]:
+        - generic [ref=f1e315]: 0/1
+      - button "Minesweeper, rank 0 of 1, locked" [ref=f1e316] [cursor=pointer]:
+        - generic [ref=f1e322]: 0/1
+      - button "Gentle Pressure, rank 0 of 5, locked" [ref=f1e323] [cursor=pointer]:
+        - generic [ref=f1e329]: 0/5
+      - button "Traveling Tinkerer, rank 0 of 1, locked" [ref=f1e330] [cursor=pointer]:
+        - generic [ref=f1e336]: 0/1
+      - button "Stylish Landing, rank 0 of 5, locked" [ref=f1e337] [cursor=pointer]:
+        - generic [ref=f1e343]: 0/5
+      - button "A Little Extra, rank 0 of 1, locked" [ref=f1e344] [cursor=pointer]:
+        - generic [ref=f1e350]: 0/1
+      - button "Looter's Luck, rank 0 of 5, locked" [ref=f1e351] [cursor=pointer]:
+        - generic [ref=f1e357]: 0/5
+      - button "Turtle Crawl, rank 0 of 5, locked" [ref=f1e358] [cursor=pointer]:
+        - generic [ref=f1e364]: 0/5
+      - button "Road Warrior, rank 0 of 1, locked" [ref=f1e365] [cursor=pointer]:
+        - generic [ref=f1e371]: 0/1
+      - button "Nomadic Crafting, rank 0 of 1, locked" [ref=f1e372] [cursor=pointer]:
+        - generic [ref=f1e378]: 0/1
+      - button "Field Repair, rank 0 of 1, locked" [ref=f1e379] [cursor=pointer]:
+        - generic [ref=f1e385]: 0/1
+    - generic [ref=f1e387]:
+      - generic [ref=f1e388]: Drag to Pan | Scroll to Zoom
+      - button "Scroll down for full guide" [ref=f1e394] [cursor=pointer]
+  - button "Open AI Build Advisor" [ref=f1e398] [cursor=pointer]
+  - generic [ref=f1e402]:
+    - generic [ref=f1e404]:
+      - generic [ref=f1e405]:
+        - generic [ref=f1e406]: "48"
+        - generic [ref=f1e407]: Skill Nodes
+      - generic [ref=f1e408]:
+        - generic [ref=f1e409]: "91"
+        - generic [ref=f1e410]: Max Points
+      - generic [ref=f1e411]:
+        - generic [ref=f1e412]: "3"
+        - generic [ref=f1e413]: Skill Branches
+      - generic [ref=f1e414]:
+        - generic [ref=f1e415]: ∞
+        - generic [ref=f1e416]: Build Combos
+    - generic [ref=f1e418]:
+      - generic [ref=f1e419]:
+        - generic [ref=f1e420]: ARC Raiders Tools
+        - heading "Master the ARC Raiders Skill Tree" [level=2] [ref=f1e423]
+        - paragraph [ref=f1e424]:
+          - text: The
+          - strong [ref=f1e425]: ARC Skill Tree
+          - text: offers a predictable growth system — define your
+          - strong [ref=f1e426]: Skill
+          - text: style with strategic
+          - strong [ref=f1e427]: ARC Raiders
+          - text: choices.
+      - generic [ref=f1e428]:
+        - generic [ref=f1e429]:
+          - generic [ref=f1e430]: NEW
+          - heading "Interactive Skill Planner" [level=3] [ref=f1e437]
+          - paragraph [ref=f1e438]: Plan a 76-point base build or an Expedition build up to 91 points. Drag, zoom, and share instantly.
+        - generic [ref=f1e440]:
+          - generic [ref=f1e441]: POPULAR
+          - heading "Best Early Builds" [level=3] [ref=f1e446]
+          - paragraph [ref=f1e447]: Curated high-performance builds for every playstyle — solo looter, team tank, or aggressive flanker.
+        - generic [ref=f1e449]:
+          - generic [ref=f1e450]: NEW
+          - heading "Branch Deep-Dives" [level=3] [ref=f1e456]
+          - paragraph [ref=f1e457]: Full breakdowns of Conditioning, Mobility, and Survival trees — every node, every effect explained.
+        - generic [ref=f1e459]:
+          - generic [ref=f1e460]: COMING SOON
+          - heading "Build Sharing" [level=3] [ref=f1e466]
+          - paragraph [ref=f1e467]: Save and share permalinks for your exact skill allocation with teammates and the community.
+        - generic [ref=f1e469]:
+          - generic [ref=f1e470]: COMING SOON
+          - heading "Zone Strategy Map" [level=3] [ref=f1e475]
+          - paragraph [ref=f1e476]: Interactive map overlay showing best skill synergies per extraction zone and raid type.
+        - generic [ref=f1e478]:
+          - generic [ref=f1e479]: COMING SOON
+          - heading "Meta Tracker" [level=3] [ref=f1e487]
+          - paragraph [ref=f1e488]: Track the current community meta builds and discover which skill paths top players are running.
+    - generic [ref=f1e491]:
+      - paragraph [ref=f1e492]: Quick Access
+      - generic [ref=f1e493]:
+        - link "Skill Planner" [ref=f1e494] [cursor=pointer]:
+          - /url: "#"
+        - link "Build Guides" [ref=f1e495] [cursor=pointer]:
+          - /url: "#scenarios"
+        - link "Skill Branches" [ref=f1e496] [cursor=pointer]:
+          - /url: "#skill-trees"
+        - link "Video Guides" [ref=f1e497] [cursor=pointer]:
+          - /url: "#videos"
+        - link "FAQ" [ref=f1e498] [cursor=pointer]:
+          - /url: "#faq"
+        - link "Wiki" [ref=f1e499] [cursor=pointer]:
+          - /url: /wiki/
+        - link "Gallery" [ref=f1e500] [cursor=pointer]:
+          - /url: /screenshots.html
+        - link "Blog" [ref=f1e501] [cursor=pointer]:
+          - /url: /blog.html
+    - generic [ref=f1e503]:
+      - generic [ref=f1e504]:
+        - heading "Beyond Random Gear" [level=3] [ref=f1e506]
+        - paragraph [ref=f1e507]:
+          - text: Unlike other games, your power in
+          - strong [ref=f1e508]: ARC Raiders
+          - text: isn't just about loot drops. The
+          - strong [ref=f1e509]: Skill Tree
+          - text: puts progression in your hands.
+      - generic [ref=f1e510]:
+        - heading "ARC Raiders Growth" [level=3] [ref=f1e512]
+        - paragraph [ref=f1e513]:
+          - text: Don't just rely on weapons. The
+          - strong [ref=f1e514]: ARC Raiders Skill Tree
+          - text: allows for deep character growth and personal expression through specific
+          - strong [ref=f1e515]: Skill
+          - text: nodes.
+      - generic [ref=f1e516]:
+        - heading "Strategic Skill Builds" [level=3] [ref=f1e518]
+        - paragraph [ref=f1e519]:
+          - text: Avoid homogenized gameplay. Use the
+          - strong [ref=f1e520]: ARC Raiders Skill Tree
+          - text: to create diverse builds that offer true strategic variety in every raid.
+    - generic [ref=f1e522]:
+      - generic [ref=f1e523]:
+        - heading "What is the ARC Raiders Skill Tree?" [level=2] [ref=f1e524]
+        - paragraph [ref=f1e525]:
+          - text: A revolutionary
+          - strong [ref=f1e526]: ARC Raiders
+          - text: progression system, letting players define strength via the
+          - strong [ref=f1e527]: Skill Tree
+          - text: .
+      - generic [ref=f1e528]:
+        - generic [ref=f1e529]:
+          - heading "ARC Raiders Skill Points" [level=3] [ref=f1e535]
+          - paragraph [ref=f1e536]:
+            - text: Plan with
+            - strong [ref=f1e537]: 76 base points
+            - text: at level 75, or up to 91 with Expedition bonuses.
+        - generic [ref=f1e538]:
+          - heading "Best Skill Configurations" [level=3] [ref=f1e543]
+          - paragraph [ref=f1e544]:
+            - text: Conditioning, Mobility, and Survival. Build your optimal
+            - strong [ref=f1e545]: ARC Raiders Skill Tree
+            - text: configuration.
+        - generic [ref=f1e546]:
+          - heading "48 Skill Tree Nodes" [level=3] [ref=f1e550]
+          - paragraph [ref=f1e551]:
+            - text: "16"
+            - strong [ref=f1e552]: Skill
+            - text: nodes per branch, including a middle choice and up to two final picks.
+    - generic [ref=f1e554]:
+      - generic [ref=f1e555]:
+        - generic [ref=f1e556]: Skill Branches
+        - heading "ARC Raiders Skill Tree Branches" [level=2] [ref=f1e557]
+      - generic [ref=f1e558]:
+        - generic [ref=f1e564]:
+          - generic [ref=f1e565]: Branch
+          - heading "Conditioning" [level=3] [ref=f1e566]
+          - paragraph [ref=f1e567]:
+            - text: "Focus:"
+            - strong [ref=f1e568]: ARC Raiders
+            - text: Survival & Stamina
+          - paragraph [ref=f1e569]: "For: Heavy Raiders, tanks, endurance builds"
+          - list [ref=f1e570]:
+            - listitem [ref=f1e571]:
+              - generic [ref=f1e572]: ▸
+              - text: Stamina recovery
+              - strong [ref=f1e573]: Skill
+            - listitem [ref=f1e574]:
+              - generic [ref=f1e575]: ▸
+              - text: Carry capacity enhancement
+            - listitem [ref=f1e576]:
+              - generic [ref=f1e577]: ▸
+              - text: Shield penalty reduction
+        - generic [ref=f1e583]:
+          - generic [ref=f1e584]: Branch
+          - heading "Mobility" [level=3] [ref=f1e585]
+          - paragraph [ref=f1e586]:
+            - text: "Focus: Speed &"
+            - strong [ref=f1e587]: ARC Raiders
+            - text: Movement
+          - paragraph [ref=f1e588]: "For: Assault Raiders, PvP experts"
+          - list [ref=f1e589]:
+            - listitem [ref=f1e590]:
+              - generic [ref=f1e591]: ▸
+              - text: Marathon Runner (stamina
+              - strong [ref=f1e592]: Skill
+              - text: )
+            - listitem [ref=f1e593]:
+              - generic [ref=f1e594]: ▸
+              - text: Youthful Lungs (max stamina)
+            - listitem [ref=f1e595]:
+              - generic [ref=f1e596]: ▸
+              - text: Effortless Roll (dodge
+              - strong [ref=f1e597]: Skill
+              - text: )
+        - generic [ref=f1e604]:
+          - generic [ref=f1e605]: Branch
+          - heading "Survival" [level=3] [ref=f1e606]
+          - paragraph [ref=f1e607]:
+            - text: "Focus: Looting &"
+            - strong [ref=f1e608]: ARC Raiders
+            - text: Resources
+          - paragraph [ref=f1e609]: "For: Looting specialists, stealth Raiders"
+          - list [ref=f1e610]:
+            - listitem [ref=f1e611]:
+              - generic [ref=f1e612]: ▸
+              - text: Scraping speed
+              - strong [ref=f1e613]: Skill
+            - listitem [ref=f1e614]:
+              - generic [ref=f1e615]: ▸
+              - text: Backpack capacity expansion
+            - listitem [ref=f1e616]:
+              - generic [ref=f1e617]: ▸
+              - text: Safe cracking ability
+    - generic [ref=f1e619]:
+      - heading "ARC Raiders Skill Tree Builds" [level=2] [ref=f1e621]
+      - generic [ref=f1e622]:
+        - generic [ref=f1e625]:
+          - heading "Solo Raider (Looter Build)" [level=4] [ref=f1e626]
+          - paragraph [ref=f1e632]:
+            - strong [ref=f1e633]: "Build:"
+            - text: Survival Skill Tree (40–50) + Low Mobility
+          - paragraph [ref=f1e634]: "Silent infiltration and rapid looting. Essential ARC Raiders skills: Scraping efficiency, backpack capacity."
+        - generic [ref=f1e637]:
+          - heading "Team Combat (Tank Build)" [level=4] [ref=f1e638]
+          - paragraph [ref=f1e641]:
+            - strong [ref=f1e642]: "Build:"
+            - text: Conditioning Skill Tree (40–50) + Survival supplement
+          - paragraph [ref=f1e643]: "Damage absorption for your ARC squad. Key skills: Shield enhancement, stamina recovery."
+        - generic [ref=f1e646]:
+          - heading "PvP Combat (Flanker Build)" [level=4] [ref=f1e647]
+          - paragraph [ref=f1e650]:
+            - strong [ref=f1e651]: "Build:"
+            - text: Mobility Skill Tree (45–55) + Low Conditioning
+          - paragraph [ref=f1e652]: "High mobility and tactical dodging. Best ARC Raiders skills: Extreme sprint, climbing, dodging."
+    - generic [ref=f1e654]:
+      - generic [ref=f1e655]:
+        - generic [ref=f1e656]: Video Guides
+        - heading "ARC Raiders Skill Tree Video Guides" [level=2] [ref=f1e659]
+        - paragraph [ref=f1e660]: Prefer learning by watching? These older community videos show earlier skill trees; check node names and point totals against Frozen Trail before following a build.
+      - generic [ref=f1e662]:
+        - paragraph [ref=f1e663]: Featured Guide
+        - heading "Arc Raiders – Skill Tree Overview – Best EARLY Skills" [level=3] [ref=f1e664]
+        - iframe [ref=f1e666]
+      - generic [ref=f1e667]:
+        - link [ref=f1e668] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=GhaoPMkzido
+          - generic [ref=f1e672]:
+            - heading "Arc Raiders OP Skill Tree Build Guide – BEST SKILLS TO UNLOCK! – SOLO Beginner to Pro Full Guide" [level=3] [ref=f1e673]
+            - paragraph [ref=f1e674]: Deep-dive on strong early picks and a full progression path from fresh character to end-game.
+        - link [ref=f1e675] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=K7Mf9fg8-7U
+          - generic [ref=f1e679]:
+            - heading "Arc Raiders – The ONLY Skill Tree Build you NEED | 75 Points" [level=3] [ref=f1e680]
+            - paragraph [ref=f1e681]: A full 75-point example build focusing on consistent performance across most activities.
+        - link [ref=f1e682] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=V5nKXXsiODQ
+          - generic [ref=f1e686]:
+            - heading "Watch THIS Before Unlocking Skills in ARC Raiders (In-Depth Guide & Build)" [level=3] [ref=f1e687]
+            - paragraph [ref=f1e688]: Explains how the tree works so you avoid wasting points and understand long-term trade-offs.
+        - link [ref=f1e689] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=s08i_ImDvc0
+          - generic [ref=f1e693]:
+            - heading "BEST All Round Skill Tree in Arc Raiders! Avoid This Mistake!" [level=3] [ref=f1e694]
+            - paragraph [ref=f1e695]: A flexible all-rounder build plus common routing mistakes to steer clear of.
+        - link [ref=f1e696] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=abOCeC8vruw
+          - generic [ref=f1e700]:
+            - 'heading "Arc Raiders: The Best 13 Skills To Unlock Early… (Skill Tree Beginner''s Guide)" [level=3] [ref=f1e701]'
+            - paragraph [ref=f1e702]: A curated list of must-have early skills to unlock first on fresh accounts.
+        - link [ref=f1e703] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=yKBU3UMhT4U
+          - generic [ref=f1e707]:
+            - heading "If YOU Mess this up, Goodluck. - Arc Raiders Skill Tree Guide & Best Skill Tree Build" [level=3] [ref=f1e708]
+            - paragraph [ref=f1e709]: Highlights critical mistakes and presents a safe, strong recommendation to follow.
+        - link [ref=f1e710] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=akrz8fbocZI
+          - generic [ref=f1e714]:
+            - 'heading "My ARC Raiders Skill Tree: what I like, what I regret (level 75 build review)" [level=3] [ref=f1e715]'
+            - paragraph [ref=f1e716]: Level 75 review with insight into which picks felt worth it and which could be skipped.
+    - generic [ref=f1e718]:
+      - generic [ref=f1e719]:
+        - paragraph [ref=f1e720]: Third-party games
+        - heading "Play Online" [level=2] [ref=f1e721]
+      - generic [ref=f1e722]:
+        - generic [ref=f1e723]:
+          - heading "Online Game 1" [level=3] [ref=f1e724]
+          - iframe [ref=f1e726]
+        - generic [ref=f1e727]:
+          - heading "Online Game 2" [level=3] [ref=f1e728]
+          - iframe [ref=f1e730]
+    - generic [ref=f1e732]:
+      - heading "ARC Raiders Skill Tree FAQ" [level=2] [ref=f1e734]
+      - generic [ref=f1e735]:
+        - generic [ref=f1e736]:
+          - heading "How to earn ARC Raiders Skill points?" [level=3] [ref=f1e737]
+          - paragraph [ref=f1e741]:
+            - text: The Frozen Trail tree provides 76 base
+            - strong [ref=f1e742]: Skill
+            - text: points by level 75. Three Expeditions can add up to 15 more, for 91 total.
+        - generic [ref=f1e743]:
+          - heading "Can I reset my ARC Raiders Skill Tree?" [level=3] [ref=f1e744]
+          - paragraph [ref=f1e748]:
+            - text: The game currently lacks a convenient free respec mechanism for your
+            - strong [ref=f1e749]: Skill Tree
+            - text: . Use this planner to test
+            - strong [ref=f1e750]: ARC Raiders
+            - text: builds before committing.
+        - generic [ref=f1e751]:
+          - heading "Which Skill Tree is best for beginners?" [level=3] [ref=f1e752]
+          - paragraph [ref=f1e756]:
+            - text: Prioritize basic Mobility (Marathon Runner) in the
+            - strong [ref=f1e757]: ARC Raiders Skill Tree
+            - text: for levels 1–20, then move to Survival looting
+            - strong [ref=f1e758]: skills
+            - text: .
+    - contentinfo [ref=f1e759]:
+      - generic [ref=f1e760]:
+        - generic [ref=f1e761]:
+          - generic [ref=f1e762]: ARC Raiders
+          - generic [ref=f1e763]: Skill Tree Builder
+          - paragraph [ref=f1e764]: "© 2025 ARC Raiders Skill Tree Build Guide.This website is not official.Tree data: Frozen Trail 2.0 (Oct 2026)"
+        - generic [ref=f1e765]:
+          - heading "Resources" [level=4] [ref=f1e766]
+          - list [ref=f1e767]:
+            - listitem [ref=f1e768]:
+              - link [ref=f1e769] [cursor=pointer]:
+                - /url: "#"
+                - strong [ref=f1e770]: ARC Raiders
+            - listitem [ref=f1e771]:
+              - link [ref=f1e772] [cursor=pointer]:
+                - /url: "#"
+                - strong [ref=f1e773]: Skill Tree
+                - text: Wiki
+            - listitem [ref=f1e774]:
+              - link "Build Sharing Platform" [ref=f1e775] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f1e776]:
+          - heading "Learning" [level=4] [ref=f1e777]
+          - list [ref=f1e778]:
+            - listitem [ref=f1e779]:
+              - link "Beginner Guide" [ref=f1e780] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e783]:
+              - link "ARC Raiders Meta" [ref=f1e784] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f1e789]:
+          - heading "Community" [level=4] [ref=f1e790]
+          - list [ref=f1e791]:
+            - listitem [ref=f1e792]:
+              - link "Follow on X" [ref=f1e793] [cursor=pointer]:
+                - /url: https://x.com/xfutureagi
+            - listitem [ref=f1e796]:
+              - link "Discord Community" [ref=f1e797] [cursor=pointer]:
+                - /url: https://discord.com/channels/1484119117090001031/1484119117874204753
+          - heading "Friends" [level=4] [ref=f1e803]
+          - list [ref=f1e804]:
+            - listitem [ref=f1e805]:
+              - link "xfutureagi.com" [ref=f1e806] [cursor=pointer]:
+                - /url: https://www.xfutureagi.com
+            - listitem [ref=f1e807]:
+              - link "rentokenai.com" [ref=f1e808] [cursor=pointer]:
+                - /url: https://rentokenai.com
+      - generic [ref=f1e810]:
+        - generic [ref=f1e811]: ARC Raiders Skill Tree
+        - generic [ref=f1e815]:
+          - generic [ref=f1e816]: © 2025 ARC Raiders Skill Tree Builder
+          - generic [ref=f1e817]: ·
+          - link "Privacy Policy" [ref=f1e818] [cursor=pointer]:
+            - /url: /privacy-policy.html
+          - generic [ref=f1e819]: ·
+          - link "support@arcraiderskill.com" [ref=f1e820] [cursor=pointer]:
+            - /url: mailto:support@arcraiderskill.com

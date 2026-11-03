@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { validateBuild } from './buildRules.mjs';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
+const storeCatalog = JSON.parse(await fs.readFile(path.join(rootDir, 'store-catalog.json'), 'utf8'));
 const isMainModule = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
@@ -387,6 +388,21 @@ if (isMainModule) {
   const server = http.createServer(async (req, res) => {
     const requestUrl = new URL(req.url, 'http://localhost');
     const pathname = requestUrl.pathname;
+    const shopDestinations = {
+      ...Object.fromEntries(storeCatalog.products.map(product => [`/go/catalog/${product.id}`, product.destination])),
+      '/go/store': '/partners/arcskiller/',
+      '/go/weapons-level-5': '/services/weapons-level-5/',
+      '/go/raider-loadout': '/services/raider-loadout/',
+      '/go/blueprints': '/services/blueprints/',
+      '/go/items-and-resources': '/services/items-and-resources/',
+    };
+    if (Object.hasOwn(shopDestinations, pathname)) {
+      const destination = new URL(shopDestinations[pathname], 'https://arc-store.pro');
+      destination.searchParams.set('ref', 'arcskiller');
+      res.writeHead(302, { Location: destination.href, 'Cache-Control': 'no-store' });
+      res.end();
+      return;
+    }
     const redirectTarget = permanentRedirects.get(pathname);
     if (redirectTarget) {
       res.writeHead(301, { Location: `${redirectTarget}${requestUrl.search}` });

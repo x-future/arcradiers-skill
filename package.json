@@ -6,7 +6,9 @@
   "scripts": {
     "prebuild": "npm run generate-wiki && npm run apply-seo && npm run update-sitemap && npm run generate-llms-full",
     "dev": "node server.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender-pages.mjs && npm run check-search-pages",
+    "check-search-pages": "node scripts/check-search-pages.mjs",
+    "sync-store-catalog": "node scripts/sync-store-catalog.mjs",
     "start": "NODE_ENV=production node server.mjs",
     "preview": "NODE_ENV=production node server.mjs",
     "generate-wiki": "node scripts/generate-wiki.js",
