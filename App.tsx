@@ -9,6 +9,8 @@ import Tooltip from './components/Tooltip';
 import GeminiAssistant from './components/GeminiAssistant';
 import LandingSections from './components/LandingSections';
 import ScreenshotViewer from './components/ScreenshotViewer';
+import HomePage from './components/HomePage';
+import SkillReference from './components/SkillReference';
 import { Share2, RotateCcw, Info, ZoomIn, ZoomOut, Maximize, Move, Camera, Sparkles } from 'lucide-react';
 
 // Configuration for Grid Cropping & Sizing
@@ -337,6 +339,10 @@ const handleScreenshot = async () => {
     return <ScreenshotViewer shortId={currentShortId} onBack={handleBack} />;
   }
 
+  if (!window.location.pathname.startsWith('/s/') && window.location.pathname !== '/planner/' && window.location.pathname !== '/planner' && !window.location.hash.includes('build=')) {
+    return <HomePage store={window.location.pathname.startsWith('/store')} />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-[#050505] text-zinc-300 overflow-x-hidden font-body selection:bg-arc-mob selection:text-black">
       
@@ -656,6 +662,7 @@ const handleScreenshot = async () => {
       </button>
 
       {/* SEO Landing Content Sections */}
+      <SkillReference />
       <LandingSections />
 
       {/* Tooltip */}

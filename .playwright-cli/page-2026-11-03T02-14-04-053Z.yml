@@ -1,0 +1,186 @@
+- generic [ref=f6e3]:
+  - link "Skip to content" [ref=f6e4] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e5]:
+    - link "ARCSKILLER RAIDERS FIELD GUIDE" [ref=f6e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f6e9]:
+        - text: ARCSKILLER
+        - generic [ref=f6e10]: RAIDERS FIELD GUIDE
+    - navigation "Main navigation" [ref=f6e11]:
+      - link "Skill Planner" [ref=f6e12] [cursor=pointer]:
+        - /url: /planner/
+      - link "Builds" [ref=f6e13] [cursor=pointer]:
+        - /url: /#builds
+      - link "Guides" [ref=f6e14] [cursor=pointer]:
+        - /url: /#guides
+      - link "Shop" [ref=f6e15] [cursor=pointer]:
+        - /url: /store/
+  - main [ref=f6e19]:
+    - generic [ref=f6e20]:
+      - generic [ref=f6e21]: ARC STORE / PARTNER SHOP
+      - heading "Your next loadout." [level=1] [ref=f6e22]
+      - paragraph [ref=f6e23]: Weapons, complete kits and supplies from ARC Store.
+      - link "Open ARC Store" [ref=f6e24] [cursor=pointer]:
+        - /url: https://arc-store.pro/partners/arcskiller/?ref=arcskiller
+    - generic [ref=f6e28]:
+      - generic [ref=f6e29]:
+        - strong [ref=f6e30]: ARCSKILLER
+        - paragraph [ref=f6e31]: 10% off eligible catalog items.
+      - button "Copy code" [ref=f6e32] [cursor=pointer]
+      - paragraph [ref=f6e36]: Level V weapon builds, Raider Loadouts and blueprint sets retain their own pricing. Check the final offer at checkout.
+      - status
+    - iframe [ref=f6e37]:
+      - generic [ref=f7e1]:
+        - link "Skip to content" [ref=f7e2] [cursor=pointer]:
+          - /url: "#main"
+        - banner [ref=f7e3]:
+          - generic [ref=f7e4]:
+            - link [ref=f7e5] [cursor=pointer]:
+              - /url: https://arc-store.pro/?ref=arcskiller
+              - img "ARC Store" [ref=f7e6]
+              - generic [ref=f7e7]:
+                - strong [ref=f7e8]: ARC
+                - text: store
+            - navigation "Main navigation" [ref=f7e9]:
+              - link "All products" [ref=f7e10] [cursor=pointer]:
+                - /url: https://arc-store.pro/?ref=arcskiller#catalog
+              - link "Upgraded weapons" [ref=f7e11] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/weapons-level-5/?ref=arcskiller
+              - link "Raider Loadout" [ref=f7e12] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+              - link "Blueprints" [ref=f7e13] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/blueprints/?ref=arcskiller
+              - link "Items & resources" [ref=f7e14] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/items-and-resources/?ref=arcskiller
+            - link "Cart" [ref=f7e15] [cursor=pointer]:
+              - /url: https://arc-store.pro/cart?ref=arcskiller
+        - main [ref=f7e20]:
+          - generic [ref=f7e21]:
+            - generic [ref=f7e22]:
+              - generic [ref=f7e23]:
+                - strong [ref=f7e24]: ARC
+                - text: store
+              - heading "Your build. Your loadout." [level=1] [ref=f7e25]
+              - paragraph [ref=f7e26]: You’ve planned your skill tree. Now choose the gear to match.
+              - paragraph [ref=f7e27]: For the arcraiderskill.com community · ChaosEon × ARC Store
+            - generic [ref=f7e28]:
+              - img "ARC Store level V weapon selection" [ref=f7e29]
+              - generic [ref=f7e30]:
+                - heading "Level V weapons, built around your playstyle." [level=2] [ref=f7e31]
+                - paragraph [ref=f7e32]: Welcome from ChaosEon. Configure upgraded weapons, attachments and perks, or put together a Raider Loadout for your next run.
+                - generic [ref=f7e33]:
+                  - link "Configure a weapon V →" [ref=f7e34] [cursor=pointer]:
+                    - /url: https://arc-store.pro/services/weapons-level-5/?ref=arcskiller
+                  - link "Build a Raider Loadout →" [ref=f7e35] [cursor=pointer]:
+                    - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+            - generic [ref=f7e36]:
+              - generic [ref=f7e37]:
+                - text: Your partner code
+                - strong [ref=f7e38]: ARCSKILLER
+              - button "Copy promo code ARCSKILLER" [ref=f7e39]: Copy code
+              - status [ref=f7e40]: Enter ARCSKILLER for eligible catalog items. Checkout confirms the current offer.
+              - paragraph [ref=f7e41]: Level V weapon builds, Raider Loadouts and blueprint sets use their own prices. The referral link still tracks these orders for ChaosEon.
+            - paragraph [ref=f7e42]: "Partner link: ChaosEon may earn a commission on completed orders."
+          - generic [ref=f7e43]:
+            - generic [ref=f7e44]:
+              - heading "Choose your starting point." [level=2] [ref=f7e46]
+              - paragraph [ref=f7e47]: Pick the items that fit your playstyle.Review every option before you add it to your cart.
+            - generic [ref=f7e48]:
+              - article [ref=f7e49]:
+                - link [ref=f7e50] [cursor=pointer]:
+                  - /url: https://arc-store.pro/services/weapons-level-5/?ref=arcskiller
+                - generic [ref=f7e51]:
+                  - heading "Start with your weapon." [level=3] [ref=f7e52]
+                  - paragraph [ref=f7e53]: Browse level V weapons and configure the available attachments and perk options on the product page.
+                  - link "Configure a weapon →" [ref=f7e54] [cursor=pointer]:
+                    - /url: https://arc-store.pro/services/weapons-level-5/?ref=arcskiller
+              - article [ref=f7e55]:
+                - link [ref=f7e56] [cursor=pointer]:
+                  - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+                - generic [ref=f7e57]:
+                  - heading "Bring the whole kit." [level=3] [ref=f7e58]
+                  - paragraph [ref=f7e59]: Choose weapons, attachments, augments and shields together. Add the supplies you need for your PvP or PvE plan.
+                  - link "Build a Raider Loadout →" [ref=f7e60] [cursor=pointer]:
+                    - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+            - generic [ref=f7e61]:
+              - heading "Finish your shopping list." [level=3] [ref=f7e62]
+              - link "Blueprints →" [ref=f7e63] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/blueprints/?ref=arcskiller
+              - link "Items & resources →" [ref=f7e64] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/items-and-resources/?ref=arcskiller
+              - link "Ask about a custom order →" [ref=f7e65] [cursor=pointer]:
+                - /url: https://arc-store.pro/services/individual-request/?ref=arcskiller
+          - generic [ref=f7e67]:
+            - heading "How you receive your order." [level=2] [ref=f7e68]
+            - list [ref=f7e69]:
+              - listitem [ref=f7e70]:
+                - text: "01"
+                - heading "Configure your gear" [level=3] [ref=f7e71]
+                - paragraph [ref=f7e72]: Choose items and quantities. Prices and available options are shown in the catalog.
+              - listitem [ref=f7e73]:
+                - text: "02"
+                - heading "Review your cart" [level=3] [ref=f7e74]
+                - paragraph [ref=f7e75]: Enter ARCSKILLER, check the final total and complete checkout using an available payment method.
+              - listitem [ref=f7e76]:
+                - text: "03"
+                - heading "Coordinate in order chat" [level=3] [ref=f7e77]
+                - paragraph [ref=f7e78]: ARC Store handles fulfilment. Use your order chat to confirm availability, delivery requirements and the in-game handover.
+            - generic [ref=f7e79]:
+              - paragraph [ref=f7e80]: Support attached to your order.Keep your order link and follow the manager’s instructions.
+              - link "Read delivery details ↗" [ref=f7e81] [cursor=pointer]:
+                - /url: https://arc-store.pro/delivery/?ref=arcskiller
+              - link "Read the refund policy ↗" [ref=f7e82] [cursor=pointer]:
+                - /url: https://arc-store.pro/refund-policy/?ref=arcskiller
+          - generic [ref=f7e83]:
+            - generic [ref=f7e84]:
+              - heading "A few useful answers." [level=2] [ref=f7e85]
+              - paragraph [ref=f7e86]: Need help matching gear to your build? Share what you’re aiming for with ARC Store support.
+              - link "Contact ARC Store →" [ref=f7e87] [cursor=pointer]:
+                - /url: https://arc-store.pro/contact/?ref=arcskiller
+            - generic [ref=f7e88]:
+              - group [ref=f7e89]:
+                - generic "How do I use ARCSKILLER?" [ref=f7e90]
+                - paragraph [ref=f7e91]: Copy the code, choose your items and enter it in the cart before placing your order. Check the discount and final total before payment. Check the current offer and eligibility in the ARC Store cart.
+              - group [ref=f7e92]:
+                - generic "Does the code stack with my personal discount?" [ref=f7e93]
+              - group [ref=f7e94]:
+                - generic "Can I use my skill-tree build here?" [ref=f7e95]
+              - group [ref=f7e96]:
+                - generic "Who handles my order?" [ref=f7e97]
+              - group [ref=f7e98]:
+                - generic "Where can I check reviews and policies?" [ref=f7e99]
+          - generic [ref=f7e100]:
+            - heading "Make your build tangible." [level=2] [ref=f7e101]
+            - link "Build your loadout ↗" [ref=f7e102] [cursor=pointer]:
+              - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+        - contentinfo [ref=f7e103]:
+          - generic [ref=f7e104]:
+            - link "ARC Store" [ref=f7e105] [cursor=pointer]:
+              - /url: https://arc-store.pro/?ref=arcskiller
+            - link "Terms" [ref=f7e106] [cursor=pointer]:
+              - /url: https://arc-store.pro/terms/?ref=arcskiller
+            - link "Privacy" [ref=f7e107] [cursor=pointer]:
+              - /url: https://arc-store.pro/privacy-policy/?ref=arcskiller
+            - link "Cookies" [ref=f7e108] [cursor=pointer]:
+              - /url: https://arc-store.pro/cookie-policy/?ref=arcskiller
+            - link "Contact" [ref=f7e109] [cursor=pointer]:
+              - /url: https://arc-store.pro/contact/?ref=arcskiller
+          - paragraph [ref=f7e110]: ARC Store is an independent service and is not affiliated with or endorsed by Embark Studios or ARC Raiders. Game names and imagery belong to their respective owners.
+          - paragraph [ref=f7e111]:
+            - text: After you follow a store link, ARC Store uses a first-party referral cookie for up to 30 days.
+            - link "Cookie policy" [ref=f7e112] [cursor=pointer]:
+              - /url: https://arc-store.pro/cookie-policy/?ref=arcskiller
+  - contentinfo [ref=f6e38]:
+    - link "ARCSKILLER" [ref=f6e39] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f6e40]:
+      - link "Planner" [ref=f6e41] [cursor=pointer]:
+        - /url: /planner/
+      - link "Wiki" [ref=f6e42] [cursor=pointer]:
+        - /url: /wiki/
+      - link "Guides" [ref=f6e43] [cursor=pointer]:
+        - /url: /blog.html
+      - link "Shop" [ref=f6e44] [cursor=pointer]:
+        - /url: /store/
+    - paragraph [ref=f6e45]: Independent fan resource. Not affiliated with Embark Studios. Game imagery belongs to its respective owners. Store links may earn us a commission.

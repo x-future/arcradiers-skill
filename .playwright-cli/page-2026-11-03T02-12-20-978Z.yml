@@ -1,0 +1,152 @@
+- generic [ref=e3]:
+  - link "Skip to content" [ref=e4] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e5]:
+    - link "ARCSKILLER RAIDERS FIELD GUIDE" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e9]:
+        - text: ARCSKILLER
+        - generic [ref=e10]: RAIDERS FIELD GUIDE
+    - navigation "Main navigation" [ref=e11]:
+      - link "Skill Planner" [ref=e12] [cursor=pointer]:
+        - /url: /planner/
+      - link "Builds" [ref=e13] [cursor=pointer]:
+        - /url: /#builds
+      - link "Guides" [ref=e14] [cursor=pointer]:
+        - /url: /#guides
+      - link "Shop" [ref=e15] [cursor=pointer]:
+        - /url: /store/
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img "ARC Raiders game landscape" [ref=e21]
+      - generic [ref=e23]:
+        - generic [ref=e24]: PLAN THE BUILD. MAKE THE EXTRACTION.
+        - heading "ARC Raiders Skill Tree Builder" [level=1] [ref=e25]: ARC RaidersSkill Tree Builder
+        - paragraph [ref=e26]: Your next run starts here. Plan your skills, find a build and choose the gear to match.
+        - generic [ref=e27]:
+          - link "Open Skill Planner" [ref=e28] [cursor=pointer]:
+            - /url: /planner/
+          - link "Explore builds" [ref=e31] [cursor=pointer]:
+            - /url: "#builds"
+        - link [ref=e34] [cursor=pointer]:
+          - /url: /planner/
+          - img "Frozen Trail skill tree preview" [ref=e35]
+          - generic [ref=e36]: FROZEN TRAIL SKILL TREE
+    - generic [ref=e40]:
+      - generic [ref=e41]: Conditioning
+      - generic [ref=e42]: Mobility
+      - generic [ref=e43]: Survival
+      - link "76-point base · up to 91 points" [ref=e44] [cursor=pointer]:
+        - /url: /planner/
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: 01 / BUILD GUIDES
+          - heading "Choose your next run." [level=2] [ref=e51]
+        - link "All build guides" [ref=e52] [cursor=pointer]:
+          - /url: /blog/arc-raiders-skill-tree-builds.html
+      - generic [ref=e55]:
+        - link "SOLO / SURVIVAL Find your solo build Plan your route, manage stamina and make the extraction. Read build guide" [ref=e56] [cursor=pointer]:
+          - /url: /blog/arc-raiders-skill-tree-best-build.html
+          - generic [ref=e58]:
+            - text: SOLO / SURVIVAL
+            - heading "Find your solo build" [level=3] [ref=e59]
+            - paragraph [ref=e63]: Plan your route, manage stamina and make the extraction.
+            - generic [ref=e64]: Read build guide
+        - link "PVP / COMBAT Build for the fight Explore skill choices for player encounters and aggressive runs. Read build guide" [ref=e67] [cursor=pointer]:
+          - /url: /blog/arc-raiders-pvp-skill-tree-build.html
+          - generic [ref=e69]:
+            - text: PVP / COMBAT
+            - heading "Build for the fight" [level=3] [ref=e70]
+            - paragraph [ref=e74]: Explore skill choices for player encounters and aggressive runs.
+            - generic [ref=e75]: Read build guide
+        - link "SOLO / SQUAD Explore more playstyles Compare build guides before committing your skill points. Read build guide" [ref=e78] [cursor=pointer]:
+          - /url: /blog/arc-raiders-20-best-skill-tree-builds-for-pvpve-solo--squad.html
+          - generic [ref=e80]:
+            - text: SOLO / SQUAD
+            - heading "Explore more playstyles" [level=3] [ref=e81]
+            - paragraph [ref=e85]: Compare build guides before committing your skill points.
+            - generic [ref=e86]: Read build guide
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: 02 / WEAPONS & LOADOUTS
+          - heading "Bring the right gear." [level=2] [ref=e94]
+        - link "Visit partner shop" [ref=e95] [cursor=pointer]:
+          - /url: /store/
+      - generic [ref=e99]:
+        - link [ref=e100] [cursor=pointer]:
+          - /url: https://arc-store.pro/services/weapons-level-5/?ref=arcskiller
+          - img "Level V weapons" [ref=e101]
+          - generic [ref=e102]:
+            - heading "Level V weapons" [level=3] [ref=e103]
+            - paragraph [ref=e107]: Choose your weapon and available attachments.
+            - generic [ref=e108]: View options & prices
+        - link [ref=e111] [cursor=pointer]:
+          - /url: https://arc-store.pro/services/raider-loadout/?ref=arcskiller
+          - img "Raider Loadouts" [ref=e112]
+          - generic [ref=e113]:
+            - heading "Raider Loadouts" [level=3] [ref=e114]
+            - paragraph [ref=e118]: Put together weapons, shields and supplies.
+            - generic [ref=e119]: View options & prices
+      - generic [ref=e122]:
+        - link "Blueprints" [ref=e123] [cursor=pointer]:
+          - /url: https://arc-store.pro/services/blueprints/?ref=arcskiller
+        - link "Items & resources" [ref=e127] [cursor=pointer]:
+          - /url: https://arc-store.pro/services/items-and-resources/?ref=arcskiller
+      - link "ARC Store partner shop - use code ARCSKILLER":
+        - /url: https://arc-store.pro/partners/arcskiller/?ref=arcskiller
+        - generic:
+          - img "ARC Store partner shop - use code ARCSKILLER"
+      - paragraph [ref=e131]: "Partner links: we may earn a commission. ARCSKILLER gives 10% off eligible catalog items. Level V builds, Raider Loadouts and blueprint sets use their own pricing."
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - generic [ref=e135]: 03 / FIELD NOTES
+          - heading "Go in prepared." [level=2] [ref=e136]
+        - link "All guides" [ref=e137] [cursor=pointer]:
+          - /url: /blog.html
+      - generic [ref=e140]:
+        - link [ref=e141] [cursor=pointer]:
+          - /url: /blog/arc-raiders-skill-tree-builder-guide.html
+          - img "ARC Raiders skill tree" [ref=e142]
+          - heading "Get more from your skill tree" [level=3] [ref=e143]
+          - paragraph [ref=e147]: Start with the skill planner guide.
+        - generic [ref=e148]:
+          - link "01 Skill tree mechanics" [ref=e149] [cursor=pointer]:
+            - /url: /blog/skill-tree-mechanics-deep-dive.html
+            - generic [ref=e150]: "01"
+            - heading "Skill tree mechanics" [level=3] [ref=e151]
+          - link "02 Beginner mistakes to avoid" [ref=e155] [cursor=pointer]:
+            - /url: /blog/arc-raiders-beginner-mistakes.html
+            - generic [ref=e156]: "02"
+            - heading "Beginner mistakes to avoid" [level=3] [ref=e157]
+          - link "03 PvP combat tactics" [ref=e161] [cursor=pointer]:
+            - /url: /blog/arc-raiders-pvp-combat-tactics.html
+            - generic [ref=e162]: "03"
+            - heading "PvP combat tactics" [level=3] [ref=e163]
+          - link "04 Weapons reference" [ref=e167] [cursor=pointer]:
+            - /url: /wiki/weapons/
+            - generic [ref=e168]: "04"
+            - heading "Weapons reference" [level=3] [ref=e169]
+    - generic [ref=e173]:
+      - heading "Before you head out." [level=2] [ref=e174]
+      - group [ref=e175]:
+        - generic "How many skill points can I use?" [ref=e176] [cursor=pointer]
+      - group [ref=e177]:
+        - generic "Can I share my skill build?" [ref=e178] [cursor=pointer]
+      - group [ref=e179]:
+        - generic "Who handles shop orders?" [ref=e180] [cursor=pointer]
+  - contentinfo [ref=e181]:
+    - link "ARCSKILLER" [ref=e182] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e183]:
+      - link "Planner" [ref=e184] [cursor=pointer]:
+        - /url: /planner/
+      - link "Wiki" [ref=e185] [cursor=pointer]:
+        - /url: /wiki/
+      - link "Guides" [ref=e186] [cursor=pointer]:
+        - /url: /blog.html
+      - link "Shop" [ref=e187] [cursor=pointer]:
+        - /url: /store/
+    - paragraph [ref=e188]: Independent fan resource. Not affiliated with Embark Studios. Game imagery belongs to its respective owners. Store links may earn us a commission.
