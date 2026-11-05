@@ -10,7 +10,12 @@ for (const route of ['', 'planner/', 'store/']) {
   assert.ok(!/content="[^"\n]*(?:noindex|nosnippet)/.test(html));
   const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   assert.equal(schema.url, `${origin}/${route}`);
-  assert.ok(html.includes(route === 'store/' ? '/go/catalog/services-' : 'How the ARC Raiders skill tree works'));
+  if (route === 'store/') {
+    assert.ok(html.includes('href="https://arc-store.pro/services/weapons/?ref=arcskiller"'));
+    assert.ok(!html.includes('href="/go/'));
+  } else {
+    assert.ok(html.includes('How the ARC Raiders skill tree works'));
+  }
 }
 const sitemap = await fs.readFile(new URL('../dist/sitemap.xml', import.meta.url), 'utf8');
 for (const route of ['planner/', 'store/']) assert.ok(sitemap.includes(`<loc>${origin}/${route}</loc>`));
